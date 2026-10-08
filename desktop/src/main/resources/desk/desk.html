@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>StarBridge</title>
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="desk.css">
+<script src="i18n-en.js"></script>
+<script src="i18n.js"></script>
+</head>
+<body>
+<div id="app">
+  <!-- Toolbar -->
+  <header class="toolbar">
+    <div class="brand">
+      <img src="icon-192.png" alt="" class="logo">
+      <div>
+        <div class="app-name">StarBridge</div>
+        <div class="conn"><span id="connDot" class="dot"></span><span id="connText">Conectando…</span></div>
+      </div>
+    </div>
+    <div class="toolbar-mid">
+      <button id="alignPill" class="pill warn" data-view-link="align">Sin alinear</button>
+      <span id="statePill" class="pill hidden"></span>
+      <button id="camPill" class="pill hidden" data-view-link="photos" title="La cámara del iPhone"></button>
+      <button id="peerPill" class="pill busy hidden" title="Otro StarBridge de la WiFi tiene el telescopio"></button>
+      <button id="homePill" class="pill hidden" title="Volver al panel de este PC"></button>
+      <button id="portPill" class="pill warn hidden">Elige el puerto del cable</button>
+    </div>
+    <div class="toolbar-right">
+      <button id="padToggle" class="icon-btn hidden" title="Mostrar u ocultar el mando" aria-label="Mando"></button>
+      <button id="winBtn" class="icon-btn" title="Ventanas: abre secciones en ventanas aparte" aria-label="Ventanas"></button>
+      <button id="nightBtn" class="icon-btn" title="Modo nocturno (N)" aria-label="Modo nocturno"></button>
+      <button id="stopBtn" class="stop" title="Parar todo (Espacio)">STOP</button>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button data-view="sky" class="active"><i data-icon="sky"></i><span>Cielo</span><kbd>1</kbd></button>
+    <button data-view="objects"><i data-icon="list"></i><span>Objetos</span><kbd>2</kbd></button>
+    <button data-view="photos"><i data-icon="camera"></i><span>Fotos</span><b class="side-badge hidden" id="photoBadge"></b><kbd>3</kbd></button>
+    <button data-view="align"><i data-icon="target"></i><span>Alineación</span><kbd>4</kbd></button>
+    <button data-view="tracking"><i data-icon="chart"></i><span>Seguimiento</span><kbd>5</kbd></button>
+    <button data-view="slack"><i data-icon="gears"></i><span>Holgura</span><kbd>6</kbd></button>
+    <button data-view="console"><i data-icon="terminal"></i><span>Consola</span><kbd>7</kbd></button>
+    <button data-view="settings"><i data-icon="settings"></i><span>Ajustes</span><kbd>8</kbd></button>
+    <div class="sidebar-foot">
+      <div class="kbd-help">
+        <div><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> mover</div>
+        <div><kbd>⇧</kbd> más rápido · <kbd>+</kbd><kbd>−</kbd> velocidad</div>
+        <div><kbd>Espacio</kbd> STOP · <kbd>T</kbd> seguir</div>
+        <div><kbd>G</kbd> ir al seleccionado · <kbd>F</kbd> buscar</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main views -->
+  <main class="main">
+    <!-- CIELO -->
+    <section class="view active" id="view-sky">
+      <div class="map-wrap" id="mapWrap">
+        <canvas id="sky"></canvas>
+        <div class="map-tools">
+          <div class="seg small" id="faceSeg">
+            <button data-face="0">N</button><button data-face="90">E</button><button data-face="180" class="active">S</button><button data-face="270">O</button>
+          </div>
+          <div class="seg small">
+            <button id="zoomOut" aria-label="Alejar">−</button><button id="zoomReset">Todo</button><button id="zoomIn" aria-label="Acercar">+</button>
+          </div>
+          <button id="centerScope" class="tool-btn">Ir al telescopio</button>
+          <button id="zonesBtn" class="tool-btn" title="Lo que ves desde donde estás (una ventana…)">Zonas visibles</button>
+          <div class="seg small" id="layerSeg">
+            <button data-layer="lines" class="active">Constelaciones</button><button data-layer="names" class="active">Nombres</button><button data-layer="dso" class="active">Cielo profundo</button>
+          </div>
+        </div>
+        <div class="map-legend" id="mapLegend"></div>
+        <div class="tooltip hidden" id="tooltip"></div>
+        <div class="map-card hidden" id="mapCard"></div>
+        <div class="zone-panel hidden" id="zonePanel"></div>
+        <div class="zone-bar hidden" id="zoneBar"></div>
+      </div>
+    </section>
+
+    <!-- OBJETOS -->
+    <section class="view" id="view-objects">
+      <div class="two-col">
+        <div class="col list-col">
+          <div class="search">
+            <i data-icon="search"></i>
+            <input id="q" type="search" placeholder="M42, Júpiter, Vega, Andrómeda…" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="chips" id="chips">
+            <button class="chip active" data-cat="best">Lo mejor ahora</button>
+            <button class="chip" data-cat="solar">Luna y planetas</button>
+            <button class="chip" data-cat="messier">Messier</button>
+            <button class="chip" data-cat="galaxy">Galaxias</button>
+            <button class="chip" data-cat="nebula">Nebulosas</button>
+            <button class="chip" data-cat="cluster">Cúmulos</button>
+            <button class="chip" data-cat="star">Estrellas</button>
+          </div>
+          <label class="check"><input id="onlyVisible" type="checkbox" checked> Solo sobre el horizonte</label>
+          <label class="check hidden" id="onlyZoneWrap"><input id="onlyZone" type="checkbox"> Solo lo que veo (zonas visibles)</label>
+          <div class="list" id="results"></div>
+        </div>
+        <div class="col detail-col" id="objectDetail">
+          <div class="empty-state">
+            <div class="big-icon"><i data-icon="sky"></i></div>
+            <h2>Elige un objeto</h2>
+            <p>Su ficha muestra cuándo está más alto esta noche y te lleva allí con un clic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOTOS (las del iPhone) -->
+    <section class="view" id="view-photos">
+      <div class="photos">
+        <div class="photo-stage" id="photoStage">
+          <img id="photoBig" alt="" class="hidden">
+          <div class="photo-empty" id="photoEmpty">
+            <div class="big-icon"><i data-icon="camera"></i></div>
+            <h2>Aún no hay fotos</h2>
+            <p>Las fotos que hagas con la app StarBridge EAA del iPhone aparecen aquí en cuanto llegan.</p>
+          </div>
+          <div class="photo-info hidden" id="photoInfo"></div>
+          <div class="photo-tools">
+            <button class="tool-btn" id="photoPrev" title="Anterior (,)">‹</button>
+            <button class="tool-btn" id="photoNext" title="Siguiente (.)">›</button>
+            <label class="tool-btn check-pill"><input type="checkbox" id="photoFollow"> La última al llegar</label>
+            <a class="tool-btn" id="photoDownload" download>Descargar</a>
+            <button class="tool-btn hidden" id="photoGoto">Ir al objeto</button>
+            <button class="tool-btn" id="photoFull" title="Pantalla completa (Z)">Pantalla completa</button>
+          </div>
+        </div>
+        <div class="cam-bar" id="camBar"></div>
+        <div class="photo-strip" id="photoStrip"></div>
+      </div>
+    </section>
+
+    <!-- ALINEACIÓN -->
+    <section class="view" id="view-align">
+      <div class="page">
+        <div class="page-head">
+          <h1>Alineación</h1>
+          <div class="seg" id="modeSeg">
+            <button data-mode="starbridge">Alinea StarBridge</button><button data-mode="hc">Alinea el mando</button>
+          </div>
+        </div>
+        <!-- The guided flow: state, the big button, then one star at a time. -->
+        <div class="card align-hero" id="alignHero"></div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Estrellas para alinear <span class="muted">la primera es la recomendada</span></div>
+            <div class="list" id="alignSuggestions"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Puntos de alineación</div>
+            <table class="table" id="alignPoints"></table>
+            <div class="row-actions"><button class="btn ghost" id="alignClear">Empezar de nuevo</button></div>
+          </div>
+        </div>
+        <div class="card" id="levelCard"></div>
+      </div>
+    </section>
+
+    <!-- SEGUIMIENTO -->
+    <section class="view" id="view-tracking">
+      <div class="page">
+        <div class="page-head">
+          <h1>Seguimiento</h1>
+          <span class="muted" id="trackHead"></span>
+        </div>
+        <div class="grid-3" id="trackStats"></div>
+        <div class="card">
+          <div class="card-title">Error de seguimiento <span class="muted">(″, últimos 10 min)</span></div>
+          <canvas class="chart" id="errChart"></canvas>
+        </div>
+        <div class="card">
+          <div class="card-title">Velocidad de los motores <span class="muted">(″/s)</span></div>
+          <canvas class="chart" id="rateChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOLGURA -->
+    <section class="view" id="view-slack">
+      <div class="page">
+        <div class="page-head"><h1>Holgura de los motores</h1></div>
+        <div class="card" id="centerCard">
+          <div class="card-title">Medirla centrando una estrella <span class="pill ok">la más precisa</span></div>
+          <p class="muted">Centras la misma estrella varias veces, terminando cada vez con el último toque en sentido contrario. Los encoders se separan exactamente la holgura (StarBridge descuenta lo que se mueve el cielo), así que no depende de tus reflejos. Cada pareja de centrados es una medida; con 3 o 4 sale muy fina.</p>
+          <div id="centerBody"></div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Holgura medida</div>
+            <p class="muted">Grados de motor que se pierden al cambiar de sentido. StarBridge la usa para apuntar, seguir y recoger con las flechas.</p>
+            <div class="form-grid">
+              <label>Acimut (°)<input id="slackAz" type="number" min="0" max="3" step="0.01"></label>
+              <label>Altitud (°)<input id="slackAlt" type="number" min="0" max="3" step="0.01"></label>
+            </div>
+            <div class="row-actions"><button class="btn primary" id="saveSlack">Guardar</button></div>
+            <div class="switch-row">
+              <div><div class="row-title">Recoger la holgura con las flechas</div>
+                <div class="muted">Al cambiar de sentido, el motor recorre primero toda la holgura deprisa.</div></div>
+              <label class="switch"><input id="takeUp" type="checkbox"><span></span></label>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Dónde está el motor dentro de la holgura</div>
+            <div id="gearBars"></div>
+            <p class="muted">Se sigue con cada lectura del encoder. «Sin saber» hasta el primer movimiento largo tras conectar.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Medirla con el ocular</div>
+            <p class="muted">Centra una estrella brillante. StarBridge tensa los engranajes y luego mueve muy despacio; pulsa «¡Se mueve!» en cuanto la estrella empiece a moverse.</p>
+            <div class="row-actions" id="visualActions">
+              <button class="btn" data-visual="azm">Medir acimut</button><button class="btn" data-visual="alt">Medir altitud</button>
+            </div>
+            <div id="visualState" class="visual"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Anti-backlash del mando <span class="muted">(0–99)</span></div>
+            <p class="muted">Compensación propia de los motores. Si usas la recogida de StarBridge, déjalo a 0 para no compensar dos veces.</p>
+            <table class="table" id="nativeTable"></table>
+            <div class="row-actions"><button class="btn ghost" id="readNative">Leer del mando</button><button class="btn" id="zeroNative">Poner a 0</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSOLA -->
+    <section class="view" id="view-console">
+      <div class="page console-page">
+        <div class="page-head">
+          <h1>Consola del mando</h1>
+          <div class="row-actions"><button class="btn ghost" id="diagBtn">Diagnóstico completo</button><button class="btn ghost" id="pauseTrace">Pausar</button></div>
+        </div>
+        <div class="card trace-card">
+          <pre id="trace" class="trace"></pre>
+        </div>
+        <div class="card">
+          <div class="console-form">
+            <input id="rawCmd" type="text" placeholder="Kx · V · z · P 2 16 36 6 0 0 0" spellcheck="false" autocomplete="off">
+            <input id="rawLen" type="text" placeholder="respuesta: texto" title="Bytes de respuesta (vacío = texto hasta #)">
+            <button class="btn primary" id="rawSend">Enviar</button>
+          </div>
+          <div class="quick" id="quickCmds"></div>
+          <pre id="rawOut" class="raw-out"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- AJUSTES -->
+    <section class="view" id="view-settings">
+      <div class="page">
+        <div class="page-head"><h1>Ajustes</h1></div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Lugar</div>
+            <div class="muted" id="siteInfo"></div>
+            <div class="form-grid">
+              <label>Latitud (°)<input id="lat" type="number" step="0.0001"></label>
+              <label>Longitud (° este +)<input id="lon" type="number" step="0.0001"></label>
+            </div>
+            <div class="row-actions"><button class="btn primary" id="saveSite">Guardar lugar</button></div>
+          </div>
+          <div class="card">
+            <div class="card-title">GoTo</div>
+            <div class="muted">¿Quién mueve los motores?</div>
+            <div class="seg" id="gotoSeg"><button data-method="auto">Auto</button><button data-method="hc">El mando</button><button data-method="soft">StarBridge</button></div>
+            <p class="muted" id="gotoHint"></p>
+            <label class="inline">Aproximación final (°)<input id="approach" type="number" min="0" max="3" step="0.1"></label>
+          </div>
+          <div class="card">
+            <div class="card-title">Mando y montura</div>
+            <div id="mountInfo" class="kv"></div>
+            <div id="pcPort" class="pc-port hidden"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Conectar el iPhone</div>
+            <div class="muted">Escanéalo con la cámara del iPhone, en la misma WiFi que este PC.</div>
+            <div class="share">
+              <figure><img id="shareQr" alt="QR para Safari"><figcaption>Safari</figcaption></figure>
+              <figure><img id="shareQrApp" alt="QR para la app"><figcaption>App StarBridge EAA</figcaption></figure>
+            </div>
+            <div class="mono share-text" id="shareText"></div>
+          </div>
+          <div class="card" data-no-i18n>
+            <div class="card-title">Idioma · Language</div>
+            <div class="seg" id="langSeg"><button data-l="es">Español</button><button data-l="en">English</button></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Pantalla</div>
+            <div class="switch-row"><span>Modo nocturno (rojo)</span><label class="switch"><input id="nightSwitch" type="checkbox"><span></span></label></div>
+            <div class="switch-row"><span>Invertir izquierda/derecha</span><label class="switch"><input id="invertAz" type="checkbox"><span></span></label></div>
+            <div class="switch-row"><span>Invertir arriba/abajo</span><label class="switch"><input id="invertAlt" type="checkbox"><span></span></label></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Acerca de</div>
+            <div class="row-actions" style="margin:0 0 10px"><button class="btn ghost" id="welcomeAgain">Ver la bienvenida</button></div>
+            <p class="muted">StarBridge · control de telescopios Celestron NexStar. Estrellas: HYG v4 (CC BY-SA 4.0). Cielo profundo: OpenNGC (CC BY-SA 4.0). Constelaciones: d3-celestial, © 2015 Olaf Frohn (BSD-3-Clause). Planetas: método de Paul Schlyter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Inspector: the telescope, always at hand -->
+  <aside class="inspector">
+    <div class="insp-section">
+      <div class="insp-label" id="pointLabel">Apuntando</div>
+      <div class="insp-title" id="pointTitle">—</div>
+      <div class="coords mono" id="coords"></div>
+    </div>
+    <div class="insp-section">
+      <div class="pad" id="pad">
+        <button class="dir up" data-axis="alt" data-dir="pos" aria-label="Arriba"><i data-icon="up"></i></button>
+        <button class="dir left" data-axis="azm" data-dir="neg" aria-label="Izquierda"><i data-icon="left"></i></button>
+        <button class="pad-center" id="padStop" aria-label="Parar">STOP</button>
+        <button class="dir right" data-axis="azm" data-dir="pos" aria-label="Derecha"><i data-icon="right"></i></button>
+        <button class="dir down" data-axis="alt" data-dir="neg" aria-label="Abajo"><i data-icon="down"></i></button>
+      </div>
+      <div class="speed">
+        <div class="speed-head"><span>Velocidad</span><b id="speedText"></b></div>
+        <input id="speed" type="range" min="0" max="1000" step="1">
+        <div class="presets" id="presets">
+          <button data-arcsec="30">Fina</button><button data-arcsec="240">Lenta</button><button data-arcsec="1800">Media</button><button data-arcsec="7200">Rápida</button><button data-arcsec="16000">Máx</button>
+        </div>
+      </div>
+    </div>
+    <div class="insp-section">
+      <div class="switch-row"><div><div class="row-title">Seguimiento</div><div class="muted" id="trackSub">Compensa la rotación del cielo</div></div>
+        <label class="switch"><input id="trackToggle" type="checkbox"><span></span></label></div>
+      <div class="seg small full" id="rateSeg"><button data-rate="sidereal" class="active">Sideral</button><button data-rate="lunar">Lunar</button><button data-rate="solar">Solar</button></div>
+    </div>
+    <div class="insp-section">
+      <details class="goto-coords" id="gotoCoords">
+        <summary>Ir a coordenadas</summary>
+        <div class="seg small full" id="coordSeg"><button data-kind="radec" class="active">AR / Dec (J2000)</button><button data-kind="altaz">Alt / Az</button></div>
+        <div class="form-grid" id="coordRadec">
+          <label>AR (h m s)<input id="raIn" type="text" placeholder="0 42 44"></label>
+          <label>Dec (° ′ ″)<input id="decIn" type="text" placeholder="+41 16 9"></label>
+        </div>
+        <div class="form-grid hidden" id="coordAltaz">
+          <label>Acimut (°)<input id="azIn" type="number" step="0.1" min="0" max="360"></label>
+          <label>Altura (°)<input id="altIn" type="number" step="0.1" min="0" max="90"></label>
+        </div>
+        <div class="row-actions"><button class="btn primary" id="coordGo">Ir</button></div>
+        <div class="form-error hidden" id="coordErr"></div>
+      </details>
+      <div class="row-actions">
+        <button class="btn ghost" id="cancelGoto">Cancelar GoTo</button>
+        <button class="btn ghost" id="parkBtn">Aparcar</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Status bar -->
+  <footer class="statusbar">
+    <span id="sbSite"></span><span id="sbTime"></span><span id="sbLst"></span>
+    <span class="grow"></span>
+    <span id="sbLink"></span>
+  </footer>
+</div>
+
+<div class="toasts" id="toasts"></div>
+
+<div class="win-menu hidden" id="winMenu"></div>
+
+<div class="modal hidden" id="modal">
+  <div class="modal-card" id="modalCard"></div>
+</div>
+
+<div class="locked hidden" id="locked">
+  <div class="locked-card">
+    <img src="icon-192.png" alt="" class="logo big">
+    <h2>Acceso protegido</h2>
+    <p>Abre StarBridge desde el programa del PC o escribe el código de acceso.</p>
+    <form id="codeForm"><input id="codeInput" type="text" placeholder="tcys-rayg-wepd" autocomplete="off"><button class="btn primary">Entrar</button></form>
+  </div>
+</div>
+
+<script src="desk.js"></script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="StarBridge">
+<meta name="theme-color" content="#000000">
+<meta name="format-detection" content="telephone=no">
+<title>StarBridge</title>
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<script src="i18n-en.js"></script>
+<script src="i18n.js"></script>
+</head>
+<body class="night">
+
+<header class="topbar">
+  <div class="brand">
+    <span id="connDot" class="dot"></span>
+    <div>
+      <div class="title">StarBridge</div>
+      <div id="subtitle" class="subtitle">Conectando con el Android…</div>
+    </div>
+  </div>
+  <div class="top-right">
+    <span id="trackPill" class="pill hidden">Siguiendo</span>
+    <span id="clock" class="clock mono">--:--</span>
+  </div>
+</header>
+
+<div id="banner" class="banner hidden"></div>
+<a id="peerBanner" class="banner peer hidden"></a>
+
+<main>
+  <!-- Live stack thumbnail on the control tabs (tap: Imagen). -->
+  <button id="miniStack" class="mini-stack hidden" aria-label="Ver el apilado">
+    <span class="mini-thumb night-img"><img id="miniStackImg" alt=""></span>
+    <span class="mini-txt"><b id="miniStackTitle">Apilando</b><br><small id="miniStackText"></small></span>
+    <span class="chev">›</span>
+  </button>
+
+  <!-- CIELO -->
+  <section id="tab-sky" class="tab active">
+    <button class="card align-cta hidden" data-goalign>
+      <span class="ring">!</span>
+      <span><b>Sin alinear</b><br><small>Centra una estrella y el Android sabrá dónde está todo</small></span>
+      <span class="chev">›</span>
+    </button>
+    <div class="sky-tools">
+      <button id="skyRotate" class="chip small">Mirando al S</button>
+      <button id="skyLabels" class="chip small">Nombres</button>
+      <button id="skyCenter" class="chip small">Hacia el telescopio</button>
+      <button id="skyZoomIn" class="chip small" aria-label="Ampliar">+</button>
+      <button id="skyZoomOut" class="chip small" aria-label="Alejar">&minus;</button>
+      <button id="skyAll" class="chip small">Todo el cielo</button>
+    </div>
+    <div class="sky-wrap">
+      <canvas id="sky"></canvas>
+      <div id="skyReadout" class="sky-readout"></div>
+      <div id="zoneBar" class="zone-bar hidden"></div>
+    </div>
+    <div id="skyCard" class="card pointing-card"></div>
+    <p class="hint center">Toca una estrella, planeta u objeto para ver su ficha e ir a él.</p>
+  </section>
+
+  <!-- MOVER -->
+  <section id="tab-move" class="tab">
+    <button class="card align-cta hidden" data-goalign>
+      <span class="ring">!</span>
+      <span><b>Sin alinear</b><br><small>Alinear ahora</small></span>
+      <span class="chev">›</span>
+    </button>
+    <div id="moveCard" class="card pointing-card"></div>
+    <div id="pad" class="pad-host"></div>
+    <div class="seg" id="speedSeg">
+      <button data-rate="2">Fina</button>
+      <button data-rate="4">Lenta</button>
+      <button data-rate="6">Media</button>
+      <button data-rate="8">Rápida</button>
+      <button data-rate="9">Máx</button>
+    </div>
+    <div class="card row-between">
+      <div>
+        <div class="row-title">Seguimiento</div>
+        <div id="trackSub" class="row-sub">Compensa la rotación del cielo</div>
+      </div>
+      <label class="switch"><input id="trackToggle" type="checkbox"><span></span></label>
+    </div>
+    <div id="controlBanner" class="card warn-card hidden">
+      Otro dispositivo está moviendo el telescopio.
+      <button id="takeControl" class="btn small">Tomar el control</button>
+    </div>
+  </section>
+
+  <!-- BUSCAR -->
+  <section id="tab-search" class="tab">
+    <div class="searchbar">
+      <svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="M42, Júpiter, Vega, Andrómeda…" autocomplete="off" autocapitalize="off" spellcheck="false">
+    </div>
+    <div class="chips" id="chips">
+      <button class="chip active" data-cat="best">Lo mejor ahora</button>
+      <button class="chip" data-cat="all">Todas</button>
+      <button class="chip" data-cat="solar">Luna y planetas</button>
+      <button class="chip" data-cat="messier">Messier</button>
+      <button class="chip" data-cat="ngc">NGC / IC</button>
+      <button class="chip" data-cat="galaxy">Galaxias</button>
+      <button class="chip" data-cat="nebula">Nebulosas</button>
+      <button class="chip" data-cat="cluster">Cúmulos</button>
+      <button class="chip" data-cat="star">Estrellas</button>
+    </div>
+    <label class="check-row"><input id="onlyVisible" type="checkbox" checked> Solo lo que está sobre el horizonte</label>
+    <label class="check-row hidden" id="onlyZoneRow"><input id="onlyZone" type="checkbox"> Solo lo que veo (mi zona visible)</label>
+    <ul id="results" class="list"></ul>
+  </section>
+
+  <!-- IMAGEN (live stacking) -->
+  <section id="tab-img" class="tab">
+    <!-- the iPhone app StarBridge EAA as a remote camera (iphonecam.js) -->
+    <div id="iphoneStage" class="img-stage hidden">
+      <div class="img-frame night-img"><img id="iphView" alt="Imagen del iPhone" draggable="false"></div>
+      <div id="iphEmpty" class="img-empty"></div>
+      <div class="img-hud">
+        <div id="iphPills" class="img-pills"></div>
+        <div class="img-line"><span id="iphMsg"></span></div>
+        <div id="iphLog" class="img-line iph-log hidden"></div>
+      </div>
+      <div class="img-bar">
+        <button id="iphMain" class="img-btn main"><svg viewBox="0 0 24 24" class="icon"><path d="M7 5l12 7-12 7z" class="fill"/></svg><span>Empezar</span></button>
+        <button id="iphFrame" class="img-btn"><svg viewBox="0 0 24 24" class="icon"><path d="M4 9V5h4M20 9V5h-4M4 15v4h4M20 15v4h-4"/><circle cx="12" cy="12" r="2.5"/></svg><span>Encuadre</span></button>
+        <button id="iphExp" class="img-btn"><svg viewBox="0 0 24 24" class="icon"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Exposición</span></button>
+        <button id="iphSave" class="img-btn"><svg viewBox="0 0 24 24" class="icon"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Guardar</span></button>
+        <button id="iphNew" class="img-btn"><svg viewBox="0 0 24 24" class="icon"><path d="M12 5v14M5 12h14"/></svg><span>Nuevo</span></button>
+      </div>
+    </div>
+    <div id="camSourceSeg" class="seg compact cam-source hidden">
+      <button data-src="iphone">Cámara del iPhone</button><button data-src="android">Cámara del Android</button>
+    </div>
+    <div id="imgStage" class="img-stage">
+      <div id="imgFrame" class="img-frame night-img">
+        <img id="imgView" alt="Imagen apilada" draggable="false">
+      </div>
+      <div id="imgEmpty" class="img-empty"></div>
+      <div id="imgHud" class="img-hud">
+        <div id="imgPills" class="img-pills"></div>
+        <div id="imgLine" class="img-line"><span id="imgMsg"></span><div class="img-progress"><i id="imgProg"></i></div></div>
+      </div>
+      <div id="imgBanner" class="img-banner hidden"></div>
+      <div id="imgFocus" class="img-focus hidden"></div>
+      <div id="imgPadWrap" class="img-pad hidden"><div id="imgPad" class="pad-host small"></div>
+        <div class="seg compact" id="imgSpeedSeg">
+          <button data-rate="2">Fina</button><button data-rate="4">Lenta</button><button data-rate="7">Rápida</button>
+        </div>
+      </div>
+      <div id="imgBar" class="img-bar">
+        <button id="imgMain" class="img-btn main"><svg viewBox="0 0 24 24" class="icon"><path d="M7 5l12 7-12 7z" class="fill"/></svg><span>Empezar</span></button>
+        <button id="imgSettingsBtn" class="img-btn"><svg viewBox="0 0 24 24" class="icon"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Ajustes</span></button>
+        <button id="imgFrameBtn" class="img-btn"><svg viewBox="0 0 24 24" class="icon"><path d="M4 9V5h4M20 9V5h-4M4 15v4h4M20 15v4h-4"/><circle cx="12" cy="12" r="2.5"/></svg><span>Encuadre</span></button>
+        <button id="imgSessionBtn" class="img-btn"><svg viewBox="0 0 24 24" class="icon"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span>Sesión</span></button>
+        <button id="imgSaveBtn" class="img-btn"><svg viewBox="0 0 24 24" class="icon"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Guardar</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALINEAR (opened from the banner or from Más) -->
+  <section id="tab-align" class="tab">
+    <button class="back-link" id="alignBack">‹ Volver</button>
+    <div id="alignHeader" class="card"></div>
+    <div class="seg" id="modeSeg">
+      <button data-mode="starbridge">Alinea StarBridge</button>
+      <button data-mode="hc">Alinea el mando</button>
+    </div>
+    <div id="alignChecks" class="card checks"></div>
+    <div id="alignBody"></div>
+    <div id="alignActive" class="card active-star hidden">
+      <div id="activeInfo"></div>
+      <div id="guide" class="guide hidden"></div>
+      <div class="active-actions">
+        <button id="activeGoto" class="btn">Ir con GoTo</button>
+        <button id="activeDone" class="btn primary">Está centrada ✓</button>
+      </div>
+      <div id="alignPad" class="pad-host small"></div>
+      <div class="seg compact" id="alignSpeedSeg">
+        <button data-rate="2">Fina</button>
+        <button data-rate="4">Lenta</button>
+        <button data-rate="7">Rápida</button>
+      </div>
+      <button id="activeCancel" class="btn ghost full">Elegir otra estrella</button>
+    </div>
+    <div id="alignPoints"></div>
+  </section>
+
+  <!-- MÁS -->
+  <section id="tab-more" class="tab">
+    <h2>Uso</h2>
+    <div class="card">
+      <div class="seg" id="useSeg">
+        <button data-use="auto">Auto</button>
+        <button data-use="observe">Observar</button>
+        <button data-use="photo">Fotografiar</button>
+        <button data-use="both">Las dos</button>
+      </div>
+      <p id="useHint" class="hint"></p>
+    </div>
+
+    <h2 data-no-i18n>Idioma · Language</h2>
+    <div class="card" data-no-i18n>
+      <div class="seg" id="langSeg"><button data-l="es">Español</button><button data-l="en">English</button></div>
+    </div>
+
+    <h2>Telescopio</h2>
+    <div id="infoCard" class="card"></div>
+    <button class="card row-between nav-row" data-goalign>
+      <span><span class="row-title">Alineación</span><br><span id="alignRowSub" class="row-sub"></span></span>
+      <span class="chev">›</span>
+    </button>
+
+    <h2>Conectar otro móvil</h2>
+    <div id="shareCard" class="card share hidden">
+      <img id="shareQr" alt="QR para conectar otro móvil">
+      <div class="share-code mono"><span id="shareAddress"></span><br>código <b id="shareKey"></b></div>
+      <p class="hint center">Escanéalo con la cámara de otro móvil conectado a la misma WiFi.
+        Lleva la clave de acceso: compártelo solo con quien quieras. Para echar a todos,
+        pulsa «Cambiar la clave de acceso» en el Android.</p>
+    </div>
+
+    <h2>Ubicación y hora</h2>
+    <div class="card">
+      <div id="siteInfo" class="row-sub"></div>
+      <details class="details">
+        <summary>Introducir coordenadas a mano</summary>
+        <div class="form-row">
+          <label>Latitud <input id="lat" type="number" step="0.0001" inputmode="decimal"></label>
+          <label>Longitud (este +) <input id="lon" type="number" step="0.0001" inputmode="decimal"></label>
+        </div>
+        <button id="saveSite" class="btn small">Guardar lugar</button>
+        <p class="hint">Solo se usa si el Android no tiene GPS.</p>
+      </details>
+    </div>
+
+    <h2>Android en el tubo</h2>
+    <div class="card">
+      <div class="row-sub">¿Cómo va sujeto el Android al telescopio?</div>
+      <div class="seg" id="mountingSeg">
+        <button data-mounting="top">Borde superior hacia el cielo</button>
+        <button data-mounting="camera">Cámara trasera hacia el cielo</button>
+      </div>
+      <div id="sensorLive" class="row-sub mono"></div>
+    </div>
+
+    <h2>Holgura de los motores</h2>
+    <div class="card">
+      <button id="meterOpen" class="meter-cta">
+        <span class="meter-cta-icon" aria-hidden="true">◀ ▶</span>
+        <span><b>Medir holgura moviéndolo tú</b><br><small>Apoya el Android en el tubo y mueve con las flechas: el giroscopio nota cuándo empieza a girar de verdad.</small></span>
+        <span class="chev">›</span>
+      </button>
+      <p class="hint">Holgura guardada (grados): la usa StarBridge para apuntar y seguir con precisión.</p>
+      <div class="form-row">
+        <label>Acimut <input id="slackAz" type="number" min="0" max="3" step="0.01" inputmode="decimal"></label>
+        <label>Altitud <input id="slackAlt" type="number" min="0" max="3" step="0.01" inputmode="decimal"></label>
+      </div>
+      <button id="saveSlack" class="btn small">Guardar</button>
+      <div class="row-between" style="margin-top:12px">
+        <span><span class="row-title">Recoger la holgura con las flechas</span><br>
+          <span class="row-sub">Al cambiar de sentido, el motor recorre primero toda la holgura deprisa y el tubo responde al momento, aunque solo des un toque.</span></span>
+        <label class="switch"><input id="takeUp" type="checkbox"><span></span></label>
+      </div>
+      <p class="hint">Si lo usas, deja a 0 el anti-backlash del mando (abajo) para no compensar dos veces.</p>
+      <details class="details">
+        <summary>Otras formas de medirla</summary>
+        <div class="row-sub" style="margin-top:10px">Con el ocular (sin sensores):</div>
+        <div class="split">
+          <button class="btn small vcal" data-axis="azm">Visual · acimut</button>
+          <button class="btn small vcal" data-axis="alt">Visual · altitud</button>
+        </div>
+        <div class="row-sub" style="margin-top:12px">Automática con el giroscopio (se mueve solo):</div>
+        <div class="split">
+          <button class="btn small cal" data-axis="azm">Auto · acimut</button>
+          <button class="btn small cal" data-axis="alt">Auto · altitud</button>
+        </div>
+        <div id="calResult" class="row-sub mono"></div>
+      </details>
+      <details class="details">
+        <summary>Anti-backlash del mando (0–99)</summary>
+        <p class="hint">Compensación propia de los motores. + = derecha/arriba, − = izquierda/abajo.</p>
+        <div class="bl" data-axis="azm"><span>Acimut</span>
+          <label>+ <input class="pos" type="number" min="0" max="99" inputmode="numeric"></label>
+          <label>− <input class="neg" type="number" min="0" max="99" inputmode="numeric"></label>
+          <button class="btn small save">Guardar</button>
+        </div>
+        <div class="bl" data-axis="alt"><span>Altitud</span>
+          <label>+ <input class="pos" type="number" min="0" max="99" inputmode="numeric"></label>
+          <label>− <input class="neg" type="number" min="0" max="99" inputmode="numeric"></label>
+          <button class="btn small save">Guardar</button>
+        </div>
+        <button id="readBacklash" class="btn small">Leer del telescopio</button>
+        <p id="blOriginal" class="hint"></p>
+      </details>
+    </div>
+
+    <h2>GoTo</h2>
+    <div class="card">
+      <div class="row-sub">¿Quién mueve los motores en un GoTo?</div>
+      <div class="seg" id="gotoSeg">
+        <button data-method="auto">Auto</button>
+        <button data-method="hc">El mando</button>
+        <button data-method="soft">StarBridge</button>
+      </div>
+      <p id="gotoHint" class="hint"></p>
+      <label class="form-line">Aproximación final (grados)
+        <input id="approach" type="number" min="0" max="3" step="0.1" inputmode="decimal">
+      </label>
+      <p class="hint">El GoTo se para un poco antes y entra en el sentido del seguimiento para que la holgura no afecte.</p>
+    </div>
+
+    <h2>Zonas visibles</h2>
+    <div id="zonesCard" class="card"></div>
+
+    <h2>Pantalla</h2>
+    <div class="card">
+      <div class="row-between"><span>Modo nocturno (rojo)</span><label class="switch"><input id="night" type="checkbox"><span></span></label></div>
+      <div class="row-between"><span>Invertir izquierda/derecha</span><label class="switch"><input id="invertAz" type="checkbox"><span></span></label></div>
+      <div class="row-between"><span>Invertir arriba/abajo</span><label class="switch"><input id="invertAlt" type="checkbox"><span></span></label></div>
+    </div>
+
+    <h2>Ayuda</h2>
+    <button id="diagOpen" class="card row-between nav-row">
+      <span><span class="row-title">Diagnóstico</span><br><span class="row-sub">Qué contesta el mando, avisos y errores recientes</span></span>
+      <span class="chev">›</span>
+    </button>
+
+    <h2>Acerca de</h2>
+    <div class="card about">
+      <p>StarBridge · control de telescopios Celestron NexStar desde el navegador.</p>
+      <p class="hint">Estrellas: HYG v4 (CC BY-SA 4.0). Objetos de cielo profundo: OpenNGC (CC BY-SA 4.0). Planetas: método de Paul Schlyter.</p>
+      <p class="hint">Añádela a la pantalla de inicio: Compartir → «Añadir a pantalla de inicio».</p>
+    </div>
+  </section>
+</main>
+
+<button id="stopBtn" class="stop" aria-label="Parar el telescopio">STOP</button>
+
+<nav class="tabbar">
+  <button aria-label="Cielo" data-tab="sky" class="active">
+    <svg viewBox="0 0 24 24" class="icon"><circle cx="12" cy="12" r="9"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/><path d="M9 9l1.2 2.6L13 12l-2.8.4L9 15l-.8-2.6L5.5 12l2.7-.4z" class="fill"/></svg>
+    <span>Cielo</span>
+  </button>
+  <button aria-label="Mover" data-tab="move">
+    <svg viewBox="0 0 24 24" class="icon"><path d="M12 3l3 3h-6zM12 21l-3-3h6zM3 12l3-3v6zM21 12l-3 3V9z" class="fill"/><circle cx="12" cy="12" r="2.5"/></svg>
+    <span>Mover</span>
+  </button>
+  <button aria-label="Imagen" data-tab="img">
+    <svg viewBox="0 0 24 24" class="icon"><rect x="3" y="6" width="18" height="13" rx="3"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+    <span>Imagen</span>
+  </button>
+  <button aria-label="Buscar" data-tab="search">
+    <svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <span>Buscar</span>
+  </button>
+  <button aria-label="Más" data-tab="more">
+    <svg viewBox="0 0 24 24" class="icon"><circle cx="5" cy="12" r="1.6" class="fill"/><circle cx="12" cy="12" r="1.6" class="fill"/><circle cx="19" cy="12" r="1.6" class="fill"/></svg>
+    <span>Más</span>
+  </button>
+</nav>
+
+<div id="sheet" class="sheet hidden" aria-hidden="true">
+  <div class="sheet-backdrop" data-close></div>
+  <div class="sheet-panel">
+    <div class="grab" data-close></div>
+    <div id="sheetBody"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<div id="locked" class="locked hidden">
+  <svg viewBox="0 0 24 24" class="icon big"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+  <h3>Acceso protegido</h3>
+  <p id="lockedWhy"></p>
+  <form id="codeForm" class="code-form" autocomplete="off">
+    <input id="codeInput" type="text" inputmode="text" autocapitalize="off" autocorrect="off" spellcheck="false"
+           placeholder="j576-xmkf-mvu2" aria-label="Código de acceso">
+    <button class="btn primary" type="submit">Entrar</button>
+  </form>
+  <p id="codeError" class="code-error hidden">Escribe el código que aparece en el Android</p>
+  <p class="hint">El código y el QR están en la app StarBridge del Android conectado al telescopio.</p>
+</div>
+<script src="app.js"></script>
+<script src="imaging.js"></script>
+<script src="iphonecam.js"></script>
+<script src="zones.js"></script>
+</body>
+</html>

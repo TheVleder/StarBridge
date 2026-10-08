@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night-sky palette shared with the web icon: deep blue-black, warm star, coral bridge. -->
+    <color name="sb_bg">#08090E</color>
+    <color name="sb_surface">#12141C</color>
+    <color name="sb_surface_2">#1A1D28</color>
+    <color name="sb_line">#252937</color>
+    <color name="sb_text">#F2F3F7</color>
+    <color name="sb_dim">#8D93A7</color>
+    <color name="sb_faint">#585E72</color>
+    <color name="sb_accent">#FF5A4E</color>
+    <color name="sb_accent_ink">#1A0504</color>
+    <color name="sb_ok">#3DDC84</color>
+    <color name="sb_busy">#FFB547</color>
+    <color name="sb_warn">#FF6B5E</color>
+    <color name="sb_off">#585E72</color>
+    <color name="sb_notice_bg">#241411</color>
+    <color name="sb_notice_line">#4D2821</color>
+    <color name="sb_qr_light">#F4F4F6</color>
+    <color name="sb_qr_dark">#0A0B10</color>
+    <color name="sb_star">#FFF4E4</color>
+    <color name="sb_bridge">#FF5C5C</color>
+    <!-- Barely visible red on pure black: keeps night vision. -->
+    <color name="sb_black_hint">#5A1612</color>
+</resources>

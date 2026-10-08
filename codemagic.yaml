@@ -1,0 +1,53 @@
+# Codemagic: Android build. No notification e-mails on purpose.
+workflows:
+  android-debug:
+    name: StarBridge Android (debug APK)
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+    environment:
+      java: 17
+    scripts:
+      - name: Tests (imaging engine, core, server routes)
+        script: ./gradlew :imaging:test :core:test :server:test
+      - name: Build debug APK
+        script: ./gradlew :app:assembleDebug
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk
+
+  # Public release: signed APK. Upload the keystore in Codemagic (Team settings › Code signing
+  # identities › Android keystores) with the reference name below; Codemagic then sets CM_KEYSTORE_*.
+  android-release:
+    name: StarBridge Android (signed release APK)
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+    environment:
+      java: 17
+      android_signing:
+        - starbridge_release
+    scripts:
+      - name: Tests (imaging engine, core, server routes)
+        script: ./gradlew :imaging:test :core:test :server:test
+      - name: Build signed release APK
+        script: |
+          export STARBRIDGE_STORE_FILE="$CM_KEYSTORE_PATH"
+          export STARBRIDGE_STORE_PASSWORD="$CM_KEYSTORE_PASSWORD"
+          export STARBRIDGE_KEY_ALIAS="$CM_KEY_ALIAS"
+          export STARBRIDGE_KEY_PASSWORD="$CM_KEY_PASSWORD"
+          ./gradlew :app:assembleRelease
+    artifacts:
+      - app/build/outputs/apk/release/*.apk
+
+  # The PC program for Windows: StarBridge.exe with its own Java runtime, zipped.
+  windows-pc:
+    name: StarBridge PC (Windows zip)
+    instance_type: windows_x2
+    max_build_duration: 30
+    environment:
+      java: 17
+    scripts:
+      - name: Tests (core, desktop)
+        script: ./gradlew.bat :core:test :desktop:test
+      - name: Package for Windows
+        script: ./gradlew.bat :desktop:packageWindows
+    artifacts:
+      - build/release/*.zip

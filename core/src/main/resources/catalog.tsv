@@ -1,0 +1,1861 @@
+# id	name	type	ra_hours	dec_deg	mag	const	aliases	Source: OpenNGC (CC-BY-SA-4.0)
+M1	Crab Nebula / NGC 1952	Supernova remnant	5.57555	22.0145	8.4	Tau	
+M2	NGC 7089	Globular cluster	21.55750	-0.8233	6.25	Aqr	
+M3	NGC 5272	Globular cluster	13.70312	28.3754	6.39	CVn	
+M4	NGC 6121	Globular cluster	16.39317	-26.5255	5.4	Sco	
+M5	NGC 5904	Globular cluster	15.30938	2.0827	5.95	Se1	
+M6	Butterfly Cluster / NGC 6405	Open cluster	17.67243	-32.2542	4.2	Sco	
+M7	Ptolemy's Cluster / NGC 6475	Open cluster	17.89755	-34.7928	3.3	Sco	
+M8	Lagoon Nebula / NGC 6523	Nebula	18.06146	-24.3802	5.8	Sgr	
+M9	NGC 6333	Globular cluster	17.31994	-18.5162	8.42	Oph	
+M10	NGC 6254	Globular cluster	16.95250	-4.0993	4.98	Oph	
+M11	Amas de l'Ecu de Sobieski / NGC 6705	Open cluster	18.85166	-6.2700	5.8	Sct	
+M12	NGC 6218	Globular cluster	16.78737	-1.9478	6.07	Oph	
+M13	Hercules Globular Cluster / NGC 6205	Globular cluster	16.69490	36.4613	5.8	Her	
+M14	NGC 6402	Globular cluster	17.62671	-3.2459	5.73	Oph	
+M15	NGC 7078	Globular cluster	21.49955	12.1668	6.3	Peg	
+M16	Eagle Nebula / NGC 6611	Nebula	18.31338	-13.8072	6.0	Se2	
+M17	Checkmark Nebula / NGC 6618	Nebula	18.34642	-16.1715	7.0	Sgr	
+M18	NGC 6613	Open cluster	18.33291	-17.1020	6.9	Sgr	
+M19	NGC 6273	Globular cluster	17.04380	-26.2679	5.57	Oph	
+M20	Trifid Nebula / NGC 6514	Nebula	18.04503	-22.9719	8.5	Sgr	
+M21	NGC 6531	Open cluster	18.07040	-22.4901	5.9	Sgr	
+M22	NGC 6656	Globular cluster	18.60672	-23.9034	6.17	Sgr	
+M23	NGC 6494	Open cluster	17.95133	-18.9853	5.5	Sgr	
+M24	Small Sgr Star Cloud / IC 4715	Asterism	18.28226	-18.5146	4.5	Sgr	
+M25	IC 4725	Open cluster	18.52966	-19.1149	4.6	Sgr	
+M26	NGC 6694	Open cluster	18.75518	-9.3836	8.87	Sct	
+M27	Dumbbell Nebula / NGC 6853	Planetary nebula	19.99344	22.7210	7.4	Vul	
+M28	NGC 6626	Globular cluster	18.40914	-24.8698	6.9	Sgr	
+M29	NGC 6913	Open cluster	20.39938	38.5077	6.6	Cyg	
+M30	NGC 7099	Globular cluster	21.67278	-23.1791	7.1	Cap	
+M31	Andromeda Galaxy / NGC 224	Galaxy	0.71232	41.2691	3.44	And	
+M32	NGC 221	Galaxy	0.71162	40.8653	8.13	And	
+M33	Triangulum Galaxy / NGC 598	Galaxy	1.56414	30.6602	5.79	Tri	
+M34	NGC 1039	Open cluster	2.70206	42.7461	5.2	Per	
+M35	NGC 2168	Open cluster	6.15141	24.3386	5.1	Gem	
+M36	NGC 1960	Open cluster	5.60493	34.1407	6.0	Aur	
+M37	NGC 2099	Open cluster	5.87176	32.5530	5.6	Aur	
+M38	NGC 1912	Open cluster	5.47847	35.8549	6.4	Aur	
+M39	NGC 7092	Open cluster	21.53009	48.4382	4.6	Cyg	
+M40		Double star	12.37114	58.0844	8.0	UMa	
+M41	NGC 2287	Open cluster	6.76665	-20.7542	4.5	CMa	
+M42	Great Orion Nebula / NGC 1976	Cluster + nebula	5.58791	-5.3897	4.0	Ori	
+M43	Mairan's Nebula / NGC 1982	Emission nebula	5.59205	-5.2675	9.0	Ori	
+M44	Beehive / NGC 2632	Open cluster	8.67283	19.6721	3.1	Cnc	
+M45	Pleiades / Mel 22	Open cluster	3.79128	24.1053	1.2	Tau	
+M46	NGC 2437	Open cluster	7.69634	-14.8100	6.1	Pup	
+M47	NGC 2422	Open cluster	7.60973	-14.4826	4.4	Pup	
+M48	NGC 2548	Open cluster	8.22866	-5.7504	5.8	Hya	
+M49	NGC 4472	Galaxy	12.49632	8.0005	8.28	Vir	
+M50	NGC 2323	Open cluster	7.04458	-8.3640	5.9	Mon	
+M51	Whirlpool Galaxy / NGC 5194	Galaxy	13.49797	47.1952	8.36	CVn	
+M52	NGC 7654	Open cluster	23.41344	61.5932	6.9	Cas	
+M53	NGC 5024	Globular cluster	13.21534	18.1691	7.79	Com	
+M54	NGC 6715	Globular cluster	18.91758	-30.4785	7.7	Sgr	
+M55	NGC 6809	Globular cluster	19.66650	-30.9621	6.49	Sgr	
+M56	NGC 6779	Globular cluster	19.27653	30.1845	8.4	Lyr	
+M57	Ring Nebula / NGC 6720	Planetary nebula	18.89306	33.0286	8.8	Lyr	
+M58	NGC 4579	Galaxy	12.62876	11.8182	10.3	Vir	
+M59	NGC 4621	Galaxy	12.70062	11.6470	9.56	Vir	
+M60	NGC 4649	Galaxy	12.72777	11.5527	8.79	Vir	
+M61	NGC 4303	Galaxy	12.36525	4.4736	10.25	Vir	
+M62	NGC 6266	Globular cluster	17.02017	-30.1124	7.39	Oph	
+M63	Sunflower Galaxy / NGC 5055	Galaxy	13.26370	42.0293	8.61	CVn	
+M64	Black Eye Galaxy / NGC 4826	Galaxy	12.94546	21.6830	8.52	Com	
+M65	NGC 3623	Galaxy	11.31553	13.0924	9.32	Leo	
+M66	NGC 3627	Galaxy	11.33749	12.9915	8.92	Leo	
+M67	NGC 2682	Open cluster	8.85559	11.8119	6.9	Cnc	
+M68	NGC 4590	Globular cluster	12.65778	-26.7430	7.96	Hya	
+M69	NGC 6637	Globular cluster	18.52312	-32.3480	8.31	Sgr	
+M70	NGC 6681	Globular cluster	18.72018	-32.2919	9.06	Sgr	
+M71	NGC 6838	Globular cluster	19.89614	18.7784	6.1	Sge	
+M72	NGC 6981	Globular cluster	20.89109	-12.5371	8.96	Aqr	
+M73	NGC 6994	Other	20.98221	-12.6355	8.9	Aqr	
+M74	NGC 628	Galaxy	1.61160	15.7837	9.31	Psc	
+M75	NGC 6864	Globular cluster	20.10134	-21.9222	8.26	Sgr	
+M76	Barbell Nebula / NGC 650	Planetary nebula	1.70547	51.5755	10.1	Per	
+M77	NGC 1068	Galaxy	2.71131	-0.0133	9.29	Cet	
+M78	NGC 2068	Reflection nebula	5.77939	0.0793	8.0	Ori	
+M79	NGC 1904	Globular cluster	5.40294	-24.5242	8.16	Lep	
+M80	NGC 6093	Globular cluster	16.28403	-22.9751	7.3	Sco	
+M81	Bode's Galaxy / NGC 3031	Galaxy	9.92588	69.0653	6.92	UMa	
+M82	Cigar Galaxy / NGC 3034	Galaxy	9.93131	69.6794	8.3	UMa	
+M83	Southern Pinwheel Galaxy / NGC 5236	Galaxy	13.61693	-29.8654	7.21	Hya	
+M84	NGC 4374	Galaxy	12.41771	12.8870	9.79	Vir	
+M85	NGC 4382	Galaxy	12.42336	18.1915	9.05	Com	
+M86	NGC 4406	Galaxy	12.43659	12.9462	8.86	Vir	
+M87	Virgo Galaxy / NGC 4486	Galaxy	12.51373	12.3911	9.0	Vir	
+M88	NGC 4501	Galaxy	12.53310	14.4204	10.33	Com	
+M89	NGC 4552	Galaxy	12.59439	12.5563	10.08	Vir	
+M90	NGC 4569	Galaxy	12.61383	13.1629	9.54	Vir	
+M91	NGC 4548	Galaxy	12.59068	14.4963	10.96	Com	
+M92	NGC 6341	Globular cluster	17.28535	43.1365	6.52	Her	
+M93	NGC 2447	Open cluster	7.74145	-23.8531	6.2	Pup	
+M94	NGC 4736	Galaxy	12.84807	41.1204	8.24	CVn	
+M95	NGC 3351	Galaxy	10.73269	11.7038	9.77	Leo	
+M96	NGC 3368	Galaxy	10.77937	11.8199	9.21	Leo	
+M97	Owl Nebula / NGC 3587	Planetary nebula	11.24659	55.0190	9.9	UMa	
+M98	NGC 4192	Galaxy	12.23008	14.9003	10.84	Com	
+M99	Coma Pinwheel / NGC 4254	Galaxy	12.31378	14.4165	9.84	Com	
+M100	NGC 4321	Galaxy	12.38190	15.8218	9.47	Com	
+M101	NGC 5457	Galaxy	14.05348	54.3489	7.9	UMa	
+M103	NGC 581	Open cluster	1.55606	60.6580	7.4	Cas	
+M104	Sombrero Galaxy / NGC 4594	Galaxy	12.66651	-11.6231	8.59	Vir	
+M105	NGC 3379	Galaxy	10.79711	12.5816	9.27	Leo	
+M106	NGC 4258	Galaxy	12.31597	47.3040	9.29	CVn	
+M107	NGC 6171	Globular cluster	16.54220	-13.0536	8.85	Oph	
+M108	NGC 3556	Galaxy	11.19194	55.6741	10.05	UMa	
+M109	NGC 3992	Galaxy	11.95999	53.3745	9.88	UMa	
+M110	NGC 205	Galaxy	0.67280	41.6853	8.15	And	
+NGC 188		Open cluster	0.79098	85.2696	8.1	Cep	C1
+NGC 40	Bow-Tie nebula	Planetary nebula	0.21695	72.5219	11.89	Cep	C2
+NGC 4236		Galaxy	12.27837	69.4626	9.77	Dra	C3
+NGC 7023	Iris Nebula	Nebula	21.02656	68.1696	7.2	Cep	C4
+IC 342		Galaxy	3.78014	68.0964	9.68	Cam	C5
+NGC 6543	Cat's Eye Nebula	Planetary nebula	17.97594	66.6332	9.01	Dra	C6
+NGC 2403		Galaxy	7.61428	65.6026	8.43	Cam	C7
+NGC 559		Open cluster	1.49255	63.3014	9.5	Cas	C8
+C 9	Cave Nebula	Emission nebula	22.96500	62.5183		Cep	
+NGC 663		Open cluster	1.77112	61.2182	7.1	Cas	C10
+NGC 7635	Bubble Nebula	Emission nebula	23.34600	61.2124	11.0	Cas	C11
+NGC 6946	Fireworks Galaxy	Galaxy	20.58120	60.1539	9.05	Cyg	C12
+NGC 457	Owl Cluster	Open cluster	1.32574	58.2907	6.4	Cas	C13
+C 14	Double Cluster	Asterism	2.34500	57.1375		Per	
+NGC 6826	Blinking Planetary	Planetary nebula	19.74670	50.5250	9.44	Cyg	C15
+NGC 7243		Open cluster	22.25238	49.8975	6.4	Lac	C16
+NGC 147		Galaxy	0.55337	48.5087	9.72	Cas	C17
+NGC 185		Galaxy	0.64944	48.3374	9.2	Cas	C18
+IC 5146	Cocoon Nebula	Cluster + nebula	21.89132	47.2669	7.2	Cyg	C19
+NGC 7000	North America Nebula	Emission nebula	20.98809	44.5288	4.0	Cyg	C20
+NGC 4449		Galaxy	12.46975	44.0936	9.64	CVn	C21
+NGC 7662	Copeland's Blue Snowball	Planetary nebula	23.43164	42.5349	8.3	And	C22
+NGC 891		Galaxy	2.37595	42.3491	10.01	And	C23
+NGC 1275	Perseus A	Galaxy	3.33004	41.5117	12.24	Per	C24
+NGC 2419		Globular cluster	7.63554	38.8800	10.05	Lyn	C25
+NGC 4244		Galaxy	12.29157	37.8071	10.18	CVn	C26
+NGC 6888	Crescent Nebula	Emission nebula	20.20182	38.3549	7.44	Cyg	C27
+NGC 752		Open cluster	1.95967	37.8334	5.7	And	C28
+NGC 5005		Galaxy	13.18229	37.0592	10.71	CVn	C29
+NGC 7331		Galaxy	22.61778	34.4155	9.41	Peg	C30
+IC 405	Flaming Star Nebula	Nebula	5.27486	34.3562	10.0	Aur	C31
+NGC 4631	Whale Galaxy	Galaxy	12.70222	32.5415	9.24	CVn	C32
+NGC 6992	Eastern Veil	Supernova remnant	20.93863	31.7428	7.0	Cyg	C33
+NGC 6960	Veil Nebula	Supernova remnant	20.76616	30.5951	7.0	Cyg	C34
+NGC 4889		Galaxy	13.00226	27.9770	11.45	Com	C35
+NGC 4559		Galaxy	12.59935	27.9600	9.92	Com	C36
+NGC 6882		Open cluster	20.19885	26.4888	14.1	Vul	C37
+NGC 4565	Needle Galaxy	Galaxy	12.60577	25.9877	10.86	Com	C38
+NGC 2392	Eskimo Nebula	Planetary nebula	7.48632	20.9118	9.61	Gem	C39
+NGC 3626		Galaxy	11.33439	18.3568	10.98	Leo	C40
+C 41	Hyades	Open cluster	4.44833	15.8667		Tau	
+NGC 7006		Globular cluster	21.02479	16.1875	10.46	Del	C42
+NGC 7814		Galaxy	0.05414	16.1454	10.6	Peg	C43
+NGC 7479		Galaxy	23.08240	12.3229	11.09	Peg	C44
+NGC 5248		Galaxy	13.62556	8.8852	9.97	Boo	C45
+NGC 2261	Hubble's Nebula	Reflection nebula	6.65264	8.7443	11.85	Mon	C46
+NGC 6934		Globular cluster	20.56986	7.4041	9.75	Del	C47
+NGC 2775		Galaxy	9.17226	7.0379	10.24	Cnc	C48
+NGC 2238	Rosette Nebula	Emission nebula	6.51121	5.0131	6.0	Mon	C49
+NGC 2239		Cluster + nebula	6.53210	4.9429	4.8	Mon	C50
+IC 1613		Galaxy	1.07994	2.1178	9.54	Cet	C51
+NGC 4697		Galaxy	12.80997	-5.8007	9.37	Vir	C52
+NGC 3115	Spindle Galaxy	Galaxy	10.08722	-7.7186	9.09	Sex	C53
+NGC 2506		Open cluster	8.00049	-10.7696	7.6	Mon	C54
+NGC 7009	Saturn Nebula	Planetary nebula	21.06966	-11.3632	8.0	Aqr	C55
+NGC 246		Planetary nebula	0.78427	-11.8719	10.9	Cet	C56
+NGC 6822	Barnard's Galaxy	Galaxy	19.74937	-14.8034	10.05	Sgr	C57
+NGC 2360	Caroline's Cluster	Open cluster	7.29531	-15.6413	7.2	CMa	C58
+NGC 3242	Jupiter's Ghost Nebula	Planetary nebula	10.41280	-18.6422	7.7	Hya	C59
+NGC 4038	Antennae Galaxies	Galaxy	12.03139	-18.8676	10.2	Crv	C60
+NGC 4039	Antennae Galaxies	Galaxy	12.03153	-18.8862	11.04	Crv	C61
+NGC 247		Galaxy	0.78571	-20.7604	9.21	Cet	C62
+NGC 7293	Helix Nebula	Planetary nebula	22.49405	-20.8373	7.3	Aqr	C63
+NGC 2362		Open cluster	7.31152	-24.9542	4.1	CMa	C64
+NGC 253	Sculptor Filament	Galaxy	0.79253	-25.2882	11.11	Scl	C65
+NGC 5694		Globular cluster	14.66014	-26.5383	10.89	Hya	C66
+NGC 1097		Galaxy	2.77196	-30.2749	9.76	For	C67
+NGC 6729		Nebula	19.03206	-36.9576		CrA	C68
+NGC 6302	Bug Nebula	Planetary nebula	17.22906	-37.1031	9.6	Sco	C69
+NGC 300		Galaxy	0.91486	-37.6844	8.66	Scl	C70
+NGC 2477		Open cluster	7.86938	-38.5333	5.8	Pup	C71
+NGC 55		Galaxy	0.24822	-39.1966	8.54	Scl	C72
+NGC 1851		Globular cluster	5.23520	-40.0466	7.23	Col	C73
+NGC 3132	Eight-Burst Nebula	Planetary nebula	10.11715	-40.4366	9.2	Vel	C74
+NGC 6124		Open cluster	16.42224	-40.6537	5.8	Sco	C75
+NGC 6231		Open cluster	16.90303	-41.8243	2.6	Sco	C76
+NGC 5128	Centaurus A	Galaxy	13.42434	-43.0191	7.22	Cen	C77
+NGC 6541		Globular cluster	18.13398	-43.7159	7.32	CrA	C78
+NGC 3201		Globular cluster	10.29354	-46.4112	8.24	Vel	C79
+NGC 5139	Omega Centauri	Globular cluster	13.44608	-47.4769	5.33	Cen	C80
+NGC 6352		Globular cluster	17.42477	-48.4227	8.87	Ara	C81
+NGC 6193		Open cluster	16.68895	-48.7625		Ara	C82
+NGC 4945		Galaxy	13.09097	-49.4682	11.86	Cen	C83
+NGC 5286		Globular cluster	13.77405	-51.3735	8.31	Cen	C84
+IC 2391	ο Vel Cluster	Open cluster	8.67552	-53.0355	2.5	Vel	C85
+NGC 6397		Globular cluster	17.67816	-53.6737	5.17	Ara	C86
+NGC 1261		Globular cluster	3.20426	-55.2168	8.63	Hor	C87
+NGC 5823		Open cluster	15.09184	-55.6037	7.9	Cir	C88
+NGC 6087	S Nor Cluster	Open cluster	16.31405	-57.9346	5.4	Nor	C89
+NGC 2867		Planetary nebula	9.35694	-58.3117	9.7	Car	C90
+NGC 3532	Wishing Well Cluster	Open cluster	11.09662	-58.7705	3.0	Car	C91
+NGC 3372	Carina Nebula	Emission nebula	10.75237	-59.8667	3.0	Car	C92
+NGC 6752		Globular cluster	19.18105	-59.9819	6.28	Pav	C93
+NGC 4755	Herschel's Jewel Box	Open cluster	12.89363	-60.3563		Cru	C94
+NGC 6025		Open cluster	16.05494	-60.4314	5.1	TrA	C95
+NGC 2516		Open cluster	7.96863	-60.7535	3.8	Car	C96
+NGC 3766	Pearl Cluster	Open cluster	11.60400	-61.6052	5.3	Cen	C97
+NGC 4609	Coalsack Cluster	Open cluster	12.70467	-62.9958	6.9	Cru	C98
+C 99	Coalsack Nebula	Dark nebula	12.52194	-63.7433		Cru	
+IC 2944	λ Cen Nebula	Cluster + nebula	11.59637	-63.0198	4.5	Cen	C100
+NGC 6744		Galaxy	19.16281	-63.8575	9.25	Pav	C101
+IC 2602	θ Car Cluster	Open cluster	10.71596	-64.3942		Car	C102
+NGC 2070	30 Dor Cluster	Emission nebula	5.64510	-69.1009	7.25	Dor	C103
+NGC 362		Globular cluster	1.05395	-70.8482	6.58	Tuc	C104
+NGC 4833		Globular cluster	12.99304	-70.8746	7.79	Mus	C105
+NGC 104	47 Tuc Cluster	Globular cluster	0.40149	-72.0814	4.09	Tuc	C106
+NGC 6101		Globular cluster	16.43016	-72.2016	10.08	Aps	C107
+NGC 4372		Globular cluster	12.42927	-72.6591	9.85	Mus	C108
+NGC 3195		Planetary nebula	10.15583	-80.8586	11.6	Cha	C109
+B 33	Horsehead Nebula	Dark nebula	5.68306	-2.4583		Ori	
+Cl 399	Brocchi's Cluster	Asterism	19.42333	20.1833	3.6	Vul	
+ESO056-115	Large Magellanic Cloud	Galaxy	5.39292	-69.7561	0.29	Dor	
+ESO097-013	Circinus Galaxy	Galaxy	14.21943	-65.3392	10.56	Cir	
+ESO107-004		Galaxy	21.05823	-67.1813	11.97	Pav	
+ESO121-026		Galaxy	6.36076	-59.7399	11.94	Pic	
+ESO138-010		Galaxy	16.98415	-60.2160	11.42	Ara	
+ESO142-019		Galaxy	19.55527	-58.1142	11.93	Pav	
+ESO183-030		Galaxy	18.94887	-54.5454	11.67	Tel	
+ESO185-054		Galaxy	20.05751	-55.9472	11.24	Tel	
+ESO208-021		Galaxy	7.56562	-50.4430	11.22	Pup	
+ESO213-011		Galaxy	10.28209	-48.8811	11.87	Vel	
+ESO221-026		Galaxy	14.13995	-47.9705	11.06	Cen	
+ESO265-007		Galaxy	11.13044	-46.5243	11.38	Cen	
+ESO269-057		Galaxy	13.16790	-46.4373	11.86	Cen	
+ESO270-017	Fourcade-Figueroa	Galaxy	13.57981	-45.5475	11.72	Cen	
+ESO273-014		Galaxy	14.97510	-47.6989	11.96	Lup	
+ESO274-001		Galaxy	15.23718	-46.8079	11.19	Lup	
+ESO311-012		Galaxy	7.79279	-41.4521	11.83	Pup	
+ESO351-030	Sculptor Dwarf Elliptical	Galaxy	1.00260	-33.7090	8.6	Scl	
+ESO356-004	Fornax Dwarf Spheroidal	Galaxy	2.66648	-34.4492	7.4	For	
+ESO358-063		Galaxy	3.77195	-34.9436	11.89	For	
+ESO373-008		Galaxy	9.55598	-33.0335	11.93	Ant	
+ESO380-001		Galaxy	12.24587	-35.5098	11.89	Hya	
+ESO380-006		Galaxy	12.25952	-35.6298	11.54	Hya	
+ESO383-087		Galaxy	13.82153	-36.0634	10.91	Cen	
+ESO390-006		Globular cluster	16.47781	-35.3536	12.0	Sco	
+ESO428-011		Galaxy	7.25869	-29.3590	11.89	CMa	
+ESO443-024		Galaxy	13.01689	-32.4413	11.84	Cen	
+ESO462-015		Galaxy	20.38718	-27.7146	11.92	Sgr	
+ESO494-026		Galaxy	8.10308	-27.5284	11.51	Pup	
+ESO495-021		Galaxy	8.60420	-26.4094	11.83	Pyx	
+ESO507-025		Galaxy	12.85884	-26.4521	11.6	Hya	
+ESO556-015		Galaxy	6.35154	-20.0484	11.83	CMa	
+H 20		Open cluster	19.88500	18.3333	7.7	Sge	
+H 21		Open cluster	23.90367	61.7400	9.0	Cas	
+H 5		Open cluster	12.45444	-60.7783	7.1	Cru	
+HCG 79	Seyfert's Sextet	Galaxy group	15.98664	20.7586		Se1	
+HCG 92	Stephan's Quintet	Galaxy group	22.59972	33.9583		Peg	
+IC 10		Galaxy	0.33815	59.3038	10.35	Cas	
+IC 1029		Galaxy	14.54091	49.9046	11.29	Boo	
+IC 1266		Planetary nebula	17.75981	-46.0899	11.2	Ara	
+IC 127		Galaxy	1.49656	-6.9801	9.2	Cet	
+IC 1274		Emission nebula	18.16418	-23.6482		Sgr	
+IC 1283		Emission nebula	18.28801	-19.7622		Sgr	
+IC 1284		Nebula	18.29434	-19.6720	7.7	Sgr	
+IC 1287		Reflection nebula	18.52380	-10.7958	6.1	Sct	
+IC 1297		Planetary nebula	19.28983	-39.6131	10.7	CrA	
+IC 1310		Cluster + nebula	20.16694	34.9689		Cyg	
+IC 1340		Supernova remnant	20.93563	31.0479		Cyg	
+IC 136		Asterism	1.57112	30.5621	11.04	Tri	
+IC 1396		Cluster + nebula	21.64934	57.4891		Cep	
+IC 143		Emission nebula	1.56970	30.7764	11.4	Tri	
+IC 1442		Open cluster	22.26704	53.9913	9.1	Lac	
+IC 1459		Galaxy	22.95295	-36.4622	10.54	Gru	
+IC 1470		Emission nebula	23.08617	60.2441	11.5	Cep	
+IC 1611		Open cluster	0.99664	-72.3323	11.96	Tuc	
+IC 1633		Galaxy	1.16544	-45.9312	11.39	Phe	
+IC 1644		Emission nebula	1.15361	-73.1941	11.7	Tuc	
+IC 166		Open cluster	1.87328	61.8526	11.7	Cas	
+IC 1727		Galaxy	1.79164	27.3334	11.57	Tri	
+IC 1747		Planetary nebula	1.95992	63.3218	12.0	Cas	
+IC 1795		Emission nebula	2.44221	62.0416		Cas	
+IC 1805		Cluster + nebula	2.54486	61.4569	6.5	Cas	
+IC 1831		Nebula	2.73233	62.4116		Cas	
+IC 1848		Cluster + nebula	2.85294	60.4025	6.5	Cas	
+IC 1953		Galaxy	3.56163	-21.4786	11.96	Eri	
+IC 1954		Galaxy	3.52539	-51.9048	11.58	Hor	
+IC 1993		Galaxy	3.78467	-33.7099	11.9	For	
+IC 2003		Planetary nebula	3.93945	33.8749	11.4	Per	
+IC 2006		Galaxy	3.90790	-35.9671	11.34	Eri	
+IC 2035		Galaxy	4.15052	-45.5175	11.75	Hor	
+IC 2051		Galaxy	3.86690	-83.8307	11.23	Men	
+IC 2056		Galaxy	4.27348	-60.2068	11.87	Ret	
+IC 2067		Nebula	4.51417	35.4462	11.49	Per	
+IC 2128		Cluster + nebula	5.37894	-68.0611	11.1	Dor	
+IC 2145		Nebula	5.67354	-69.6703	12.0	Dor	
+IC 2149		Planetary nebula	5.93997	46.1048	10.78	Aur	
+IC 2157		Open cluster	6.07988	24.0710	8.4	Gem	
+IC 2163		Galaxy	6.27444	-21.3759	11.11	CMa	
+IC 2165		Planetary nebula	6.36186	-12.9872	10.5	CMa	
+IC 2177		Reflection nebula	7.07692	-10.4711		Mon	
+IC 2220	Toby Jug Nebula	Reflection nebula	7.94749	-59.1258		Car	
+IC 2311		Galaxy	8.31277	-25.3697	11.52	Pup	
+IC 239		Galaxy	2.60774	38.9699	11.2	And	
+IC 2395		Open cluster	8.70836	-48.1506	4.6	Vel	
+IC 2448		Planetary nebula	9.11841	-69.9418	10.4	Car	
+IC 2469		Galaxy	9.38363	-32.4497	11.09	Pyx	
+IC 2488		Open cluster	9.46062	-57.0069	7.4	Vel	
+IC 2501		Planetary nebula	9.64644	-60.0919	10.4	Car	
+IC 2522		Galaxy	9.91916	-33.1371	12.0	Ant	
+IC 2533		Galaxy	10.00880	-31.2450	11.97	Ant	
+IC 2553		Planetary nebula	10.15580	-62.6137	10.3	Car	
+IC 2554		Galaxy	10.14738	-67.0309	11.7	Car	
+IC 2574	Coddington's Nebula	Galaxy	10.47319	68.4121	10.46	UMa	
+IC 2581		Open cluster	10.45810	-57.6173	4.3	Car	
+IC 2597		Galaxy	10.62985	-27.0817	11.68	Hya	
+IC 2599		Emission nebula	10.62419	-58.7334		Car	
+IC 2621		Planetary nebula	11.00555	-65.2494	11.2	Car	
+IC 2627		Galaxy	11.16483	-23.7259	12.0	Crt	
+IC 2714		Open cluster	11.29093	-62.7251	8.2	Car	
+IC 284		Galaxy	3.10275	42.3719	11.59	Per	
+IC 2872		Nebula	11.46890	-62.9889		Cen	
+IC 334		Galaxy	3.75474	76.6383	11.5	Cam	
+IC 3370		Galaxy	12.46037	-39.3378	11.18	Cen	
+IC 341		Nebula	3.68214	21.9602		Tau	
+IC 348	ο Per Cloud	Cluster + nebula	3.74283	32.1628		Per	
+IC 349	Barnard's Merope Nebula	Reflection nebula	3.77225	23.9398		Tau	
+IC 351		Planetary nebula	3.79250	35.0469	11.9	Per	
+IC 353		Nebula	3.88363	25.8480		Tau	
+IC 354		Nebula	3.89942	23.1470		Tau	
+IC 356		Galaxy	4.12970	69.8124	10.24	Cam	
+IC 3568		Planetary nebula	12.55188	82.5639	10.6	Cam	
+IC 359A		Reflection nebula	4.31139	28.2900		Tau	
+IC 360		Nebula	4.15071	26.1312		Tau	
+IC 361		Open cluster	4.31408	58.2495	11.7	Cam	
+IC 3829		Galaxy	12.87036	-29.8407	11.7	Hya	
+IC 3896		Galaxy	12.94534	-50.3469	11.31	Cen	
+IC 410		Nebula	5.37833	33.3667		Aur	
+IC 417		Emission nebula	5.46833	34.4239		Aur	
+IC 418		Planetary nebula	5.45783	-12.6973	9.44	Lep	
+IC 4182		Galaxy	13.09709	37.6049	11.61	CVn	
+IC 4191		Planetary nebula	13.14645	-67.6438	10.6	Mus	
+IC 4214		Galaxy	13.29519	-32.1017	11.4	Cen	
+IC 426		Nebula	5.60872	-0.2983		Ori	
+IC 4291		Open cluster	13.61567	-62.0931	9.7	Cen	
+IC 4296		Galaxy	13.61084	-33.9658	10.51	Cen	
+IC 432		Reflection nebula	5.68222	-1.5070		Ori	
+IC 4329		Galaxy	13.81814	-30.2959	10.97	Cen	
+IC 434	Flame Nebula	Emission nebula	5.68358	-2.4538	11.0	Ori	
+IC 4351		Galaxy	13.96507	-29.3157	11.62	Hya	
+IC 4402		Galaxy	14.35364	-46.2979	11.82	Lup	
+IC 4406		Planetary nebula	14.37402	-44.1502	10.2	Lup	
+IC 443	Gem A	Supernova remnant	6.27706	22.5317	12.0	Gem	
+IC 444		Reflection nebula	6.30944	23.3133	7.03	Gem	
+IC 4441		Galaxy	14.52739	-43.4184	11.84	Lup	
+IC 447		Emission nebula	6.51676	9.8974	7.7	Mon	
+IC 448		Emission nebula	6.54593	7.3886		Mon	
+IC 4499		Globular cluster	15.00535	-82.2135	8.56	Aps	
+IC 4591		Emission nebula	16.20504	-27.9277		Sco	
+IC 4592		Reflection nebula	16.19963	-19.4547	3.9	Sco	
+IC 4593		Planetary nebula	16.19569	12.0714	10.7	Her	
+IC 4601		Nebula	16.33828	-20.0873		Sco	
+IC 4603		Nebula	16.42347	-24.4684		Oph	
+IC 4604	ρ Oph Nebula	Nebula	16.42533	-23.4366	5.1	Oph	
+IC 4605		Nebula	16.50347	-25.1152	4.7	Sco	
+IC 4628		Nebula	16.94956	-40.4510		Sco	
+IC 4634		Planetary nebula	17.02600	-21.8260	10.9	Oph	
+IC 4651		Open cluster	17.41365	-49.9382	6.9	Ara	
+IC 4662		Galaxy	17.78580	-64.6418	11.1	Pav	
+IC 4665		Open cluster	17.77422	5.6487	4.2	Oph	
+IC 4678		Nebula	18.10930	-23.9544	10.4	Sgr	
+IC 4685		Nebula	18.15486	-23.9872		Sgr	
+IC 4701		Nebula	18.27659	-16.6483		Sgr	
+IC 4703	Eagle Nebula	Nebula	18.31562	-13.8454	6.0	Se2	
+IC 4710		Galaxy	18.47721	-66.9823	12.0	Pav	
+IC 4721		Galaxy	18.57354	-58.4966	11.82	Pav	
+IC 4756		Open cluster	18.64764	5.4622	4.6	Se2	
+IC 4765		Galaxy	18.78831	-63.3313	11.19	Pav	
+IC 4776		Planetary nebula	18.76408	-33.3431	10.8	Sgr	
+IC 4797		Galaxy	18.94158	-54.3058	11.32	Tel	
+IC 4812		Nebula	19.01768	-37.0603		CrA	
+IC 4837A		Galaxy	19.25449	-54.1325	11.71	Tel	
+IC 4845		Galaxy	19.33958	-60.3892	11.97	Pav	
+IC 4846		Planetary nebula	19.27453	-9.0436	11.9	Aql	
+IC 4889		Galaxy	19.75421	-54.3441	11.22	Tel	
+IC 4901		Galaxy	19.90654	-58.7136	11.65	Pav	
+IC 4931		Galaxy	20.01399	-38.5751	11.88	Sgr	
+IC 4946		Galaxy	20.39946	-43.9953	11.92	Sgr	
+IC 4991		Galaxy	20.30647	-41.0502	11.54	Sgr	
+IC 4996		Open cluster	20.27591	37.5553	7.3	Cyg	
+IC 4997		Planetary nebula	20.33578	16.7317	10.5	Sge	
+IC 5011		Galaxy	20.47606	-36.0271	11.84	Mic	
+IC 5052		Galaxy	20.86821	-69.2016	11.34	Pav	
+IC 5068		Emission nebula	20.84160	42.4777		Cyg	
+IC 5070	Pelican Nebula	Emission nebula	20.85020	44.4015	8.0	Cyg	
+IC 5105		Galaxy	21.40611	-40.5377	11.6	Mic	
+IC 5117		Planetary nebula	21.54194	44.5966	11.5	Cyg	
+IC 5148		Planetary nebula	21.99311	-39.3858	11.0	Gru	
+IC 5152		Galaxy	22.04486	-51.2964	10.68	Ind	
+IC 5181		Galaxy	22.22269	-46.0176	11.48	Gru	
+IC 5186		Galaxy	22.31292	-36.8016	11.93	Gru	
+IC 520		Galaxy	8.89507	73.4909	11.83	Cam	
+IC 5201		Galaxy	22.34929	-46.0359	11.37	Gru	
+IC 5217		Planetary nebula	22.39881	50.9667	11.3	Lac	
+IC 5240		Galaxy	22.69788	-44.7672	11.66	Gru	
+IC 5250A		Galaxy	22.78819	-65.0597	11.11	Tuc	
+IC 5267		Galaxy	22.95377	-43.3961	10.43	Gru	
+IC 5271		Galaxy	22.96717	-33.7422	11.54	PsA	
+IC 5273		Galaxy	22.99075	-37.7029	11.45	Gru	
+IC 5325		Galaxy	23.47873	-41.3335	11.28	Phe	
+IC 5328		Galaxy	23.55457	-45.0160	11.37	Phe	
+IC 5332		Galaxy	23.57430	-36.1011	10.03	Scl	
+IC 59		Reflection nebula	0.95795	61.1437		Cas	
+IC 750		Galaxy	11.98117	42.7225	11.82	UMa	
+IC 983		Galaxy	14.16788	17.7338	11.96	Boo	
+MWSC 3156		Globular cluster	19.69567	-33.9995	11.54	Sgr	
+MWSC 3171		Globular cluster	19.75400	-8.0072	7.54	Aql	
+MWSC 3561		Globular cluster	21.77746	-21.2526	11.89	Cap	
+Mel 101		Open cluster	10.70333	-65.1000	8.0	Car	
+Mel 105		Open cluster	11.32833	-63.4833	8.5	Car	
+Mel 111	Coma Star Cluster	Open cluster	12.41833	26.1000		Com	
+Mel 71		Open cluster	7.62600	-12.0550	7.1	Pup	
+Mel 72		Open cluster	7.47744	-10.7000	10.1	Mon	
+NGC 1003		Galaxy	2.65469	40.8723	11.51	Per	
+NGC 1016		Galaxy	2.63877	2.1193	11.64	Cet	
+NGC 1022		Galaxy	2.64242	-6.6774	11.35	Cet	
+NGC 1023		Galaxy	2.67334	39.0633	9.47	Per	
+NGC 1027		Open cluster	2.70974	61.5944	6.7	Cas	
+NGC 103		Open cluster	0.42122	61.3235	9.8	Cas	
+NGC 1032		Galaxy	2.65657	1.0938	11.67	Cet	
+NGC 1042		Galaxy	2.67332	-8.4336	11.22	Cet	
+NGC 1052		Galaxy	2.68467	-8.2558	11.04	Cet	
+NGC 1055		Galaxy	2.69590	0.4432	10.6	Cet	
+NGC 1058		Galaxy	2.72500	37.3413	11.25	Per	
+NGC 1060		Galaxy	2.72085	32.4250	11.82	Tri	
+NGC 1073		Galaxy	2.72792	1.3761	11.05	Cet	
+NGC 1079		Galaxy	2.72898	-29.0034	11.44	For	
+NGC 1084		Galaxy	2.76664	-7.5785	10.6	Eri	
+NGC 1087		Galaxy	2.77366	-0.4986	11.02	Cet	
+NGC 1090		Galaxy	2.77609	-0.2472	11.97	Cet	
+NGC 1156		Galaxy	2.99508	25.2378	11.63	Ari	
+NGC 1161		Galaxy	3.02059	44.8973	11.89	Per	
+NGC 1169		Galaxy	3.05965	46.3864	11.41	Per	
+NGC 1172		Galaxy	3.02668	-14.8366	11.75	Eri	
+NGC 1179		Galaxy	3.04402	-18.8978	12.0	Eri	
+NGC 1187		Galaxy	3.04377	-22.8672	10.92	Eri	
+NGC 1199		Galaxy	3.06067	-15.6132	11.43	Eri	
+NGC 1201		Galaxy	3.06888	-26.0696	10.81	For	
+NGC 1209		Galaxy	3.10084	-15.6113	11.38	Eri	
+NGC 121		Globular cluster	0.44674	-71.5357	11.24	Tuc	
+NGC 1220		Open cluster	3.19463	53.3482	11.8	Per	
+NGC 1232		Galaxy	3.16264	-20.5793	10.11	Eri	
+NGC 1245		Open cluster	3.24485	47.2387	8.4	Per	
+NGC 1249		Galaxy	3.16701	-53.3358	11.77	Hor	
+NGC 1253		Galaxy	3.23585	-2.8229	11.78	Eri	
+NGC 1255		Galaxy	3.22557	-25.7252	11.17	For	
+NGC 1265		Galaxy	3.30435	41.8578	11.92	Per	
+NGC 1269		Galaxy	3.28850	-41.1081	8.7	Eri	
+NGC 1272		Galaxy	3.32258	41.4906	11.88	Per	
+NGC 128		Galaxy	0.48752	2.8641	11.63	Psc	
+NGC 129		Open cluster	0.49950	60.2112	6.5	Cas	
+NGC 1300		Galaxy	3.32808	-19.4114	10.52	Eri	
+NGC 1302		Galaxy	3.33088	-26.0604	10.63	For	
+NGC 1305		Galaxy	3.35638	-2.3168	11.97	Eri	
+NGC 1309		Galaxy	3.36849	-15.4001	11.58	Eri	
+NGC 1313		Galaxy	3.30446	-66.4982	9.49	Ret	
+NGC 1316	Fornax A	Galaxy	3.37826	-37.2082	8.48	For	
+NGC 1317	Fornax B	Galaxy	3.37897	-37.1037	10.88	For	
+NGC 1325		Galaxy	3.40710	-21.5440	11.54	Eri	
+NGC 1326		Galaxy	3.39900	-36.4647	10.45	For	
+NGC 133		Open cluster	0.52138	63.3526	9.4	Cas	
+NGC 1332		Galaxy	3.43813	-21.3352	10.36	Eri	
+NGC 1333		Cluster + nebula	3.48200	31.3700	10.9	Per	
+NGC 1339		Galaxy	3.46849	-32.2861	11.75	For	
+NGC 134		Galaxy	0.50610	-33.2440	10.31	Scl	
+NGC 1340		Galaxy	3.47213	-31.0682	10.37	For	
+NGC 1342		Open cluster	3.52781	37.3794	6.7	Per	
+NGC 1350		Galaxy	3.51892	-33.6286	10.31	For	
+NGC 1351		Galaxy	3.50972	-34.8539	11.46	For	
+NGC 1353		Galaxy	3.53417	-20.8192	11.46	Eri	
+NGC 1357		Galaxy	3.55474	-13.6641	11.44	Eri	
+NGC 1360		Planetary nebula	3.55407	-25.8717	9.4	For	
+NGC 1365		Galaxy	3.56010	-36.1404	10.1	For	
+NGC 1366		Galaxy	3.56491	-31.1941	11.91	For	
+NGC 1367		Galaxy	3.58371	-24.9332	10.66	For	
+NGC 1374		Galaxy	3.58794	-35.2263	11.14	For	
+NGC 1379		Galaxy	3.60110	-35.4412	11.02	For	
+NGC 1380		Galaxy	3.60766	-34.9762	9.94	For	
+NGC 1381		Galaxy	3.60880	-35.2952	11.47	For	
+NGC 1385		Galaxy	3.62468	-24.5003	11.03	For	
+NGC 1386		Galaxy	3.61283	-35.9994	11.86	Eri	
+NGC 1387		Galaxy	3.61585	-35.5066	10.75	For	
+NGC 1389		Galaxy	3.61994	-35.7456	11.51	Eri	
+NGC 1395		Galaxy	3.64160	-23.0275	9.65	Eri	
+NGC 1398		Galaxy	3.64781	-26.3378	9.55	For	
+NGC 1399		Galaxy	3.64140	-35.4507	9.4	For	
+NGC 1400		Galaxy	3.65857	-18.6881	11.06	Eri	
+NGC 1404		Galaxy	3.64776	-35.5944	9.93	Eri	
+NGC 1406		Galaxy	3.65647	-31.3214	11.82	For	
+NGC 1407		Galaxy	3.66996	-18.5801	9.65	Eri	
+NGC 1411		Galaxy	3.64580	-44.1006	11.19	Hor	
+NGC 1415		Galaxy	3.68246	-22.5645	11.53	Eri	
+NGC 1421		Galaxy	3.70813	-13.4880	11.52	Eri	
+NGC 1425		Galaxy	3.70319	-29.8933	10.7	For	
+NGC 1426		Galaxy	3.71364	-22.1084	11.47	Eri	
+NGC 1427		Galaxy	3.70539	-35.3926	10.88	For	
+NGC 1432	Maia Nebula	Emission nebula	3.76377	24.3679		Tau	
+NGC 1433		Galaxy	3.70043	-47.2221	9.95	Hor	
+NGC 1435	Merope Nebula	Nebula	3.76947	23.7650		Tau	
+NGC 1436		Galaxy	3.72697	-35.8530	11.69	Eri	
+NGC 1439		Galaxy	3.74721	-21.9206	11.39	Eri	
+NGC 1440		Galaxy	3.75081	-18.2660	11.63	Eri	
+NGC 1444		Open cluster	3.82469	52.6553	6.6	Per	
+NGC 1448		Galaxy	3.74220	-44.6448	10.94	Hor	
+NGC 1452		Galaxy	3.75620	-18.6336	11.84	Eri	
+NGC 1453		Galaxy	3.77424	-3.9688	11.41	Eri	
+NGC 146		Open cluster	0.55109	63.3090	9.1	Cas	
+NGC 1461		Galaxy	3.80754	-16.3929	11.81	Eri	
+NGC 1466		Globular cluster	3.74260	-71.6716	11.59	Hyi	
+NGC 1493		Galaxy	3.95762	-46.2107	11.44	Hor	
+NGC 1494		Galaxy	3.96192	-48.9081	11.95	Hor	
+NGC 1496		Open cluster	4.07552	52.6614	9.6	Per	
+NGC 1499	California Nebula	Nebula	4.05401	36.3675	5.0	Per	
+NGC 150		Galaxy	0.57097	-27.8036	11.41	Scl	
+NGC 1501		Planetary nebula	4.11649	60.9207	11.5	Cam	
+NGC 1502		Open cluster	4.13036	62.3315	6.9	Cam	
+NGC 151		Galaxy	0.56744	-9.7053	11.66	Cet	
+NGC 1511		Galaxy	3.99361	-67.6343	11.3	Hyi	
+NGC 1512		Galaxy	4.06508	-43.3489	10.37	Hor	
+NGC 1513		Open cluster	4.16519	49.5173	8.4	Per	
+NGC 1514		Planetary nebula	4.15471	30.7759	10.19	Tau	
+NGC 1515		Galaxy	4.06742	-54.1001	10.99	Dor	
+NGC 1518		Galaxy	4.11381	-21.1726	11.79	Eri	
+NGC 1521		Galaxy	4.13859	-21.0520	11.57	Eri	
+NGC 1527		Galaxy	4.14004	-47.8970	10.8	Hor	
+NGC 1528		Open cluster	4.25524	51.2115	6.4	Per	
+NGC 1530		Galaxy	4.39086	75.2956	11.7	Cam	
+NGC 1532		Galaxy	4.20120	-32.8742	10.13	Eri	
+NGC 1533		Galaxy	4.16440	-56.1184	10.65	Dor	
+NGC 1535		Planetary nebula	4.23771	-12.7394	9.6	Eri	
+NGC 1537		Galaxy	4.22797	-31.6454	10.72	Eri	
+NGC 1543		Galaxy	4.21201	-57.7380	10.17	Ret	
+NGC 1545		Open cluster	4.34896	50.2553	6.2	Per	
+NGC 1546		Galaxy	4.24348	-56.0608	11.35	Dor	
+NGC 1549		Galaxy	4.26254	-55.5922	9.75	Dor	
+NGC 1553		Galaxy	4.26957	-55.7801	9.31	Dor	
+NGC 1555	Hind's Nebula	Reflection nebula	4.36651	19.5352	9.98	Tau	
+NGC 1559		Galaxy	4.29327	-62.7837	10.6	Ret	
+NGC 1560		Galaxy	4.54697	71.8831	11.5	Cam	
+NGC 1566		Galaxy	4.33345	-54.9378	9.73	Dor	
+NGC 1569		Galaxy	4.51363	64.8479	11.11	Cam	
+NGC 1573		Galaxy	4.58444	73.2624	11.79	Cam	
+NGC 1574		Galaxy	4.36634	-56.9748	10.24	Ret	
+NGC 1579		Cluster + nebula	4.50383	35.2694		Per	
+NGC 1582		Open cluster	4.52966	43.7848	7.0	Per	
+NGC 1587		Galaxy	4.51109	0.6616	11.7	Tau	
+NGC 1589		Galaxy	4.51262	0.8637	11.81	Tau	
+NGC 1596		Galaxy	4.46059	-55.0278	11.14	Dor	
+NGC 16		Galaxy	0.15119	27.7294	12.0	Peg	
+NGC 1600		Galaxy	4.52776	-5.0862	10.97	Eri	
+NGC 1605		Open cluster	4.58119	45.2714	10.7	Per	
+NGC 1617		Galaxy	4.52765	-54.6023	10.37	Dor	
+NGC 1624		Cluster + nebula	4.67681	50.4617	11.8	Per	
+NGC 1637		Galaxy	4.69116	-2.8580	10.85	Eri	
+NGC 1640		Galaxy	4.70403	-20.4348	11.69	Eri	
+NGC 1647		Open cluster	4.76544	19.0951	6.4	Tau	
+NGC 1653		Galaxy	4.76315	-2.3928	11.97	Eri	
+NGC 1662		Open cluster	4.80804	10.9304	6.4	Ori	
+NGC 1664		Open cluster	4.85151	43.6762	7.6	Aur	
+NGC 1672		Galaxy	4.76181	-59.2472	10.16	Dor	
+NGC 1679		Galaxy	4.83184	-31.9647	11.62	Cae	
+NGC 1688		Galaxy	4.80661	-59.8003	11.85	Dor	
+NGC 1700		Galaxy	4.94897	-4.8658	11.16	Eri	
+NGC 1703		Galaxy	4.88115	-59.7422	11.69	Dor	
+NGC 1704		Open cluster	4.83207	-69.7563	11.5	Dor	
+NGC 1711		Globular cluster	4.84337	-69.9854	11.1	Men	
+NGC 1714		Cluster + nebula	4.86913	-66.9234	11.61	Dor	
+NGC 1726		Galaxy	4.99497	-7.7553	11.65	Eri	
+NGC 1735		Open cluster	4.90546	-67.0996	10.76	Dor	
+NGC 1743		Nebula	4.90074	-69.1986	11.26	Dor	
+NGC 1744		Galaxy	4.99939	-26.0222	11.5	Lep	
+NGC 1746		Open cluster	5.06394	23.7676	6.1	Tau	
+NGC 1747		Open cluster	4.91972	-67.1689	9.37	Dor	
+NGC 1751		Globular cluster	4.90349	-69.8058	11.73	Men	
+NGC 1754		Globular cluster	4.90526	-70.4425	11.57	Men	
+NGC 1755		Globular cluster	4.92080	-68.2041	9.85	Dor	
+NGC 1761		Asterism	4.94381	-66.4789	9.94	Dor	
+NGC 1763		Cluster + nebula	4.94700	-66.4091	9.4	Dor	
+NGC 1767		Open cluster	4.94092	-69.4006	10.61	Dor	
+NGC 1772		Open cluster	4.94800	-69.5561	10.97	Dor	
+NGC 1774		Open cluster	4.96858	-67.2423	10.76	Dor	
+NGC 1778		Open cluster	5.13492	37.0228	7.7	Aur	
+NGC 1782		Open cluster	4.96419	-69.3922	10.5	Dor	
+NGC 1783		Globular cluster	4.98578	-65.9873	10.93	Dor	
+NGC 1784		Galaxy	5.09086	-11.8715	11.6	Lep	
+NGC 1786		Globular cluster	4.98551	-67.7452	10.1	Dor	
+NGC 1787		Open cluster	5.02900	-65.8233	10.92	Dor	
+NGC 1788		Reflection nebula	5.11478	-3.3410	5.8	Ori	
+NGC 1792		Galaxy	5.08735	-37.9808	10.16	Col	
+NGC 1804		Open cluster	5.01757	-69.0826	11.87	Dor	
+NGC 1806		Globular cluster	5.03677	-67.9857	11.1	Dor	
+NGC 1807		Open cluster	5.17917	16.5128	7.0	Tau	
+NGC 1808		Galaxy	5.12843	-37.5131	10.21	Col	
+NGC 1810		Open cluster	5.05646	-66.3818	11.9	Dor	
+NGC 1817		Open cluster	5.20730	16.6841	7.7	Tau	
+NGC 1818		Globular cluster	5.07077	-66.4345	9.7	Dor	
+NGC 1820		Open cluster	5.06713	-67.2659	11.5	Dor	
+NGC 1831		Globular cluster	5.10464	-64.9175	11.18	Dor	
+NGC 1832		Galaxy	5.20092	-15.6878	11.54	Lep	
+NGC 1834		Open cluster	5.08649	-69.2075	11.82	Dor	
+NGC 1835		Globular cluster	5.08516	-69.4039	10.6	Dor	
+NGC 1839		Open cluster	5.10065	-68.6268	11.8	Dor	
+NGC 1841		Globular cluster	4.75649	-83.9991	11.43	Men	
+NGC 1845		Asterism	5.09584	-70.5816	10.2	Men	
+NGC 1846		Globular cluster	5.12609	-67.4615	11.31	Dor	
+NGC 1848		Open cluster	5.12421	-71.1954	9.73	Men	
+NGC 1850		Globular cluster	5.14576	-68.7617	8.96	Dor	
+NGC 1854		Globular cluster	5.15552	-68.8474	10.39	Dor	
+NGC 1856		Globular cluster	5.15816	-69.1276	10.06	Dor	
+NGC 1857		Open cluster	5.33488	39.3436	7.0	Aur	
+NGC 1858		Cluster + nebula	5.16443	-68.8913	9.88	Dor	
+NGC 1860		Open cluster	5.17764	-68.7523	11.04	Dor	
+NGC 1866		Globular cluster	5.22753	-65.4656	9.73	Dor	
+NGC 1868		Globular cluster	5.24342	-63.9545	11.57	Dor	
+NGC 1870		Globular cluster	5.21942	-69.1169	11.26	Dor	
+NGC 1871		Cluster + nebula	5.23104	-67.4526	10.09	Dor	
+NGC 1872		Globular cluster	5.21966	-69.3116	11.04	Dor	
+NGC 1873		Cluster + nebula	5.23213	-67.3344	10.44	Dor	
+NGC 1876		Cluster + nebula	5.22184	-69.3621	11.71	Dor	
+NGC 1877		Nebula	5.22746	-69.3838	12.0	Dor	
+NGC 1883		Open cluster	5.43172	46.4901	12.0	Aur	
+NGC 1885		Open cluster	5.25163	-68.9776	11.97	Dor	
+NGC 1888		Galaxy	5.37624	-11.4995	11.92	Lep	
+NGC 189		Open cluster	0.65992	61.0945	8.8	Cas	
+NGC 1893		Open cluster	5.37893	33.4120	7.5	Aur	
+NGC 1898		Open cluster	5.27844	-69.6562	11.86	Dor	
+NGC 1902		Open cluster	5.30532	-66.6274	11.77	Dor	
+NGC 1903		Globular cluster	5.28953	-69.3353	11.86	Dor	
+NGC 1907		Open cluster	5.46793	35.3257	8.2	Aur	
+NGC 1909	Witch Head Nebula	Reflection nebula	5.08207	-7.2656		Eri	
+NGC 1910		Cluster + nebula	5.31196	-69.2319	9.65	Dor	
+NGC 1913		Open cluster	5.30536	-69.5365	11.14	Dor	
+NGC 1916		Globular cluster	5.31013	-69.4068	10.38	Dor	
+NGC 1922		Open cluster	5.33026	-69.4483	11.51	Dor	
+NGC 1923		Cluster + nebula	5.35946	-65.4867	11.24	Dor	
+NGC 1926		Globular cluster	5.34317	-69.5253	11.79	Dor	
+NGC 1931		Cluster + nebula	5.52371	34.2466	10.1	Aur	
+NGC 1934		Cluster + nebula	5.36330	-67.9372	10.5	Dor	
+NGC 1936		Emission nebula	5.37054	-67.9783	11.6	Dor	
+NGC 1939		Globular cluster	5.35739	-69.9498	11.83	Men	
+NGC 1940		Globular cluster	5.37882	-67.1866	11.91	Dor	
+NGC 1941		Cluster + nebula	5.38547	-66.3786	12.0	Dor	
+NGC 1943		Globular cluster	5.37465	-70.1549	11.88	Men	
+NGC 1944		Globular cluster	5.36595	-72.4941	11.84	Men	
+NGC 1945		Emission nebula	5.41527	-66.4575		Dor	
+NGC 1947		Galaxy	5.44656	-63.7600	10.47	Dor	
+NGC 1948		Cluster + nebula	5.42951	-66.2668	10.61	Dor	
+NGC 1951		Open cluster	5.43523	-66.5972	10.58	Dor	
+NGC 1953		Globular cluster	5.42439	-68.8383	11.74	Dor	
+NGC 1955		Emission nebula	5.43610	-67.4974	8.87	Dor	
+NGC 1961		Galaxy	5.70129	69.3784	11.54	Cam	
+NGC 1962		Open cluster	5.43826	-68.8376	11.47	Dor	
+NGC 1964		Galaxy	5.55604	-21.9458	10.91	Lep	
+NGC 1965		Open cluster	5.44202	-68.8055	11.7	Dor	
+NGC 1966		Open cluster	5.44607	-68.8199	11.83	Dor	
+NGC 1967		Open cluster	5.44536	-69.1015	10.81	Dor	
+NGC 1968		Asterism	5.45614	-67.4638	8.22	Dor	
+NGC 1970		Open cluster	5.44796	-68.8367	10.28	Dor	
+NGC 1971		Open cluster	5.44590	-69.8516	11.9	Dor	
+NGC 1973		Nebula	5.58466	-4.7318	7.0	Ori	
+NGC 1974		Open cluster	5.46639	-67.4241	10.3	Dor	
+NGC 1975		Nebula	5.58830	-4.6852	7.0	Ori	
+NGC 1977	Running Man Nebula	Cluster + nebula	5.58772	-4.8443		Ori	
+NGC 1978		Globular cluster	5.47920	-66.2359	10.7	Dor	
+NGC 1980	Lower Sword	Cluster + nebula	5.59055	-5.9099	2.5	Ori	
+NGC 1981	Upper Sword	Cluster + nebula	5.58600	-4.4251	4.2	Ori	
+NGC 1984		Open cluster	5.46136	-69.1343	9.99	Dor	
+NGC 1986		Globular cluster	5.46058	-69.9736	11.07	Men	
+NGC 1999		Reflection nebula	5.60704	-6.7159	9.5	Ori	
+NGC 2002		Globular cluster	5.50575	-66.8850	10.84	Dor	
+NGC 2003		Globular cluster	5.51533	-66.4666	11.3	Dor	
+NGC 2004		Globular cluster	5.51187	-67.2864	9.6	Dor	
+NGC 2005		Globular cluster	5.50301	-69.7524	11.57	Dor	
+NGC 2006		Asterism	5.52250	-66.9653	10.88	Dor	
+NGC 2009		Open cluster	5.51643	-69.1817	11.02	Dor	
+NGC 2010		Open cluster	5.50970	-70.8197	11.72	Men	
+NGC 2011		Open cluster	5.53895	-67.5231	10.58	Dor	
+NGC 2014		Nebula	5.53885	-67.6898	8.97	Dor	
+NGC 2015		Asterism	5.53514	-69.2430	10.43	Dor	
+NGC 2018		Emission nebula	5.52358	-71.0691	10.89	Men	
+NGC 2019		Globular cluster	5.53241	-70.1596	10.86	Men	
+NGC 2022		Planetary nebula	5.70173	9.0865	11.6	Ori	
+NGC 2023		Reflection nebula	5.69400	-2.2590		Ori	
+NGC 2024		Nebula	5.69516	-1.8563		Ori	
+NGC 2025		Open cluster	5.54268	-71.7155	10.94	Men	
+NGC 2027		Open cluster	5.58325	-66.9163	10.97	Dor	
+NGC 2031		Globular cluster	5.56162	-70.9868	10.83	Men	
+NGC 2033		Asterism	5.57519	-69.7801	11.63	Dor	
+NGC 2035		Nebula	5.59200	-67.5842	10.99	Dor	
+NGC 2037		Open cluster	5.58351	-69.7316	10.31	Dor	
+NGC 2038		Open cluster	5.57841	-70.5629	11.92	Men	
+NGC 2040		Nebula	5.60165	-67.5686	11.47	Dor	
+NGC 2041		Globular cluster	5.60779	-66.9898	10.36	Dor	
+NGC 2042		Open cluster	5.60266	-68.9234	9.58	Dor	
+NGC 2044		Asterism	5.60172	-69.1987	10.59	Dor	
+NGC 2050		Asterism	5.61078	-69.3835	9.25	Dor	
+NGC 2051		Open cluster	5.60204	-71.0114	11.69	Men	
+NGC 2052		Nebula	5.61974	-69.7742		Dor	
+NGC 2055		Asterism	5.61242	-69.4986	8.39	Dor	
+NGC 2056		Open cluster	5.60944	-70.6719	11.77	Men	
+NGC 2058		Open cluster	5.61506	-70.1623	11.85	Men	
+NGC 2060		Supernova remnant	5.62969	-69.1717	9.59	Dor	
+NGC 2064		Reflection nebula	5.77177	0.0059		Ori	
+NGC 2065		Open cluster	5.62734	-70.2365	11.24	Men	
+NGC 2069		Nebula	5.64623	-68.9744	10.1	Dor	
+NGC 2071		Cluster + nebula	5.78535	0.2943	8.0	Ori	
+NGC 2074		Cluster + nebula	5.65099	-69.4981	8.5	Dor	
+NGC 2075		Cluster + nebula	5.63926	-70.6850	11.47	Men	
+NGC 2077		Nebula	5.66001	-69.6571	11.71	Dor	
+NGC 2078		Emission nebula	5.66096	-69.7432	10.89	Dor	
+NGC 2079		Emission nebula	5.66044	-69.7572	11.81	Dor	
+NGC 2080		Emission nebula	5.66273	-69.6441	10.42	Dor	
+NGC 2083		Nebula	5.66645	-69.7376	10.83	Dor	
+NGC 2086		Nebula	5.67024	-69.6679	12.0	Dor	
+NGC 2090		Galaxy	5.78386	-34.2506	10.92	Col	
+NGC 2093		Asterism	5.69715	-68.9214	11.57	Dor	
+NGC 2096		Open cluster	5.70494	-68.4586	11.31	Dor	
+NGC 2098		Open cluster	5.70862	-68.2732	10.73	Dor	
+NGC 210		Galaxy	0.67639	-13.8728	11.12	Cet	
+NGC 2100		Globular cluster	5.70252	-69.2118	9.6	Dor	
+NGC 2102		Open cluster	5.70569	-69.4871	11.44	Dor	
+NGC 2103		Emission nebula	5.69454	-71.3331	10.82	Men	
+NGC 2107		Open cluster	5.72024	-70.6399	11.51	Men	
+NGC 2112		Open cluster	5.89589	0.4108	9.1	Ori	
+NGC 2117		Open cluster	5.79609	-67.4502	11.65	Dor	
+NGC 2122		Cluster + nebula	5.81459	-70.0701	10.43	Men	
+NGC 2127		Open cluster	5.85591	-69.3591	11.64	Dor	
+NGC 2129		Open cluster	6.01848	23.3222	6.7	Gem	
+NGC 2134		Globular cluster	5.86603	-71.0976	11.05	Men	
+NGC 2136		Globular cluster	5.88271	-69.4928	10.7	Dor	
+NGC 2139		Galaxy	6.01884	-23.6726	11.66	Lep	
+NGC 2141		Open cluster	6.04863	10.4465	9.4	Ori	
+NGC 2146		Galaxy	6.31047	78.3570	10.69	Cam	
+NGC 2154		Globular cluster	5.96041	-67.2638	11.79	Dor	
+NGC 2156		Globular cluster	5.96380	-68.4608	11.38	Dor	
+NGC 2157		Globular cluster	5.95966	-69.1972	10.16	Dor	
+NGC 2158		Open cluster	6.12378	24.0962	8.6	Gem	
+NGC 2159		Globular cluster	5.96774	-68.6229	11.38	Dor	
+NGC 2164		Globular cluster	5.98229	-68.5159	10.34	Dor	
+NGC 2169		Open cluster	6.14010	13.9649	5.9	Ori	
+NGC 2172		Open cluster	6.00162	-68.6369	11.75	Dor	
+NGC 2173		Globular cluster	5.96636	-72.9745	11.88	Men	
+NGC 2174	Monkey Head Nebula	Nebula	6.15656	20.6596		Ori	
+NGC 2175		Cluster + nebula	6.16099	20.4876	6.8	Ori	
+NGC 2180		Open cluster	6.16007	4.7116	9.0	Ori	
+NGC 2182		Reflection nebula	6.15860	-6.3264	9.0	Mon	
+NGC 2186		Open cluster	6.20198	5.4586	8.7	Ori	
+NGC 2188		Galaxy	6.16931	-34.1062	11.67	Col	
+NGC 2192		Open cluster	6.25484	39.8552	10.9	Aur	
+NGC 2194		Open cluster	6.22942	12.8067	8.5	Ori	
+NGC 2196		Galaxy	6.20268	-21.8059	11.19	Lep	
+NGC 2203		Globular cluster	6.07849	-75.4384	11.29	Men	
+NGC 2204		Open cluster	6.25895	-18.6659	8.6	CMa	
+NGC 2207		Galaxy	6.27279	-21.3727	11.06	CMa	
+NGC 2210		Globular cluster	6.19204	-69.1214	10.94	Dor	
+NGC 2214		Open cluster	6.21581	-68.2607	10.93	Dor	
+NGC 2215		Open cluster	6.34701	-7.2838	8.45	Mon	
+NGC 2217		Galaxy	6.36105	-27.2338	10.57	CMa	
+NGC 2223		Galaxy	6.40998	-22.8382	11.87	CMa	
+NGC 2232		Open cluster	6.46698	-4.8474	3.9	Mon	
+NGC 2236		Open cluster	6.49436	6.8307	8.5	Mon	
+NGC 2237	Rosette A	Nebula	6.51517	5.0492		Mon	
+NGC 2243		Open cluster	6.49291	-31.2813	9.4	CMa	
+NGC 2245		Reflection nebula	6.54479	10.1566	11.0	Mon	
+NGC 2246	Rosette B	Nebula	6.54272	5.1283		Mon	
+NGC 2247		Reflection nebula	6.55144	10.3223	8.5	Mon	
+NGC 225		Open cluster	0.72677	61.7669	7.0	Cas	
+NGC 2250		Open cluster	6.56386	-5.0844	8.9	Mon	
+NGC 2251		Open cluster	6.57736	8.3664	7.3	Mon	
+NGC 2252		Open cluster	6.57860	5.3662	7.7	Mon	
+NGC 2254		Open cluster	6.59713	7.6733	9.1	Mon	
+NGC 2258		Galaxy	6.79606	74.4817	11.87	Cam	
+NGC 2259		Open cluster	6.63929	10.8836	10.8	Mon	
+NGC 2262		Open cluster	6.66058	1.1436	11.3	Mon	
+NGC 2264	Christmas Tree Cluster	Cluster + nebula	6.68285	9.8955	3.9	Mon	
+NGC 2266		Open cluster	6.72200	26.9696	9.5	Gem	
+NGC 2268		Galaxy	7.23818	84.3823	11.56	Cam	
+NGC 2269		Open cluster	6.72141	4.6243	10.0	Mon	
+NGC 2272		Galaxy	6.71147	-27.4595	11.94	CMa	
+NGC 2276		Galaxy	7.45399	85.7546	11.5	Cep	
+NGC 2280		Galaxy	6.74697	-27.6386	11.12	CMa	
+NGC 2281		Open cluster	6.80496	41.0789	5.4	Aur	
+NGC 2282		Emission nebula	6.78099	1.3160	10.0	Mon	
+NGC 2286		Open cluster	6.79449	-3.1477	7.5	Mon	
+NGC 2292		Galaxy	6.79435	-26.7462	11.83	CMa	
+NGC 2293		Galaxy	6.79525	-26.7544	11.04	CMa	
+NGC 2298		Globular cluster	6.81644	-36.0053	8.89	Pup	
+NGC 2299		Open cluster	6.86491	-7.0827	8.9	Mon	
+NGC 23		Galaxy	0.16484	25.9238	11.98	Peg	
+NGC 2300		Galaxy	7.53888	85.7095	11.16	Cep	
+NGC 2301	Great Bird Cluster	Open cluster	6.86258	0.4592	6.0	Mon	
+NGC 2304		Open cluster	6.91989	17.9928	10.0	Gem	
+NGC 2305		Galaxy	6.81038	-64.2732	11.7	Vol	
+NGC 2309		Open cluster	6.93434	-7.1743	10.5	Mon	
+NGC 2310		Galaxy	6.89832	-40.8626	11.81	Pup	
+NGC 2311		Open cluster	6.96321	-4.6113	9.6	Mon	
+NGC 2319		Open cluster	7.00895	3.0422	11.85	Mon	
+NGC 2320		Galaxy	7.09501	50.5811	11.94	Lyn	
+NGC 2324		Open cluster	7.06888	1.0446	8.4	Mon	
+NGC 2325		Galaxy	7.04456	-28.6972	11.18	CMa	
+NGC 2331		Open cluster	7.11662	27.2616	8.5	Gem	
+NGC 2335		Open cluster	7.11374	-10.0286	7.2	Mon	
+NGC 2336		Galaxy	7.45113	80.1781	10.68	Cam	
+NGC 2339		Galaxy	7.13904	18.7802	11.76	Gem	
+NGC 2340		Galaxy	7.18634	50.1747	11.73	Lyn	
+NGC 2343		Open cluster	7.13522	-10.6168	6.7	Mon	
+NGC 2345		Open cluster	7.13855	-13.1937	7.7	CMa	
+NGC 2346		Planetary nebula	7.15639	-0.8091	11.6	Mon	
+NGC 2353		Open cluster	7.24175	-10.2659	7.1	Mon	
+NGC 2354		Open cluster	7.23480	-25.6889	6.5	CMa	
+NGC 2355		Open cluster	7.28313	13.7499	9.7	Gem	
+NGC 2359		Emission nebula	7.30861	-13.2272		CMa	
+NGC 2366		Galaxy	7.48185	69.2158	11.17	Cam	
+NGC 2367		Open cluster	7.33459	-21.8841	7.9	CMa	
+NGC 2368		Open cluster	7.35175	-10.3718	11.8	Mon	
+NGC 2371		Planetary nebula	7.42629	29.4906	11.2	Gem	
+NGC 2374		Open cluster	7.39891	-13.2634	8.0	CMa	
+NGC 2380		Galaxy	7.39854	-27.5291	11.12	CMa	
+NGC 2383		Open cluster	7.41108	-20.9476	8.4	CMa	
+NGC 2384		Open cluster	7.41940	-21.0199	7.4	CMa	
+NGC 2395		Open cluster	7.45357	13.6082	8.0	Gem	
+NGC 2396		Open cluster	7.46748	-11.7197	7.4	Pup	
+NGC 2397		Galaxy	7.35555	-69.0015	11.97	Vol	
+NGC 24		Galaxy	0.16571	-24.9631	11.52	Scl	
+NGC 2409		Open cluster	7.52687	-17.1904	7.3	Pup	
+NGC 2414		Open cluster	7.55356	-15.4539	7.9	Pup	
+NGC 2420		Open cluster	7.63997	21.5741	8.3	Gem	
+NGC 2421		Open cluster	7.60328	-20.6123	8.3	Pup	
+NGC 2423		Open cluster	7.61854	-13.8715	6.7	Pup	
+NGC 2427		Galaxy	7.60783	-47.6356	11.48	Pup	
+NGC 2432		Open cluster	7.68163	-19.0691	10.2	Pup	
+NGC 2434		Galaxy	7.58088	-69.2841	11.34	Vol	
+NGC 2438		Planetary nebula	7.69733	-14.7358	10.8	Pup	
+NGC 2439		Open cluster	7.67928	-31.6924	6.9	Pup	
+NGC 2440		Planetary nebula	7.69871	-18.2085	9.4	Pup	
+NGC 2442		Galaxy	7.60662	-69.5308	10.63	Vol	
+NGC 2451		Open cluster	7.75417	-37.9674	9.5	Pup	
+NGC 2452		Planetary nebula	7.79066	-27.3340	12.0	Pup	
+NGC 2453		Open cluster	7.79281	-27.1948	8.3	Pup	
+NGC 2455		Open cluster	7.81628	-21.2979	10.2	Pup	
+NGC 2460		Galaxy	7.94786	60.3494	11.71	Cam	
+NGC 2479		Open cluster	7.91835	-17.7078	9.6	Pup	
+NGC 2482		Open cluster	7.91955	-24.2546	7.3	Pup	
+NGC 2483		Open cluster	7.92744	-27.8868	7.6	Pup	
+NGC 2489		Open cluster	7.93748	-30.0608	7.9	Pup	
+NGC 2500		Galaxy	8.03145	50.7371	11.65	Lyn	
+NGC 2502		Galaxy	7.93098	-52.3068	11.96	Car	
+NGC 2509		Open cluster	8.01328	-19.0505	9.3	Pup	
+NGC 2513		Galaxy	8.04019	9.4136	11.63	Cnc	
+NGC 2517		Galaxy	8.04641	-12.3178	11.92	Pup	
+NGC 2520		Open cluster	8.08283	-28.1467	6.5	Pup	
+NGC 2523		Galaxy	8.25003	73.5790	11.9	Cam	
+NGC 2525		Galaxy	8.09390	-11.4270	11.47	Pup	
+NGC 2533		Open cluster	8.11781	-29.8839	7.6	Pup	
+NGC 2537	Bear Claw Nebula	Galaxy	8.22073	45.9898	11.71	Lyn	
+NGC 2539		Open cluster	8.17694	-12.8207	6.5	Pup	
+NGC 254		Galaxy	0.79100	-31.4218	11.67	Scl	
+NGC 2541		Galaxy	8.24448	49.0617	11.7	Lyn	
+NGC 2546		Open cluster	8.20434	-37.5943	6.3	Pup	
+NGC 2547		Open cluster	8.16930	-49.2057	4.7	Vel	
+NGC 2549		Galaxy	8.31621	57.8031	11.14	Lyn	
+NGC 255		Galaxy	0.79648	-11.4687	11.93	Cet	
+NGC 2559		Galaxy	8.28502	-27.4558	11.33	Pup	
+NGC 2566		Galaxy	8.31268	-25.4995	10.81	Pup	
+NGC 2567		Open cluster	8.30977	-30.6356	7.4	Pup	
+NGC 2571		Open cluster	8.31565	-29.7493	7.0	Pup	
+NGC 2580		Open cluster	8.35775	-30.2935	9.7	Pup	
+NGC 2587		Open cluster	8.39002	-29.5087	9.2	Pup	
+NGC 2588		Open cluster	8.38599	-32.9752	11.8	Pup	
+NGC 2613		Galaxy	8.55634	-22.9737	10.38	Pyx	
+NGC 2627		Open cluster	8.62082	-29.9504	8.4	Pyx	
+NGC 2634		Galaxy	8.80705	73.9672	11.97	Cam	
+NGC 2635		Open cluster	8.64055	-34.7716	11.2	Pyx	
+NGC 2639		Galaxy	8.72724	50.2056	11.76	UMa	
+NGC 2640		Galaxy	8.62351	-55.1238	11.02	Car	
+NGC 2645		Open cluster	8.65087	-46.2273	7.32	Vel	
+NGC 2648		Galaxy	8.71106	14.2856	11.88	Cnc	
+NGC 2654		Galaxy	8.81996	60.2211	11.69	UMa	
+NGC 2655		Galaxy	8.92715	78.2231	10.39	Cam	
+NGC 2658		Open cluster	8.72426	-32.6562	9.2	Pyx	
+NGC 2659		Open cluster	8.70917	-45.0005	8.6	Vel	
+NGC 266		Galaxy	0.82994	32.2777	11.82	Psc	
+NGC 2660		Open cluster	8.71055	-47.2007	8.8	Vel	
+NGC 2663		Galaxy	8.75229	-33.7948	10.59	Pyx	
+NGC 2665		Galaxy	8.76694	-19.3029	11.63	Hya	
+NGC 2669		Open cluster	8.77294	-52.9475	6.1	Vel	
+NGC 2670		Open cluster	8.75819	-48.7916	7.8	Vel	
+NGC 2671		Open cluster	8.76997	-41.8772	11.6	Vel	
+NGC 2672		Galaxy	8.82275	19.0750	11.64	Cnc	
+NGC 2681		Galaxy	8.89243	51.3137	10.86	UMa	
+NGC 2683		Galaxy	8.87815	33.4217	9.69	Lyn	
+NGC 2685	Helix Galaxy	Galaxy	8.92631	58.7344	11.35	UMa	
+NGC 2693		Galaxy	8.94980	51.3474	11.86	UMa	
+NGC 2698		Galaxy	8.92681	-3.1839	11.86	Hya	
+NGC 2708		Galaxy	8.93557	-3.3601	11.96	Hya	
+NGC 2713		Galaxy	8.95570	2.9213	11.82	Hya	
+NGC 2715		Galaxy	9.13506	78.0852	11.49	Cam	
+NGC 2732		Galaxy	9.22354	79.1873	11.89	Cam	
+NGC 2736	Pencil Nebula	Emission nebula	9.00471	-45.9481		Vel	
+NGC 2742		Galaxy	9.12598	60.4793	11.49	UMa	
+NGC 2748		Galaxy	9.22862	76.4753	11.68	Cam	
+NGC 2749		Galaxy	9.08926	18.3131	11.84	Cnc	
+NGC 2768		Galaxy	9.19375	60.0372	9.87	UMa	
+NGC 2776		Galaxy	9.20403	44.9548	11.68	Lyn	
+NGC 278		Galaxy	0.86786	47.5505	10.85	Cas	
+NGC 2781		Galaxy	9.19098	-14.8168	11.57	Hya	
+NGC 2784		Galaxy	9.20542	-24.1726	10.1	Hya	
+NGC 2787		Galaxy	9.32183	69.2032	11.25	UMa	
+NGC 2792		Planetary nebula	9.20738	-42.4275	11.6	Vel	
+NGC 2805		Galaxy	9.33900	64.1028	11.56	UMa	
+NGC 2808		Globular cluster	9.20071	-64.8628	5.69	Car	
+NGC 281		Emission nebula	0.88315	56.6219		Cas	
+NGC 2811		Galaxy	9.26975	-16.3127	11.45	Hya	
+NGC 2815		Galaxy	9.27215	-23.6333	11.86	Hya	
+NGC 2818		Planetary nebula	9.26708	-36.6269	11.6	Pyx	
+NGC 2822		Galaxy	9.23048	-69.6448	11.4	Car	
+NGC 2832		Galaxy	9.32968	33.7497	11.79	Lyn	
+NGC 2835		Galaxy	9.29803	-22.3547	10.64	Hya	
+NGC 2841		Galaxy	9.36740	50.9765	10.18	UMa	
+NGC 2845		Galaxy	9.31020	-38.0101	11.97	Vel	
+NGC 2855		Galaxy	9.35764	-11.9095	11.05	Hya	
+NGC 2859		Galaxy	9.40515	34.5135	10.94	LMi	
+NGC 2865		Galaxy	9.39172	-23.1614	11.48	Hya	
+NGC 2872		Galaxy	9.42848	11.4321	11.86	Leo	
+NGC 288		Globular cluster	0.87985	-26.5899	8.13	Scl	
+NGC 2880		Galaxy	9.49293	62.4906	11.61	UMa	
+NGC 2887		Galaxy	9.39001	-63.8126	11.66	Car	
+NGC 2889		Galaxy	9.45350	-11.6434	11.78	Hya	
+NGC 289		Galaxy	0.87843	-31.2058	11.18	Scl	
+NGC 2899		Planetary nebula	9.45082	-56.1060	11.8	Vel	
+NGC 290		Open cluster	0.85394	-73.1615	11.71	Tuc	
+NGC 2903		Galaxy	9.53614	21.5008	8.91	Leo	
+NGC 2907		Galaxy	9.52687	-16.7347	11.63	Hya	
+NGC 2910		Open cluster	9.50806	-52.9140	7.2	Vel	
+NGC 292	Small Magellanic Cloud	Galaxy	0.87911	-72.8286	2.3	Tuc	
+NGC 2925		Open cluster	9.55303	-53.3960	8.3	Vel	
+NGC 2935		Galaxy	9.61246	-21.1281	11.19	Hya	
+NGC 2950		Galaxy	9.70976	58.8513	11.03	UMa	
+NGC 2962		Galaxy	9.68165	5.1658	11.88	Hya	
+NGC 2964		Galaxy	9.71506	31.8474	11.37	Leo	
+NGC 2967		Galaxy	9.70091	0.3364	11.61	Sex	
+NGC 2968		Galaxy	9.72000	31.9287	11.73	Leo	
+NGC 2972		Open cluster	9.66987	-50.3209	9.9	Vel	
+NGC 2974		Galaxy	9.70924	-3.6991	10.89	Sex	
+NGC 2976		Galaxy	9.78763	67.9164	10.16	UMa	
+NGC 2983		Galaxy	9.72808	-20.4772	11.87	Hya	
+NGC 2985		Galaxy	9.83951	72.2786	10.51	UMa	
+NGC 2986		Galaxy	9.73779	-21.2780	10.64	Hya	
+NGC 299		Open cluster	0.89002	-72.1971	11.73	Tuc	
+NGC 2997		Galaxy	9.76078	-31.1911	9.41	Ant	
+NGC 3001		Galaxy	9.77185	-30.4375	11.57	Ant	
+NGC 3003		Galaxy	9.81001	33.4215	11.78	LMi	
+NGC 3027		Galaxy	9.92794	72.2036	11.76	UMa	
+NGC 3033		Open cluster	9.80973	-56.4301	8.8	Vel	
+NGC 3038		Galaxy	9.85429	-32.7526	11.69	Ant	
+NGC 3041		Galaxy	9.88532	16.6777	11.55	Leo	
+NGC 3044		Galaxy	9.89469	1.5796	11.94	Sex	
+NGC 3054		Galaxy	9.90794	-25.7034	11.48	Hya	
+NGC 3056		Galaxy	9.90913	-28.2982	11.7	Ant	
+NGC 3059		Galaxy	9.83560	-73.9222	11.3	Car	
+NGC 3077		Galaxy	10.05530	68.7339	9.88	UMa	
+NGC 3078		Galaxy	9.97350	-26.9267	11.16	Hya	
+NGC 3079		Galaxy	10.03272	55.6798	10.71	UMa	
+NGC 3087		Galaxy	9.98574	-34.2252	11.43	Ant	
+NGC 3091		Galaxy	10.00397	-19.6370	11.0	Hya	
+NGC 3095		Galaxy	10.00162	-31.5529	11.63	Ant	
+NGC 3098		Galaxy	10.03797	24.7111	11.96	Leo	
+NGC 3100		Galaxy	10.01134	-31.6645	11.37	Ant	
+NGC 3105		Open cluster	10.01098	-54.7877	9.7	Vel	
+NGC 3108		Galaxy	10.04140	-31.6774	11.47	Ant	
+NGC 3109		Galaxy	10.05191	-26.1596	10.54	Hya	
+NGC 3114		Open cluster	10.04155	-60.1305	4.2	Car	
+NGC 3136		Galaxy	10.09671	-67.3780	10.67	Car	
+NGC 3136B		Galaxy	10.17026	-67.0051	11.79	Car	
+NGC 3137		Galaxy	10.15208	-29.0643	11.57	Ant	
+NGC 3145		Galaxy	10.16941	-12.4338	12.0	Hya	
+NGC 3147		Galaxy	10.28157	73.4008	11.94	Dra	
+NGC 315		Galaxy	0.96358	30.3524	11.6	Psc	
+NGC 3158		Galaxy	10.23070	38.7649	11.88	LMi	
+NGC 3162		Galaxy	10.22544	22.7376	11.72	Leo	
+NGC 3166		Galaxy	10.22933	3.4247	10.62	Sex	
+NGC 3169		Galaxy	10.23751	3.4661	10.89	Sex	
+NGC 3175		Galaxy	10.24503	-28.8721	11.26	Ant	
+NGC 3184		Galaxy	10.30468	41.4241	9.84	UMa	
+NGC 3189		Galaxy	10.30156	21.8323	11.05	Leo	
+NGC 3193		Galaxy	10.30692	21.8940	11.02	Leo	
+NGC 3198		Galaxy	10.33193	45.5496	10.38	UMa	
+NGC 3199		Nebula	10.29012	-57.9222		Car	
+NGC 3211		Planetary nebula	10.29736	-62.6701	10.7	Car	
+NGC 3223		Galaxy	10.35974	-34.2668	10.96	Ant	
+NGC 3227		Galaxy	10.39183	19.8651	11.72	Leo	
+NGC 3228		Open cluster	10.35618	-51.7226	6.0	Vel	
+NGC 3239		Galaxy	10.41803	17.1636	11.4	Leo	
+NGC 3245		Galaxy	10.45511	28.5074	10.75	LMi	
+NGC 3247		Emission nebula	10.40389	-57.7633	7.6	Car	
+NGC 3250		Galaxy	10.44230	-39.9439	11.02	Ant	
+NGC 3254		Galaxy	10.48887	29.4918	11.66	LMi	
+NGC 3255		Open cluster	10.44204	-60.6752	11.0	Car	
+NGC 3256		Galaxy	10.46424	-43.9037	11.58	Vel	
+NGC 3258		Galaxy	10.48155	-35.6055	11.41	Ant	
+NGC 3261		Galaxy	10.48374	-44.6568	11.41	Vel	
+NGC 3268		Galaxy	10.50018	-35.3255	11.41	Ant	
+NGC 3271		Galaxy	10.50736	-35.3595	11.73	Ant	
+NGC 3275		Galaxy	10.51439	-36.7370	11.65	Ant	
+NGC 3277		Galaxy	10.54874	28.5117	11.65	LMi	
+NGC 3281		Galaxy	10.53114	-34.8537	11.95	Ant	
+NGC 3283		Galaxy	10.51989	-46.2513	11.74	Vel	
+NGC 3285		Galaxy	10.55996	-27.4544	11.98	Hya	
+NGC 3293		Open cluster	10.59688	-58.2245	4.7	Car	
+NGC 3294		Galaxy	10.60451	37.3247	11.68	LMi	
+NGC 330		Open cluster	0.93824	-72.4629	9.55	Tuc	
+NGC 3301		Galaxy	10.61557	21.8821	11.41	Leo	
+NGC 3309		Galaxy	10.60992	-27.5184	11.74	Hya	
+NGC 3310		Galaxy	10.64607	53.5034	11.61	UMa	
+NGC 3311		Galaxy	10.61189	-27.5283	11.32	Hya	
+NGC 3313		Galaxy	10.62374	-25.3194	11.73	Hya	
+NGC 3318		Galaxy	10.62097	-41.6276	11.5	Vel	
+NGC 3319		Galaxy	10.65263	41.6867	11.37	UMa	
+NGC 3324		Cluster + nebula	10.62117	-58.6196	6.7	Car	
+NGC 3330		Open cluster	10.64595	-54.1307	7.4	Vel	
+NGC 3338		Galaxy	10.70209	13.7470	10.88	Leo	
+NGC 3344		Galaxy	10.72532	24.9222	9.98	LMi	
+NGC 3347		Galaxy	10.71293	-36.3527	11.51	Ant	
+NGC 3348		Galaxy	10.78611	72.8397	10.92	UMa	
+NGC 3358		Galaxy	10.72584	-36.4107	11.61	Ant	
+NGC 3359		Galaxy	10.77691	63.2242	10.55	UMa	
+NGC 3366		Galaxy	10.58563	-43.6918	11.71	Vel	
+NGC 3367		Galaxy	10.77638	13.7509	11.73	Leo	
+NGC 337		Galaxy	0.99725	-7.5780	11.48	Cet	
+NGC 3377		Galaxy	10.79509	13.9859	10.27	Leo	
+NGC 3384		Galaxy	10.80469	12.6293	9.96	Leo	
+NGC 3402		Galaxy	10.84069	-12.8446	11.89	Hya	
+NGC 3412		Galaxy	10.84813	13.4121	10.53	Leo	
+NGC 3414		Galaxy	10.85450	27.9751	11.09	LMi	
+NGC 3423		Galaxy	10.85398	5.8400	11.17	Sex	
+NGC 3430		Galaxy	10.86983	32.9504	11.81	LMi	
+NGC 3432		Galaxy	10.87531	36.6188	11.27	LMi	
+NGC 3448		Galaxy	10.91089	54.3049	11.98	UMa	
+NGC 3450		Galaxy	10.80101	-20.8492	11.83	Hya	
+NGC 3486		Galaxy	11.00663	28.9751	10.57	LMi	
+NGC 3489		Galaxy	11.00516	13.9012	10.23	Leo	
+NGC 3496		Open cluster	10.99272	-60.3369	8.2	Car	
+NGC 3511		Galaxy	11.05660	-23.0868	11.02	Crt	
+NGC 3513		Galaxy	11.06280	-23.2455	11.66	Crt	
+NGC 3519		Open cluster	11.06744	-61.3683	7.7	Car	
+NGC 3521		Galaxy	11.09683	-0.0359	9.11	Leo	
+NGC 3557		Galaxy	11.16601	-37.5392	10.42	Cen	
+NGC 3572		Open cluster	11.17200	-60.2484	6.6	Car	
+NGC 3579		Nebula	11.19989	-61.2432		Car	
+NGC 3585		Galaxy	11.22141	-26.7548	9.69	Hya	
+NGC 3590		Open cluster	11.21638	-60.7890	8.2	Car	
+NGC 3593		Galaxy	11.24361	12.8177	10.91	Leo	
+NGC 3596		Galaxy	11.25173	14.7870	11.49	Leo	
+NGC 3607		Galaxy	11.28184	18.0518	10.0	Leo	
+NGC 3608		Galaxy	11.28304	18.1487	10.63	Leo	
+NGC 361		Open cluster	1.03616	-71.6047	11.77	Tuc	
+NGC 3610		Galaxy	11.30702	58.7863	10.77	UMa	
+NGC 3613		Galaxy	11.31003	58.0000	10.81	UMa	
+NGC 3621		Galaxy	11.30459	-32.8141	9.55	Hya	
+NGC 3628		Galaxy	11.33805	13.5897	9.45	Leo	
+NGC 3631		Galaxy	11.35080	53.1696	10.42	UMa	
+NGC 3640		Galaxy	11.35190	3.2348	10.41	Leo	
+NGC 3646		Galaxy	11.36197	20.1696	11.2	Leo	
+NGC 3655		Galaxy	11.38184	16.5900	11.67	Leo	
+NGC 3665		Galaxy	11.41213	38.7629	10.83	UMa	
+NGC 3672		Galaxy	11.41735	-9.7954	11.34	Crt	
+NGC 3673		Galaxy	11.42024	-26.7367	11.57	Hya	
+NGC 3675		Galaxy	11.43572	43.5859	10.09	UMa	
+NGC 3680		Open cluster	11.42697	-43.2501	7.6	Cen	
+NGC 3681		Galaxy	11.44161	16.8632	11.92	Leo	
+NGC 3684		Galaxy	11.45311	17.0302	11.81	Leo	
+NGC 3686		Galaxy	11.46221	17.2242	11.43	Leo	
+NGC 3690B		Galaxy	11.47601	58.5629	11.68	UMa	
+NGC 3699		Planetary nebula	11.46587	-59.9581	11.3	Cen	
+NGC 3705		Galaxy	11.50207	9.2766	10.97	Leo	
+NGC 3706		Galaxy	11.49567	-36.3913	11.3	Cen	
+NGC 3717		Galaxy	11.52555	-30.3078	11.23	Hya	
+NGC 3718		Galaxy	11.54301	53.0679	10.7	UMa	
+NGC 3726		Galaxy	11.55587	47.0292	10.49	UMa	
+NGC 3729		Galaxy	11.56370	53.1256	11.56	UMa	
+NGC 3738		Galaxy	11.59689	54.5239	11.45	UMa	
+NGC 3756		Galaxy	11.61334	54.2936	11.52	UMa	
+NGC 376		Open cluster	1.06485	-72.8237	10.9	Tuc	
+NGC 381		Open cluster	1.13834	61.5833	9.3	Cas	
+NGC 3810		Galaxy	11.68299	11.4711	10.75	Leo	
+NGC 3813		Galaxy	11.68852	36.5468	11.7	UMa	
+NGC 3818		Galaxy	11.69927	-6.1557	11.75	Vir	
+NGC 3842		Galaxy	11.73393	19.9498	11.84	Leo	
+NGC 3872		Galaxy	11.76363	13.7667	11.71	Leo	
+NGC 3877		Galaxy	11.76881	47.4943	11.0	UMa	
+NGC 3882		Galaxy	11.76849	-56.3881	11.81	Cen	
+NGC 3885		Galaxy	11.77958	-27.9222	11.87	Hya	
+NGC 3887		Galaxy	11.78460	-16.8546	10.93	Crt	
+NGC 3892		Galaxy	11.80028	-10.9621	11.24	Crt	
+NGC 3893		Galaxy	11.81061	48.7108	10.63	UMa	
+NGC 3894		Galaxy	11.81399	59.4157	11.62	UMa	
+NGC 3898		Galaxy	11.82094	56.0844	10.72	UMa	
+NGC 3900		Galaxy	11.81929	27.0220	11.44	Leo	
+NGC 3904		Galaxy	11.82034	-29.2767	10.79	Hya	
+NGC 3917		Galaxy	11.84595	51.8247	11.81	UMa	
+NGC 3918	Blue Planetary	Planetary nebula	11.83832	-57.1823	8.1	Cen	
+NGC 3923		Galaxy	11.85047	-28.8060	9.6	Hya	
+NGC 3938		Galaxy	11.88040	44.1207	10.36	UMa	
+NGC 3941		Galaxy	11.88204	36.9863	10.37	UMa	
+NGC 3945		Galaxy	11.88715	60.6756	10.75	UMa	
+NGC 3949		Galaxy	11.89492	47.8587	10.89	UMa	
+NGC 3953		Galaxy	11.89692	52.3268	10.1	UMa	
+NGC 3955		Galaxy	11.89921	-23.1642	11.84	Crt	
+NGC 3960		Open cluster	11.84256	-55.6698	8.3	Cen	
+NGC 3962		Galaxy	11.91114	-13.9750	10.65	Crt	
+NGC 3981		Galaxy	11.93540	-19.8962	11.65	Crt	
+NGC 3982		Galaxy	11.94115	55.1253	11.7	UMa	
+NGC 3998		Galaxy	11.96559	55.4536	11.33	UMa	
+NGC 4013		Galaxy	11.97538	43.9466	11.31	UMa	
+NGC 4024		Galaxy	11.97535	-18.3468	11.8	Crv	
+NGC 4026		Galaxy	11.99033	50.9617	10.78	UMa	
+NGC 4027		Galaxy	11.99171	-19.2652	11.17	Crv	
+NGC 4030		Galaxy	12.00656	-1.1001	10.51	Vir	
+NGC 4033		Galaxy	12.00965	-17.8426	11.79	Crv	
+NGC 4036		Galaxy	12.02410	61.8958	10.84	UMa	
+NGC 404		Galaxy	1.15751	35.7181	10.55	And	
+NGC 4041		Galaxy	12.03672	62.1372	11.08	UMa	
+NGC 4045		Galaxy	12.04507	1.9768	11.81	Vir	
+NGC 4050		Galaxy	12.04832	-16.3736	11.79	Crv	
+NGC 4051		Galaxy	12.05267	44.5313	11.37	UMa	
+NGC 4052		Open cluster	12.03477	-63.2235	8.8	Cru	
+NGC 4062		Galaxy	12.06773	31.8958	11.15	UMa	
+NGC 4064		Galaxy	12.06977	18.4434	11.33	Com	
+NGC 4073		Galaxy	12.07419	1.8960	11.51	Vir	
+NGC 4088		Galaxy	12.09283	50.5390	10.6	UMa	
+NGC 4096		Galaxy	12.10031	47.4784	10.57	UMa	
+NGC 410		Galaxy	1.18303	33.1519	11.48	Psc	
+NGC 4100		Galaxy	12.10235	49.5827	11.09	UMa	
+NGC 4102		Galaxy	12.10639	52.7111	11.87	UMa	
+NGC 4103		Open cluster	12.11099	-61.2501	7.4	Cru	
+NGC 4105		Galaxy	12.11132	-29.7602	10.62	Hya	
+NGC 4106		Galaxy	12.11244	-29.7683	11.3	Hya	
+NGC 4111		Galaxy	12.11754	43.0657	10.81	CVn	
+NGC 4119		Galaxy	12.13601	10.3789	11.5	Vir	
+NGC 4123		Galaxy	12.13642	2.8783	11.39	Vir	
+NGC 4125		Galaxy	12.13501	65.1741	9.71	Dra	
+NGC 4128		Galaxy	12.14231	68.7676	11.96	Dra	
+NGC 4136		Galaxy	12.15491	29.9276	11.9	Com	
+NGC 4138		Galaxy	12.15827	43.6853	11.8	CVn	
+NGC 4144		Galaxy	12.16628	46.4572	11.61	UMa	
+NGC 4145		Galaxy	12.16709	39.8839	11.22	CVn	
+NGC 4147		Globular cluster	12.16838	18.5421	10.74	Com	
+NGC 4150		Galaxy	12.17601	30.4015	11.69	Com	
+NGC 4151		Galaxy	12.17572	39.4057	11.48	CVn	
+NGC 4157		Galaxy	12.18455	50.4847	11.29	UMa	
+NGC 416		Globular cluster	1.13292	-72.3551	11.76	Tuc	
+NGC 4162		Galaxy	12.19791	24.1237	11.7	Com	
+NGC 4168		Galaxy	12.20480	13.2052	11.45	Vir	
+NGC 4178		Galaxy	12.21290	10.8660	11.43	Vir	
+NGC 4179		Galaxy	12.21447	1.2997	10.93	Vir	
+NGC 4189		Galaxy	12.22980	13.4248	11.84	Com	
+NGC 419		Globular cluster	1.13810	-72.8835	10.5	Tuc	
+NGC 4203		Galaxy	12.25141	33.1973	11.55	Com	
+NGC 4208		Galaxy	12.26093	13.9015	11.1	Com	
+NGC 4214		Galaxy	12.26088	36.3269	9.77	CVn	
+NGC 4215		Galaxy	12.26515	6.4011	11.96	Vir	
+NGC 4216		Galaxy	12.26512	13.1494	9.93	Vir	
+NGC 4217		Galaxy	12.26414	47.0918	11.23	CVn	
+NGC 4219		Galaxy	12.27426	-43.3243	11.83	Cen	
+NGC 4220		Galaxy	12.26992	47.8833	11.33	CVn	
+NGC 4223		Galaxy	12.29050	6.6901	11.95	Vir	
+NGC 4224		Galaxy	12.27605	7.4621	11.77	Vir	
+NGC 4230		Open cluster	12.28594	-55.2861	9.4	Cen	
+NGC 4233		Galaxy	12.28547	7.6244	11.94	Vir	
+NGC 4235		Galaxy	12.28608	7.1916	11.97	Vir	
+NGC 4237		Galaxy	12.28651	15.3240	11.83	Com	
+NGC 4242		Galaxy	12.29172	45.6193	11.03	CVn	
+NGC 4245		Galaxy	12.29355	29.6080	11.42	Com	
+NGC 4251		Galaxy	12.30229	28.1754	10.77	Com	
+NGC 4260		Galaxy	12.32284	6.0987	11.55	Vir	
+NGC 4261		Galaxy	12.32312	5.8252	11.11	Vir	
+NGC 4262		Galaxy	12.32516	14.8777	11.46	Com	
+NGC 4267		Galaxy	12.32923	12.7983	10.89	Vir	
+NGC 4273		Galaxy	12.33224	5.3433	11.8	Vir	
+NGC 4274		Galaxy	12.33072	29.6145	10.42	Com	
+NGC 4278		Galaxy	12.33523	29.2807	10.21	Com	
+NGC 428		Galaxy	1.21547	0.9816	11.47	Cet	
+NGC 4281		Galaxy	12.33931	5.3864	11.31	Vir	
+NGC 4291		Galaxy	12.33839	75.3708	11.42	Dra	
+NGC 4293		Galaxy	12.35358	18.3824	10.17	Com	
+NGC 4298		Galaxy	12.35910	14.6062	11.35	Com	
+NGC 4302		Galaxy	12.36180	14.5983	11.54	Com	
+NGC 4304		Galaxy	12.37020	-33.4845	11.77	Hya	
+NGC 4312		Galaxy	12.37538	15.5379	11.7	Com	
+NGC 4314		Galaxy	12.37551	29.8959	10.57	Com	
+NGC 4324		Galaxy	12.38505	5.2503	11.5	Vir	
+NGC 4337		Open cluster	12.40092	-58.1238	8.9	Cru	
+NGC 4339		Galaxy	12.39304	6.0817	11.41	Vir	
+NGC 4340		Galaxy	12.39314	16.7224	11.15	Com	
+NGC 4349		Open cluster	12.40168	-61.8704	7.4	Cru	
+NGC 4350		Galaxy	12.39941	16.6934	10.87	Com	
+NGC 436		Open cluster	1.26605	58.8171	8.8	Cas	
+NGC 4361		Planetary nebula	12.40854	-18.7848	10.9	Crv	
+NGC 4365		Galaxy	12.40786	7.3177	9.43	Vir	
+NGC 4369		Galaxy	12.41006	39.3830	11.69	CVn	
+NGC 4371		Galaxy	12.41540	11.7042	10.83	Vir	
+NGC 4373		Galaxy	12.42162	-39.7597	10.92	Cen	
+NGC 4377		Galaxy	12.42009	14.7622	11.8	Com	
+NGC 4378		Galaxy	12.42169	4.9251	11.29	Vir	
+NGC 4379		Galaxy	12.42076	15.6075	11.63	Com	
+NGC 4380		Galaxy	12.42282	10.0168	11.29	Vir	
+NGC 4386		Galaxy	12.40788	75.5289	11.69	Dra	
+NGC 4388		Galaxy	12.42965	12.6621	11.02	Vir	
+NGC 4394		Galaxy	12.43209	18.2141	11.03	Com	
+NGC 4395		Galaxy	12.43024	33.5469	10.29	CVn	
+NGC 4402		Galaxy	12.43546	13.1133	11.78	Vir	
+NGC 4414		Galaxy	12.44086	31.2235	10.2	Com	
+NGC 4416		Galaxy	12.44631	7.9190	11.57	Vir	
+NGC 4417		Galaxy	12.44739	9.5843	11.22	Vir	
+NGC 4419		Galaxy	12.44901	15.0474	11.06	Com	
+NGC 4421		Galaxy	12.45071	15.4615	11.42	Com	
+NGC 4424		Galaxy	12.45322	9.4207	11.68	Vir	
+NGC 4425		Galaxy	12.45370	12.7347	11.95	Vir	
+NGC 4429		Galaxy	12.45736	11.1077	10.08	Vir	
+NGC 4435	Eyes	Galaxy	12.46125	13.0789	10.96	Vir	
+NGC 4438	Eyes	Galaxy	12.46266	13.0088	10.92	Vir	
+NGC 4439		Open cluster	12.47399	-60.1032	8.4	Cru	
+NGC 4440		Galaxy	12.46488	12.2933	11.81	Vir	
+NGC 4442		Galaxy	12.46774	9.8037	10.6	Vir	
+NGC 4448		Galaxy	12.47095	28.6203	11.11	Com	
+NGC 4450		Galaxy	12.47490	17.0849	10.87	Com	
+NGC 4452		Galaxy	12.47870	11.7550	11.9	Vir	
+NGC 4454		Galaxy	12.48076	-1.9392	11.93	Vir	
+NGC 4457		Galaxy	12.48306	3.5706	10.57	Vir	
+NGC 4459		Galaxy	12.48334	13.9784	10.25	Com	
+NGC 4461		Galaxy	12.48417	13.1837	11.02	Vir	
+NGC 4462		Galaxy	12.48923	-23.1664	11.85	Crv	
+NGC 4463		Open cluster	12.49867	-64.7897	7.2	Mus	
+NGC 4469		Galaxy	12.49112	8.7499	11.04	Vir	
+NGC 4473		Galaxy	12.49691	13.4294	10.09	Com	
+NGC 4474		Galaxy	12.49821	14.0686	11.56	Com	
+NGC 4477		Galaxy	12.50061	13.6366	10.31	Com	
+NGC 4478		Galaxy	12.50484	12.3286	11.44	Vir	
+NGC 4487		Galaxy	12.51791	-8.0539	11.45	Vir	
+NGC 4490	Cocoon Galaxy	Galaxy	12.51007	41.6439	9.72	CVn	
+NGC 4492		Galaxy	12.51659	8.0779	11.99	Vir	
+NGC 4494		Galaxy	12.52336	25.7752	9.8	Com	
+NGC 4496A		Galaxy	12.52756	3.9395	11.59	Vir	
+NGC 45		Galaxy	0.23444	-23.1821	10.44	Cet	
+NGC 4503		Galaxy	12.53506	11.1764	10.97	Vir	
+NGC 4504		Galaxy	12.53818	-7.5634	11.61	Vir	
+NGC 4517		Galaxy	12.54600	0.1150	10.48	Vir	
+NGC 4519		Galaxy	12.55840	8.6547	12.0	Vir	
+NGC 4526		Galaxy	12.56752	7.6995	9.59	Vir	
+NGC 4527		Galaxy	12.56901	2.6537	10.5	Vir	
+NGC 4528		Galaxy	12.56835	11.3212	11.97	Vir	
+NGC 4532		Galaxy	12.57204	6.4677	11.92	Vir	
+NGC 4535		Galaxy	12.57231	8.1978	9.89	Vir	
+NGC 4536		Galaxy	12.57418	2.1881	10.48	Vir	
+NGC 4546		Galaxy	12.59153	-3.7932	10.57	Vir	
+NGC 4551		Galaxy	12.59388	12.2640	11.98	Vir	
+NGC 4564		Galaxy	12.60749	11.4393	11.26	Vir	
+NGC 4567	Butterfly Galaxies	Galaxy	12.60909	11.2580	11.32	Vir	
+NGC 4568	Butterfly Galaxies	Galaxy	12.60952	11.2389	10.8	Vir	
+NGC 4570		Galaxy	12.61483	7.2466	11.11	Vir	
+NGC 4571		Galaxy	12.61566	14.2174	11.29	Com	
+NGC 4578		Galaxy	12.62516	9.5551	11.4	Vir	
+NGC 458		Open cluster	1.24819	-71.5527	11.66	Tuc	
+NGC 4586		Galaxy	12.64122	4.3191	11.58	Vir	
+NGC 4589		Galaxy	12.62361	74.1919	10.74	Dra	
+NGC 4592		Galaxy	12.65521	-0.5320	11.88	Vir	
+NGC 4593		Galaxy	12.66095	-5.3442	11.43	Vir	
+NGC 4596		Galaxy	12.66554	10.1761	10.46	Vir	
+NGC 4602		Galaxy	12.67690	-5.1330	11.75	Vir	
+NGC 4603		Galaxy	12.68200	-40.9764	11.67	Cen	
+NGC 4605		Galaxy	12.66649	61.6092	10.26	UMa	
+NGC 4606		Galaxy	12.68265	11.9122	11.9	Vir	
+NGC 4608		Galaxy	12.68703	10.1557	11.08	Vir	
+NGC 4618		Galaxy	12.69246	41.1508	10.78	CVn	
+NGC 4632		Galaxy	12.70890	-0.0826	11.86	Vir	
+NGC 4636		Galaxy	12.71384	2.6878	9.99	Vir	
+NGC 4638		Galaxy	12.71317	11.4425	11.12	Vir	
+NGC 4639		Galaxy	12.71455	13.2574	11.6	Vir	
+NGC 4643		Galaxy	12.72226	1.9783	10.65	Vir	
+NGC 4645		Galaxy	12.73611	-41.7499	11.83	Cen	
+NGC 4647		Galaxy	12.72564	11.5819	11.6	Vir	
+NGC 4650		Galaxy	12.73877	-40.7318	11.8	Cen	
+NGC 4651	Umbrella Galaxy	Galaxy	12.72851	16.3934	10.82	Com	
+NGC 4654		Galaxy	12.73238	13.1267	10.49	Vir	
+NGC 4660		Galaxy	12.74222	11.1905	11.27	Vir	
+NGC 4664		Galaxy	12.75166	3.0558	10.5	Vir	
+NGC 4666		Galaxy	12.75239	-0.4619	10.75	Vir	
+NGC 4676	Mice Galaxy	Galaxy pair	12.76964	30.7272		Com	
+NGC 4684		Galaxy	12.78820	-2.7274	11.55	Vir	
+NGC 4689		Galaxy	12.79599	13.7628	10.93	Com	
+NGC 4691		Galaxy	12.80379	-3.3327	10.99	Vir	
+NGC 4696		Galaxy	12.81368	-41.3108	10.3	Cen	
+NGC 4698		Galaxy	12.80636	8.4874	10.65	Vir	
+NGC 4699		Galaxy	12.81729	-8.6649	9.53	Vir	
+NGC 470		Galaxy	1.32912	3.4099	11.79	Psc	
+NGC 4709		Galaxy	12.83441	-41.3820	11.1	Cen	
+NGC 4710		Galaxy	12.82745	15.1654	10.71	Com	
+NGC 4713		Galaxy	12.83274	5.3114	11.73	Vir	
+NGC 4725		Galaxy	12.84072	25.5008	9.38	Com	
+NGC 4731		Galaxy	12.85030	-6.3931	11.42	Vir	
+NGC 4733		Galaxy	12.85188	10.9121	11.76	Vir	
+NGC 474		Galaxy	1.33519	3.4154	11.52	Psc	
+NGC 4742		Galaxy	12.86334	-10.4547	11.2	Vir	
+NGC 4753		Galaxy	12.87281	-1.1997	9.66	Vir	
+NGC 4754		Galaxy	12.87153	11.3139	10.48	Vir	
+NGC 4760		Galaxy	12.88534	-10.4942	11.58	Vir	
+NGC 4762		Galaxy	12.88224	11.2308	10.17	Vir	
+NGC 4767		Galaxy	12.89804	-39.7143	11.51	Cen	
+NGC 4772		Galaxy	12.89143	2.1684	11.34	Vir	
+NGC 4775		Galaxy	12.89603	-6.6222	11.56	Vir	
+NGC 4781		Galaxy	12.90660	-10.5372	11.39	Vir	
+NGC 4786		Galaxy	12.90901	-6.8594	11.71	Vir	
+NGC 4793		Galaxy	12.91128	28.9387	11.64	Com	
+NGC 4802		Galaxy	12.93046	-12.0553	11.34	Crv	
+NGC 4808		Galaxy	12.93026	4.3041	11.79	Vir	
+NGC 4815		Open cluster	12.96621	-64.9618	8.6	Mus	
+NGC 4818		Galaxy	12.94692	-8.5253	11.34	Vir	
+NGC 4825		Galaxy	12.95340	-13.6648	11.56	Vir	
+NGC 4835		Galaxy	12.96884	-46.2642	11.81	Cen	
+NGC 4845		Galaxy	12.96700	1.5758	10.97	Vir	
+NGC 4852		Open cluster	13.00122	-59.6094	8.9	Cen	
+NGC 4856		Galaxy	12.98924	-15.0422	10.62	Vir	
+NGC 4866		Galaxy	12.99087	14.1711	11.08	Vir	
+NGC 4874		Galaxy	12.99325	27.9593	11.83	Com	
+NGC 488		Galaxy	1.36301	5.2567	10.26	Psc	
+NGC 4900		Galaxy	13.01086	2.5014	11.36	Vir	
+NGC 4902		Galaxy	13.01659	-14.5136	11.26	Vir	
+NGC 4904		Galaxy	13.01629	-0.0276	11.96	Vir	
+NGC 4914		Galaxy	13.01193	37.3153	11.6	CVn	
+NGC 4915		Galaxy	13.02451	-4.5465	12.0	Vir	
+NGC 4930		Galaxy	13.06813	-41.4116	11.43	Cen	
+NGC 4933B		Galaxy	13.06576	-11.4981	11.74	Vir	
+NGC 4936		Galaxy	13.07136	-30.5262	10.71	Cen	
+NGC 4939		Galaxy	13.07066	-10.3396	11.91	Vir	
+NGC 4941		Galaxy	13.07032	-5.5516	11.27	Vir	
+NGC 4951		Galaxy	13.08547	-6.4938	11.84	Vir	
+NGC 4958		Galaxy	13.09691	-8.0203	10.59	Vir	
+NGC 4976		Galaxy	13.14376	-49.5064	10.08	Cen	
+NGC 4981		Galaxy	13.14687	-6.7775	11.41	Vir	
+NGC 4984		Galaxy	13.14923	-15.5163	11.01	Vir	
+NGC 4995		Galaxy	13.16129	-7.8334	11.11	Vir	
+NGC 5011		Galaxy	13.21441	-43.0962	11.38	Cen	
+NGC 5018		Galaxy	13.21695	-19.5182	10.85	Vir	
+NGC 5026		Galaxy	13.23712	-42.9613	11.81	Cen	
+NGC 5033		Galaxy	13.22430	36.5939	10.68	CVn	
+NGC 5042		Galaxy	13.25862	-23.9841	11.78	Hya	
+NGC 5044		Galaxy	13.25666	-16.3855	10.78	Vir	
+NGC 5053		Globular cluster	13.27416	17.6977	9.96	Com	
+NGC 5054		Galaxy	13.28291	-16.6349	10.79	Vir	
+NGC 5061		Galaxy	13.30141	-26.8372	10.31	Hya	
+NGC 5068		Galaxy	13.31522	-21.0391	10.06	Vir	
+NGC 507		Galaxy	1.39442	33.2561	11.57	Psc	
+NGC 5077		Galaxy	13.32546	-12.6570	11.65	Vir	
+NGC 5078		Galaxy	13.33055	-27.4104	10.64	Hya	
+NGC 5084		Galaxy	13.33803	-21.8276	10.49	Vir	
+NGC 5087		Galaxy	13.34027	-20.6110	11.13	Vir	
+NGC 5090		Galaxy	13.35356	-43.7046	11.28	Cen	
+NGC 5101		Galaxy	13.36284	-27.4305	10.46	Hya	
+NGC 5102		Galaxy	13.36600	-36.6303	9.88	Cen	
+NGC 5105		Galaxy	13.36364	-13.2068	11.81	Vir	
+NGC 5120		Open cluster	13.42761	-63.4583	10.8	Cen	
+NGC 5121		Galaxy	13.41267	-37.6822	11.62	Cen	
+NGC 5134		Galaxy	13.42182	-21.1342	11.77	Vir	
+NGC 5138		Open cluster	13.45422	-59.0409	5.33	Cen	
+NGC 514		Galaxy	1.40108	12.9174	11.71	Psc	
+NGC 5153		Galaxy	13.46509	-29.6180	11.92	Hya	
+NGC 5156		Galaxy	13.47891	-48.9168	11.86	Cen	
+NGC 5161		Galaxy	13.48720	-33.1738	11.52	Cen	
+NGC 5168		Open cluster	13.51813	-60.9392	9.1	Cen	
+NGC 5170		Galaxy	13.49689	-17.9664	11.23	Vir	
+NGC 5172		Galaxy	13.48870	17.0519	11.96	Com	
+NGC 5189		Planetary nebula	13.55914	-65.9741	10.3	Mus	
+NGC 5193		Galaxy	13.53154	-33.2342	11.73	Cen	
+NGC 5195		Galaxy	13.49989	47.2661	9.58	CVn	
+NGC 5198		Galaxy	13.50317	46.6708	11.78	CVn	
+NGC 5204		Galaxy	13.49347	58.4187	11.32	UMa	
+NGC 5206		Galaxy	13.56222	-48.1512	10.49	Cen	
+NGC 521		Galaxy	1.40938	1.7314	11.8	Cet	
+NGC 524		Galaxy	1.41326	9.5388	10.35	Psc	
+NGC 5247		Galaxy	13.63418	-17.8840	10.41	Vir	
+NGC 5253		Galaxy	13.66554	-31.6401	10.28	Cen	
+NGC 5264		Galaxy	13.69352	-29.9131	11.98	Hya	
+NGC 5266		Galaxy	13.71725	-48.1694	10.77	Cen	
+NGC 5281		Open cluster	13.77643	-62.9165	5.9	Cen	
+NGC 5288		Open cluster	13.81248	-64.6854	11.8	Cir	
+NGC 5292		Galaxy	13.79446	-30.9395	11.92	Cen	
+NGC 5297		Galaxy	13.77324	43.8723	11.76	CVn	
+NGC 5307		Planetary nebula	13.85092	-51.2058	11.2	Cen	
+NGC 5308		Galaxy	13.78345	60.9732	11.32	UMa	
+NGC 5315		Planetary nebula	13.89914	-66.5142	9.8	Cir	
+NGC 5316		Open cluster	13.89923	-61.8691	6.0	Cen	
+NGC 5322		Galaxy	13.82091	60.1905	10.14	UMa	
+NGC 5326		Galaxy	13.84742	39.5749	11.87	CVn	
+NGC 5328		Galaxy	13.88148	-28.4894	11.71	Hya	
+NGC 533		Galaxy	1.42538	1.7591	11.47	Cet	
+NGC 5333		Galaxy	13.90673	-48.5125	11.89	Cen	
+NGC 5334		Galaxy	13.88179	-1.1146	11.73	Vir	
+NGC 5350		Galaxy	13.88934	40.3639	11.47	CVn	
+NGC 5353		Galaxy	13.89075	40.2830	11.02	CVn	
+NGC 5354		Galaxy	13.89075	40.3027	11.38	CVn	
+NGC 5363		Galaxy	13.93534	5.2548	10.21	Vir	
+NGC 5364		Galaxy	13.93667	5.0145	10.52	Vir	
+NGC 5365		Galaxy	13.96407	-43.9313	11.32	Cen	
+NGC 5371		Galaxy	13.92776	40.4618	11.69	CVn	
+NGC 5377		Galaxy	13.93796	47.2357	11.27	CVn	
+NGC 5383		Galaxy	13.95138	41.8463	11.57	CVn	
+NGC 5389		Galaxy	13.93509	59.7421	11.98	UMa	
+NGC 5395		Galaxy	13.97722	37.4245	11.66	CVn	
+NGC 5408		Galaxy	14.05581	-41.3777	11.64	Cen	
+NGC 5419		Galaxy	14.06076	-33.9783	10.77	Cen	
+NGC 5422		Galaxy	14.01168	55.1645	11.8	UMa	
+NGC 5444		Galaxy	14.05670	35.1321	11.86	CVn	
+NGC 5448		Galaxy	14.04723	49.1727	11.88	UMa	
+NGC 5460		Open cluster	14.12439	-48.3425	5.6	Cen	
+NGC 5466		Globular cluster	14.09093	28.5345	9.7	Boo	
+NGC 5473		Galaxy	14.07868	54.8926	11.47	UMa	
+NGC 5474		Galaxy	14.08378	53.6622	11.01	UMa	
+NGC 5483		Galaxy	14.17362	-43.3246	11.13	Cen	
+NGC 5485		Galaxy	14.11982	55.0017	11.5	UMa	
+NGC 5493		Galaxy	14.19149	-5.0436	11.42	Vir	
+NGC 5516		Galaxy	14.26519	-48.1149	11.99	Cen	
+NGC 5529		Galaxy	14.25946	36.2266	11.91	Boo	
+NGC 5530		Galaxy	14.30754	-43.3886	11.19	Lup	
+NGC 5532		Galaxy	14.28138	10.8074	11.94	Boo	
+NGC 5533		Galaxy	14.26882	35.3438	11.81	Boo	
+NGC 5556		Galaxy	14.34280	-29.2418	11.82	Hya	
+NGC 5557		Galaxy	14.30714	36.4936	11.02	Boo	
+NGC 5566		Galaxy	14.33886	3.9338	10.51	Vir	
+NGC 5576		Galaxy	14.35102	3.2710	10.9	Vir	
+NGC 5582		Galaxy	14.34531	39.6936	11.62	Boo	
+NGC 5585		Galaxy	14.33006	56.7291	11.02	UMa	
+NGC 5606		Open cluster	14.46313	-59.6322	7.7	Cen	
+NGC 5614		Galaxy	14.40211	34.8589	11.71	Boo	
+NGC 5617		Open cluster	14.49557	-60.7108	6.3	Cen	
+NGC 5631		Galaxy	14.44258	56.5826	11.56	UMa	
+NGC 5634		Globular cluster	14.49369	-5.9764	10.05	Vir	
+NGC 5638		Galaxy	14.49455	3.2333	11.21	Vir	
+NGC 5643		Galaxy	14.54465	-44.1744	11.49	Lup	
+NGC 5660		Galaxy	14.49717	49.6227	11.91	Boo	
+NGC 5662		Open cluster	14.59377	-56.6181	5.5	Cen	
+NGC 5668		Galaxy	14.55676	4.4504	11.71	Vir	
+NGC 5670		Galaxy	14.59334	-45.9670	11.96	Lup	
+NGC 5676		Galaxy	14.54635	49.4579	11.22	Boo	
+NGC 5678		Galaxy	14.53489	57.9214	11.43	Dra	
+NGC 5687		Galaxy	14.58122	54.4759	11.74	Boo	
+NGC 5688		Galaxy	14.65976	-45.0190	11.81	Lup	
+NGC 5689		Galaxy	14.59158	48.7416	11.8	Boo	
+NGC 57		Galaxy	0.25857	17.3285	11.65	Psc	
+NGC 5701		Galaxy	14.65308	5.3635	11.2	Vir	
+NGC 5713		Galaxy	14.66986	-0.2890	11.32	Vir	
+NGC 5715		Open cluster	14.72491	-57.5770	9.8	Cir	
+NGC 5728		Galaxy	14.70664	-17.2531	11.51	Lib	
+NGC 5740		Galaxy	14.74012	1.6798	11.9	Vir	
+NGC 5746		Galaxy	14.74887	1.9550	10.55	Vir	
+NGC 5749		Open cluster	14.81498	-54.4977	8.8	Lup	
+NGC 5750		Galaxy	14.76976	-0.2229	11.69	Vir	
+NGC 5775		Galaxy	14.89933	3.5444	11.43	Vir	
+NGC 578		Galaxy	1.50808	-22.6674	11.09	Cet	
+NGC 5786		Galaxy	14.98229	-42.0134	11.89	Cen	
+NGC 5791		Galaxy	14.97951	-19.2669	11.85	Lib	
+NGC 5792		Galaxy	14.97297	-1.0911	11.26	Lib	
+NGC 5796		Galaxy	14.99003	-16.6239	11.58	Lib	
+NGC 5806		Galaxy	15.00011	1.8913	11.65	Vir	
+NGC 5812		Galaxy	15.01547	-7.4574	11.23	Lib	
+NGC 5813		Galaxy	15.01979	1.7020	10.53	Vir	
+NGC 5822		Open cluster	15.07257	-54.3964	6.5	Lup	
+NGC 5824		Globular cluster	15.06629	-33.0681	9.56	Lup	
+NGC 5831		Galaxy	15.06861	1.2199	11.46	Vir	
+NGC 5833		Galaxy	15.19824	-72.8594	11.93	Aps	
+NGC 5838		Galaxy	15.09063	2.0993	10.81	Vir	
+NGC 584		Galaxy	1.52243	-6.8681	10.35	Cet	
+NGC 5845		Galaxy	15.10023	1.6338	11.4	Vir	
+NGC 5846		Galaxy	15.10813	1.6056	10.18	Vir	
+NGC 5850		Galaxy	15.11880	1.5442	11.0	Vir	
+NGC 5854		Galaxy	15.12992	2.5686	11.8	Vir	
+NGC 5861		Galaxy	15.15447	-11.3217	11.69	Lib	
+NGC 5866		Galaxy	15.10819	55.7632	9.89	Dra	
+NGC 5873		Planetary nebula	15.21411	-38.1256	11.0	Lup	
+NGC 5878		Galaxy	15.22936	-14.2698	11.67	Lib	
+NGC 5879		Galaxy	15.16298	57.0002	11.47	Dra	
+NGC 5882		Planetary nebula	15.28056	-45.6493	10.18	Lup	
+NGC 5885		Galaxy	15.25116	-10.0860	11.7	Lib	
+NGC 5897		Globular cluster	15.29011	-21.0101	8.52	Lib	
+NGC 5898		Galaxy	15.30377	-24.0979	11.38	Lib	
+NGC 5903		Galaxy	15.31015	-24.0686	11.27	Lib	
+NGC 5907		Galaxy	15.26494	56.3288	10.37	Dra	
+NGC 5908		Galaxy	15.27867	55.4093	11.89	Dra	
+NGC 5921		Galaxy	15.36571	5.0705	11.02	Se1	
+NGC 5925		Open cluster	15.45745	-54.5288	8.4	Nor	
+NGC 5927		Globular cluster	15.46679	-50.6728	8.86	Lup	
+NGC 5938		Galaxy	15.60730	-66.8597	11.49	TrA	
+NGC 5946		Globular cluster	15.59127	-50.6597	10.72	Nor	
+NGC 596		Galaxy	1.54780	-7.0318	10.95	Cet	
+NGC 5962		Galaxy	15.60880	16.6078	11.5	Se1	
+NGC 5964		Galaxy	15.62673	5.9740	11.82	Se1	
+NGC 5965		Galaxy	15.56735	56.6856	11.78	Dra	
+NGC 5970		Galaxy	15.64166	12.1866	11.61	Se1	
+NGC 5979		Planetary nebula	15.79474	-61.2179	11.5	TrA	
+NGC 5982		Galaxy	15.64440	59.3558	11.07	Dra	
+NGC 5985		Galaxy	15.66030	59.3319	11.81	Dra	
+NGC 5986		Globular cluster	15.76762	-37.7861	6.92	Lup	
+NGC 5987		Galaxy	15.66594	58.0795	11.72	Dra	
+NGC 5999		Open cluster	15.86906	-56.4728	9.0	Nor	
+NGC 6005		Open cluster	15.93019	-57.4374	10.7	Nor	
+NGC 6012		Galaxy	15.90387	14.6013	11.96	Se1	
+NGC 6015		Galaxy	15.85701	62.3100	11.17	Dra	
+NGC 6031		Open cluster	16.12649	-54.0149	8.5	Nor	
+NGC 6067		Open cluster	16.21974	-54.2189	5.6	Nor	
+NGC 6070		Galaxy	16.16630	0.7093	11.75	Se1	
+NGC 6072		Planetary nebula	16.21617	-36.2300	11.7	Sco	
+NGC 609		Open cluster	1.60659	64.5366	11.0	Cas	
+NGC 6115		Open cluster	16.40733	-51.9482	9.8	Nor	
+NGC 6118		Galaxy	16.36351	-2.2834	11.71	Se1	
+NGC 6125		Galaxy	16.31987	57.9842	12.0	Dra	
+NGC 613		Galaxy	1.57171	-29.4184	10.35	Scl	
+NGC 6134		Open cluster	16.46292	-49.1512	7.2	Nor	
+NGC 6139		Globular cluster	16.46125	-38.8498	9.68	Sco	
+NGC 6140		Galaxy	16.34949	65.3906	11.66	Dra	
+NGC 6144		Globular cluster	16.45393	-26.0247	9.63	Sco	
+NGC 615		Galaxy	1.58491	-7.3403	11.66	Cet	
+NGC 6152		Open cluster	16.54601	-52.6440	8.1	Nor	
+NGC 6153		Planetary nebula	16.52518	-40.2534	10.9	Sco	
+NGC 6156		Galaxy	16.58126	-60.6188	11.98	TrA	
+NGC 6164		Nebula	16.56162	-48.0801	6.71	Nor	
+NGC 6165		Nebula	16.56762	-48.1505	6.71	Nor	
+NGC 6166		Galaxy	16.47736	39.5516	11.91	Her	
+NGC 6167		Open cluster	16.57638	-49.7719	6.7	Nor	
+NGC 6169		Open cluster	16.56795	-44.0456	6.6	Nor	
+NGC 6178		Open cluster	16.59646	-45.6437	7.2	Sco	
+NGC 6181		Galaxy	16.53916	19.8266	11.82	Her	
+NGC 6188	Rim Nebula	Nebula	16.66829	-48.6623		Ara	
+NGC 6192		Open cluster	16.67330	-43.3668	8.5	Sco	
+NGC 6200		Open cluster	16.73538	-47.4627	7.4	Ara	
+NGC 6204		Open cluster	16.76931	-47.0170	8.2	Ara	
+NGC 6207		Galaxy	16.71771	36.8324	11.64	Her	
+NGC 6208		Open cluster	16.82450	-53.7283	7.2	Ara	
+NGC 6210		Planetary nebula	16.74153	23.7998	9.65	Her	
+NGC 6215		Galaxy	16.85189	-58.9935	11.16	Ara	
+NGC 6216		Open cluster	16.82323	-44.7315	10.1	Sco	
+NGC 6221		Galaxy	16.87947	-59.2186	10.54	Ara	
+NGC 6229		Globular cluster	16.78302	47.5278	9.86	Her	
+NGC 6235		Globular cluster	16.89038	-22.1774	7.2	Oph	
+NGC 6242		Open cluster	16.92596	-39.4609	6.4	Sco	
+NGC 6249		Open cluster	16.96153	-44.8119	8.2	Sco	
+NGC 6250		Cluster + nebula	16.96557	-45.9366	5.9	Ara	
+NGC 6253		Open cluster	16.98476	-52.7088	10.2	Ara	
+NGC 6259		Open cluster	17.01261	-44.6550	8.0	Sco	
+NGC 6268		Open cluster	17.03622	-39.7282	9.5	Sco	
+NGC 6281		Open cluster	17.07814	-37.9852	5.4	Sco	
+NGC 6284		Globular cluster	17.07465	-24.7643	7.43	Oph	
+NGC 6287		Globular cluster	17.08593	-22.7080	10.3	Oph	
+NGC 6293		Globular cluster	17.16956	-26.5817	9.02	Oph	
+NGC 6300		Galaxy	17.28319	-62.8206	10.27	Ara	
+NGC 6304		Globular cluster	17.24236	-29.4623	9.03	Oph	
+NGC 6309	Box Nebula	Planetary nebula	17.23453	-12.9106	11.5	Oph	
+NGC 6316		Globular cluster	17.27706	-28.1400	9.03	Oph	
+NGC 6318		Open cluster	17.26989	-39.4250	11.8	Sco	
+NGC 6322		Open cluster	17.30716	-42.9340	6.0	Sco	
+NGC 6325		Globular cluster	17.29980	-23.7660	11.49	Oph	
+NGC 6340		Galaxy	17.17357	72.3044	11.11	Dra	
+NGC 6342		Globular cluster	17.35282	-19.5874	10.01	Oph	
+NGC 6355		Globular cluster	17.39963	-26.3534	11.05	Oph	
+NGC 6356		Globular cluster	17.39305	-17.8130	7.42	Oph	
+NGC 6357	War and Peace Nebula	Cluster + nebula	17.41210	-34.2013		Sco	
+NGC 636		Galaxy	1.65181	-7.5126	11.41	Cet	
+NGC 6362		Globular cluster	17.53190	-67.0479	8.86	Ara	
+NGC 6369	Little Ghost Nebula	Planetary nebula	17.48903	-23.7594	11.4	Oph	
+NGC 637		Open cluster	1.71753	64.0366	8.2	Cas	
+NGC 6374		Open cluster	17.57848	-32.5814	5.5	Sco	
+NGC 6384		Galaxy	17.54008	7.0603	10.63	Oph	
+NGC 6388		Globular cluster	17.60484	-44.7356	7.4	Sco	
+NGC 6396		Open cluster	17.62676	-35.0259	8.5	Sco	
+NGC 6400		Open cluster	17.67022	-36.9477	8.8	Sco	
+NGC 6401		Globular cluster	17.64359	-23.9088	10.71	Oph	
+NGC 6404		Open cluster	17.66038	-33.2467	10.6	Sco	
+NGC 6411		Galaxy	17.59246	60.8134	11.86	Dra	
+NGC 6412		Galaxy	17.49375	75.7044	11.83	Dra	
+NGC 6425		Open cluster	17.78380	-31.5294	7.2	Sco	
+NGC 6438		Galaxy	18.37152	-85.4021	11.61	Oct	
+NGC 6440		Globular cluster	17.81463	-20.3596	10.1	Sgr	
+NGC 6441		Globular cluster	17.83690	-37.0511	8.0	Sco	
+NGC 6445	Little Gem	Planetary nebula	17.82085	-20.0095	11.2	Sgr	
+NGC 6451		Open cluster	17.84462	-30.2116	8.2	Sco	
+NGC 6453		Globular cluster	17.84770	-34.5999	10.49	Sco	
+NGC 6469		Open cluster	17.88670	-22.2751	8.2	Sgr	
+NGC 6482		Galaxy	17.86356	23.0719	11.33	Her	
+NGC 6483		Galaxy	17.99189	-63.6687	11.96	Pav	
+NGC 6487		Galaxy	17.87829	29.8386	11.97	Her	
+NGC 6492		Galaxy	18.04676	-66.4306	11.94	Pav	
+NGC 6496		Globular cluster	17.98436	-44.2663	9.96	Sco	
+NGC 6503		Galaxy	17.82401	70.1444	10.12	Dra	
+NGC 6507		Open cluster	17.99744	-17.4503	9.6	Sgr	
+NGC 6517		Globular cluster	18.03066	-8.9595	11.08	Oph	
+NGC 6520		Open cluster	18.05671	-27.8861	7.6	Sgr	
+NGC 6522		Globular cluster	18.05946	-30.0340	9.48	Sgr	
+NGC 6526		Nebula	18.06837	-24.4419		Sgr	
+NGC 6528		Globular cluster	18.08045	-30.0558	10.65	Sgr	
+NGC 6530		Cluster + nebula	18.07529	-24.3581	4.6	Sgr	
+NGC 6535		Globular cluster	18.06408	-0.2969	9.85	Se2	
+NGC 6537	Red Spider Nebula	Planetary nebula	18.08697	-19.8430	11.6	Sgr	
+NGC 654		Open cluster	1.73318	61.8827	6.5	Cas	
+NGC 6544		Globular cluster	18.12222	-24.9984	9.9	Sgr	
+NGC 6546		Open cluster	18.12293	-23.2962	8.0	Sgr	
+NGC 6548		Galaxy	18.09979	18.5872	11.73	Her	
+NGC 6553		Globular cluster	18.15486	-25.9079	9.08	Sgr	
+NGC 6558		Globular cluster	18.17177	-31.7635	11.29	Sgr	
+NGC 6559		Nebula	18.16579	-24.1064		Sgr	
+NGC 6563		Planetary nebula	18.20069	-33.8683	11.0	Sgr	
+NGC 6565		Planetary nebula	18.19794	-28.1783	11.6	Sgr	
+NGC 6567		Planetary nebula	18.22922	-19.0758	11.0	Sgr	
+NGC 6568		Open cluster	18.21229	-21.6280	8.6	Sgr	
+NGC 6569		Globular cluster	18.22741	-31.8277	9.47	Sgr	
+NGC 6572		Planetary nebula	18.20172	6.8537	8.1	Oph	
+NGC 6574		Galaxy	18.19756	14.9818	11.96	Her	
+NGC 6583		Open cluster	18.26359	-22.1376	10.0	Sgr	
+NGC 6584		Globular cluster	18.31046	-52.2152	8.17	Tel	
+NGC 6589		Nebula	18.28205	-19.7771	10.5	Sgr	
+NGC 659		Open cluster	1.73972	60.6692	7.9	Cas	
+NGC 6590		Reflection nebula	18.28472	-19.8661	9.8	Sgr	
+NGC 660		Galaxy	1.71733	13.6451	11.29	Psc	
+NGC 6603		Open cluster	18.30749	-18.4061	11.1	Sgr	
+NGC 6604		Open cluster	18.30082	-12.2431	6.5	Se2	
+NGC 6605		Open cluster	18.27269	-15.0152	6.0	Se2	
+NGC 6625		Open cluster	18.37981	-11.9550	9.0	Sct	
+NGC 6629		Planetary nebula	18.42846	-23.2029	11.3	Sgr	
+NGC 6631		Open cluster	18.45316	-12.0312	11.7	Sct	
+NGC 6633		Open cluster	18.45423	6.5082	4.6	Oph	
+NGC 6638		Globular cluster	18.51562	-25.4964	9.68	Sgr	
+NGC 6642		Globular cluster	18.53173	-23.4761	10.24	Sgr	
+NGC 6643		Galaxy	18.32956	74.5684	11.11	Dra	
+NGC 6644		Planetary nebula	18.54298	-25.1294	10.7	Sgr	
+NGC 6645		Open cluster	18.54386	-16.8839	8.5	Sgr	
+NGC 6647		Open cluster	18.54704	-17.2287	8.0	Sgr	
+NGC 6649		Open cluster	18.55777	-10.4028	8.9	Sct	
+NGC 6652		Globular cluster	18.59604	-32.9903	9.75	Sgr	
+NGC 6654		Galaxy	18.40210	73.1832	11.84	Dra	
+NGC 6658		Galaxy	18.56546	22.8883	11.8	Her	
+NGC 6664		Open cluster	18.60926	-8.2208	7.8	Sct	
+NGC 6673		Galaxy	18.75176	-62.2972	11.72	Pav	
+NGC 6683		Open cluster	18.70388	-6.2123	9.4	Sct	
+NGC 6684		Galaxy	18.81608	-65.1734	10.5	Pav	
+NGC 6703		Galaxy	18.78856	45.5506	11.38	Lyr	
+NGC 6704		Open cluster	18.84605	-5.2054	9.2	Sct	
+NGC 6709		Open cluster	18.85526	10.3187	6.7	Aql	
+NGC 6712		Globular cluster	18.88469	-8.7055	8.69	Sct	
+NGC 6716		Open cluster	18.90955	-19.9011	7.5	Sgr	
+NGC 6717		Globular cluster	18.91834	-22.7016	10.35	Sgr	
+NGC 672		Galaxy	1.79848	27.4328	10.92	Tri	
+NGC 6727		Reflection nebula	19.02841	-36.8762		CrA	
+NGC 6738		Asterism	19.02266	11.6156	8.3	Aql	
+NGC 674		Galaxy	1.85488	22.3580	11.97	Ari	
+NGC 6741	Phantom Streak Nebula	Planetary nebula	19.04361	-0.4494	11.5	Aql	
+NGC 6743		Open cluster	19.02241	29.2775	8.2	Lyr	
+NGC 6751		Planetary nebula	19.09876	-5.9923	11.9	Aql	
+NGC 6753		Galaxy	19.18990	-57.0496	11.04	Pav	
+NGC 6755		Open cluster	19.13029	4.2664	7.5	Aql	
+NGC 6756		Open cluster	19.14516	4.7058	10.6	Aql	
+NGC 6758		Galaxy	19.23121	-56.3099	11.39	Tel	
+NGC 676		Galaxy	1.81592	5.9075	12.0	Psc	
+NGC 6760		Globular cluster	19.18668	1.0305	9.78	Aql	
+NGC 6769		Galaxy	19.30630	-60.5011	11.77	Pav	
+NGC 6770		Galaxy	19.31037	-60.4965	11.86	Pav	
+NGC 6781		Planetary nebula	19.30785	6.5397	11.4	Aql	
+NGC 6782		Galaxy	19.39942	-59.9225	11.98	Pav	
+NGC 6790		Planetary nebula	19.38247	1.5133	10.5	Aql	
+NGC 6791		Open cluster	19.34812	37.7719	9.5	Lyr	
+NGC 680		Galaxy	1.82980	21.9709	11.9	Ari	
+NGC 6802		Open cluster	19.50973	20.2610	8.8	Vul	
+NGC 6803		Planetary nebula	19.52124	10.0560	11.4	Aql	
+NGC 6804		Planetary nebula	19.52650	9.2252	12.0	Aql	
+NGC 6807		Planetary nebula	19.57597	5.6842	12.0	Aql	
+NGC 681		Galaxy	1.81967	-10.4264	11.87	Cet	
+NGC 6810		Galaxy	19.72618	-58.6556	11.42	Pav	
+NGC 6811		Open cluster	19.62164	46.3888	6.8	Cyg	
+NGC 6814		Galaxy	19.71129	-10.3235	11.32	Aql	
+NGC 6818	Little Gem Nebula	Planetary nebula	19.73270	-14.1532	9.3	Sgr	
+NGC 6819	Foxhead Cluster	Open cluster	19.68836	40.1867	7.3	Cyg	
+NGC 6823		Cluster + nebula	19.71941	23.2999	7.1	Vul	
+NGC 6824		Galaxy	19.72797	56.1095	11.76	Cyg	
+NGC 6830		Open cluster	19.84988	23.1001	7.9	Vul	
+NGC 6834		Open cluster	19.87016	29.4082	7.8	Cyg	
+NGC 6847		Cluster + nebula	19.94384	30.2129		Cyg	
+NGC 685		Galaxy	1.79522	-52.7618	11.5	Eri	
+NGC 6851		Galaxy	20.05955	-48.2845	11.84	Tel	
+NGC 6857		Emission nebula	20.03004	33.5259	11.4	Cyg	
+NGC 6861		Galaxy	20.12208	-48.3702	11.04	Tel	
+NGC 6861D		Galaxy	20.13874	-48.2114	11.94	Tel	
+NGC 6866		Open cluster	20.06533	44.1591	7.6	Cyg	
+NGC 6868		Galaxy	20.16502	-48.3796	10.59	Tel	
+NGC 6870		Galaxy	20.16968	-48.2871	11.94	Tel	
+NGC 6871		Open cluster	20.09984	35.7773	5.2	Cyg	
+NGC 6872		Galaxy	20.28238	-70.7679	11.64	Pav	
+NGC 6876		Galaxy	20.30532	-70.8588	10.83	Pav	
+NGC 6883		Open cluster	20.18882	35.8322	8.0	Cyg	
+NGC 6884		Planetary nebula	20.17325	46.4608	10.9	Cyg	
+NGC 6886		Planetary nebula	20.21192	19.9897	11.4	Sge	
+NGC 6891		Planetary nebula	20.25246	12.7044	10.5	Del	
+NGC 6893		Galaxy	20.34712	-48.2391	11.71	Tel	
+NGC 6902		Galaxy	20.40782	-43.6535	11.48	Sgr	
+NGC 6905	Blue Flash Nebula	Planetary nebula	20.37305	20.1045	11.1	Del	
+NGC 6907		Galaxy	20.41851	-24.8092	11.16	Cap	
+NGC 6909		Galaxy	20.46080	-47.0270	11.99	Tel	
+NGC 691		Galaxy	1.84492	21.7599	11.73	Ari	
+NGC 6910		Open cluster	20.38668	40.7786	7.4	Cyg	
+NGC 6920		Galaxy	20.73261	-80.0008	11.97	Oct	
+NGC 6925		Galaxy	20.57238	-31.9809	11.35	Mic	
+NGC 6935		Galaxy	20.63895	-52.1104	12.0	Ind	
+NGC 6939		Open cluster	20.52504	60.6621	7.8	Cep	
+NGC 6940		Open cluster	20.57408	28.2827	6.3	Vul	
+NGC 6942		Galaxy	20.67718	-54.3031	11.97	Ind	
+NGC 6943		Galaxy	20.74271	-68.7477	11.39	Pav	
+NGC 6958		Galaxy	20.81183	-37.9974	11.4	Mic	
+NGC 6962		Galaxy	20.78863	0.3208	11.89	Aqr	
+NGC 6995	Eastern Veil	Supernova remnant	20.95299	31.2352	7.0	Cyg	
+NGC 6997		Cluster + nebula	20.94429	44.6315	10.0	Cyg	
+NGC 7007		Galaxy	21.09109	-52.5520	11.95	Ind	
+NGC 7008		Planetary nebula	21.00911	54.5432	10.7	Cyg	
+NGC 7013		Galaxy	21.05933	29.8975	11.3	Cyg	
+NGC 7020		Galaxy	21.18891	-64.0253	11.74	Pav	
+NGC 7026		Planetary nebula	21.10513	47.8522	10.9	Cyg	
+NGC 7027		Planetary nebula	21.11709	42.2365	8.5	Cyg	
+NGC 7029		Galaxy	21.19779	-49.2837	11.67	Ind	
+NGC 7031		Open cluster	21.12015	50.8756	9.1	Cyg	
+NGC 7039		Open cluster	21.17994	45.6218	7.6	Cyg	
+NGC 7041		Galaxy	21.27566	-48.3636	11.3	Ind	
+NGC 7044		Open cluster	21.21928	42.4962	12.0	Cyg	
+NGC 7049		Galaxy	21.31675	-48.5622	10.55	Ind	
+NGC 7062		Open cluster	21.39097	46.3785	8.3	Cyg	
+NGC 7063		Open cluster	21.40603	36.4875	7.0	Cyg	
+NGC 7067		Open cluster	21.40642	48.0093	9.7	Cyg	
+NGC 7079		Galaxy	21.54313	-44.0676	11.65	Gru	
+NGC 7082		Open cluster	21.48826	47.1263	7.2	Cyg	
+NGC 7083		Galaxy	21.59575	-63.9028	11.24	Ind	
+NGC 7086		Open cluster	21.50765	51.6005	8.4	Cyg	
+NGC 7090		Galaxy	21.60802	-54.5573	10.87	Ind	
+NGC 7095		Galaxy	21.87401	-81.5308	11.92	Oct	
+NGC 7096		Galaxy	21.68869	-63.9087	11.97	Ind	
+NGC 7097		Galaxy	21.67025	-42.5394	11.7	Gru	
+NGC 7098		Galaxy	21.73781	-75.1113	11.53	Oct	
+NGC 7128		Open cluster	21.73272	53.7151	9.7	Cyg	
+NGC 7129		Cluster + nebula	21.71640	66.1130	11.5	Cep	
+NGC 7140		Galaxy	21.87092	-55.5697	11.68	Ind	
+NGC 7142		Open cluster	21.75264	65.7744	9.3	Cep	
+NGC 7144		Galaxy	21.87845	-48.2537	11.0	Gru	
+NGC 7145		Galaxy	21.88896	-47.8824	11.12	Gru	
+NGC 7160		Open cluster	21.89452	62.6033	6.1	Cep	
+NGC 7168		Galaxy	22.03539	-51.7431	11.9	Ind	
+NGC 7173		Galaxy	22.03422	-31.9737	11.98	PsA	
+NGC 7177		Galaxy	22.01146	17.7381	11.13	Peg	
+NGC 718		Galaxy	1.88703	4.1958	11.66	Psc	
+NGC 7184		Galaxy	22.04439	-20.8128	11.0	Aqr	
+NGC 7192		Galaxy	22.11393	-64.3162	11.28	Ind	
+NGC 720		Galaxy	1.88347	-13.7387	10.14	Cet	
+NGC 7205		Galaxy	22.14286	-57.4426	10.97	Tuc	
+NGC 7209		Open cluster	22.08551	46.4835	7.7	Lac	
+NGC 7213		Galaxy	22.15453	-47.1666	11.15	Gru	
+NGC 7217		Galaxy	22.13122	31.3593	10.47	Peg	
+NGC 7218		Galaxy	22.16992	-16.6610	11.91	Aqr	
+NGC 7226		Open cluster	22.17414	55.3986	9.6	Cep	
+NGC 7232		Galaxy	22.26056	-45.8501	11.89	Gru	
+NGC 7234		Open cluster	22.20695	57.2713	7.7	Cep	
+NGC 7245		Open cluster	22.25320	54.3426	9.2	Lac	
+NGC 7261		Open cluster	22.33511	58.0518	8.4	Cep	
+NGC 7295		Open cluster	22.46746	52.2891	9.7	Lac	
+NGC 7314		Galaxy	22.59616	-26.0505	11.22	PsA	
+NGC 7329		Galaxy	22.67339	-66.4790	11.7	Tuc	
+NGC 7332		Galaxy	22.62348	23.7983	11.05	Peg	
+NGC 7377		Galaxy	22.79653	-22.3121	11.19	Aqr	
+NGC 7380		Cluster + nebula	22.78917	58.1324	7.2	Cep	
+NGC 7392		Galaxy	22.86354	-20.6081	11.84	Aqr	
+NGC 741		Galaxy	1.93918	5.6289	11.26	Psc	
+NGC 7410		Galaxy	22.91693	-39.6613	11.19	Gru	
+NGC 7412		Galaxy	22.92938	-42.6420	11.33	Gru	
+NGC 7418		Galaxy	22.94338	-37.0301	11.04	Gru	
+NGC 7421		Galaxy	22.94843	-37.3473	11.99	Gru	
+NGC 7424		Galaxy	22.95510	-41.0706	10.18	Gru	
+NGC 744		Open cluster	1.97498	55.4746	7.9	Per	
+NGC 7448		Galaxy	23.00100	15.9803	11.69	Peg	
+NGC 7454		Galaxy	23.01847	16.3884	11.86	Peg	
+NGC 7456		Galaxy	23.03623	-39.5694	11.88	Gru	
+NGC 7457		Galaxy	23.01665	30.1449	10.98	Peg	
+NGC 7492		Globular cluster	23.14074	-15.6115	10.48	Aqr	
+NGC 7507		Galaxy	23.20211	-28.5396	10.04	Scl	
+NGC 7510		Open cluster	23.18438	60.5709	7.9	Cep	
+NGC 7513		Galaxy	23.22056	-28.3575	11.8	Scl	
+NGC 7531		Galaxy	23.24681	-43.5999	11.25	Gru	
+NGC 7541		Galaxy	23.24553	4.5344	11.76	Psc	
+NGC 7552		Galaxy	23.26966	-42.5847	11.45	Gru	
+NGC 7562		Galaxy	23.26597	6.6875	11.55	Psc	
+NGC 7582		Galaxy	23.30653	-42.3706	11.03	Gru	
+NGC 7585		Galaxy	23.30037	-4.6503	11.52	Aqr	
+NGC 7599		Galaxy	23.32254	-42.2568	11.35	Gru	
+NGC 7600		Galaxy	23.31496	-7.5804	11.95	Aqr	
+NGC 7606		Galaxy	23.31799	-8.4851	11.0	Aqr	
+NGC 7619		Galaxy	23.33737	8.2062	11.06	Peg	
+NGC 7626		Galaxy	23.34515	8.2170	11.12	Peg	
+NGC 7640		Galaxy	23.36849	40.8454	11.01	And	
+NGC 7686		Open cluster	23.50205	49.1341	5.6	And	
+NGC 7689		Galaxy	23.55465	-54.0945	10.84	Phe	
+NGC 7713		Galaxy	23.60416	-37.9381	11.18	Scl	
+NGC 772		Galaxy	1.98877	19.0075	10.3	Ari	
+NGC 7721		Galaxy	23.64685	-6.5179	11.68	Aqr	
+NGC 7723		Galaxy	23.64919	-12.9611	11.21	Aqr	
+NGC 7727		Galaxy	23.66492	-12.2928	10.64	Aqr	
+NGC 7741		Galaxy	23.73177	26.0756	11.27	Peg	
+NGC 7742		Galaxy	23.73770	10.7671	11.58	Peg	
+NGC 7744		Galaxy	23.74979	-42.9109	11.85	Phe	
+NGC 7755		Galaxy	23.79771	-30.5220	11.68	Scl	
+NGC 7769		Galaxy	23.85110	20.1504	11.79	Peg	
+NGC 777		Galaxy	2.00414	31.4296	11.46	Tri	
+NGC 7785		Galaxy	23.92195	5.9158	11.6	Psc	
+NGC 7788		Open cluster	23.94599	61.3999	9.4	Cas	
+NGC 7789		Open cluster	23.95668	56.7083	6.7	Cas	
+NGC 779		Galaxy	1.99508	-5.9632	11.21	Cet	
+NGC 7790		Open cluster	23.97341	61.2083	8.5	Cas	
+NGC 7793		Galaxy	23.96384	-32.5910	9.29	Scl	
+NGC 7796		Galaxy	23.98327	-55.4583	11.47	Phe	
+NGC 7822		Emission nebula	0.05982	67.1616		Cep	
+NGC 784		Galaxy	2.02137	28.8372	11.73	Tri	
+NGC 821		Galaxy	2.13921	10.9949	10.77	Ari	
+NGC 864		Galaxy	2.25768	6.0026	11.07	Cet	
+NGC 869	h Persei Cluster	Open cluster	2.31627	57.1172	3.7	Per	
+NGC 877		Galaxy	2.29990	14.5441	11.86	Ari	
+NGC 884	chi Persei Cluster	Open cluster	2.37558	57.1441	3.8	Per	
+NGC 890		Galaxy	2.36695	33.2661	11.87	Tri	
+NGC 895		Galaxy	2.36013	-5.5214	11.77	Cet	
+NGC 896		Nebula	2.42439	62.0194		Cas	
+NGC 897		Galaxy	2.35177	-33.7207	11.85	For	
+NGC 908		Galaxy	2.38460	-21.2339	10.31	Cet	
+NGC 922		Galaxy	2.41789	-24.7882	12.0	For	
+NGC 925		Galaxy	2.45469	33.5792	10.12	Tri	
+NGC 936		Galaxy	2.46041	-1.1563	10.23	Cet	
+NGC 949		Galaxy	2.51351	37.1368	11.89	Tri	
+NGC 955		Galaxy	2.50921	-1.1084	11.96	Cet	
+NGC 956		Open cluster	2.54192	44.5935	8.9	And	
+NGC 957		Open cluster	2.55529	57.5697	7.6	Per	
+NGC 972		Galaxy	2.57038	29.3113	11.33	Ari	
+NGC 986		Galaxy	2.55954	-39.0451	10.91	For	
+NGC 988		Galaxy	2.59104	-9.3562	11.21	Cet	
+NGC0520 NED01		Galaxy	1.40958	3.7949	11.47	Psc	
+NGC1487 NED01		Galaxy	3.92927	-42.3677	11.9	Eri	
+NGC1487 NED02		Galaxy	3.92977	-42.3686	11.68	Eri	
+NGC4656 NED01		Galaxy	12.73269	32.1702	10.47	CVn	
+PGC 143	Wolf-Lundmark-Melotte	Galaxy	0.03282	-15.4609	10.76	Cet	
+PGC 25886		Galaxy	9.18041	-8.8907	11.52	Hya	
+PGC 29653	Sextans A	Galaxy	10.18356	-4.6928	11.77	Sex	
+PGC 3853		Galaxy	1.08469	-6.2124	11.69	Cet	
+PGC 88608	Sextans Dwarf Spheroidal	Galaxy	10.21747	-1.6147	10.4	Sex	
+UGC 4305		Galaxy	8.31805	70.7200	10.75	UMa	
+UGC 5373	Sextans B	Galaxy	10.00003	5.3322	11.51	Sex	
+UGC 5470	Leo I	Galaxy	10.14114	12.3064	10.36	Leo	

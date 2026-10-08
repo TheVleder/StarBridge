@@ -1,0 +1,104 @@
+"""Builds app/src/main/assets/web/i18n-en.js: the Spanish -> English dictionary of every page.
+
+Sources: en_ui.py (pages), en_server.py (brain messages), and the catalogue names, read from
+the files that translated them to Spanish in the first place (so English is the original name).
+Run: python tools/i18n/build.py
+"""
+import ast
+import json
+import os
+import re
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(HERE))
+
+import sys
+sys.path.insert(0, HERE)
+from en_server import SERVER  # noqa: E402
+from en_ui import UI  # noqa: E402
+
+EXTRA = {
+    # Camera labels and compass points (16 winds, "O" = west).
+    "Trasera": "Back", "Delantera": "Front", "Externa": "External", "color": "colour", "monocromo": "monochrome",
+    "N": "N", "NNE": "NNE", "NE": "NE", "ENE": "ENE", "E": "E", "ESE": "ESE", "SE": "SE", "SSE": "SSE", "S": "S",
+    "SSO": "SSW", "SO": "SW", "OSO": "WSW", "O": "W", "ONO": "WNW", "NO": "NW", "NNO": "NNW",
+    "Sol": "Sun", "Luna": "Moon", "Mercurio": "Mercury", "Venus": "Venus", "Marte": "Mars", "Júpiter": "Jupiter",
+    "Saturno": "Saturn", "Urano": "Uranus", "Neptuno": "Neptune", "Plutón": "Pluto",
+    "Planeta": "Planet", "Satélite": "Satellite", "Estrella": "Star",
+    # Better-known English names than OpenNGC's.
+    "Cúmulo del Pato Salvaje": "Wild Duck Cluster", "Nebulosa Omega": "Omega Nebula",
+    "Gran Cúmulo de Hércules": "Great Hercules Cluster", "Pequeña Nube Estelar de Sagitario": "Small Sagittarius Star Cloud",
+    "Los Ojos": "The Eyes",
+}
+
+CONSTELLATIONS = {
+    "And": "Andromeda", "Ant": "Antlia", "Aps": "Apus", "Aqr": "Aquarius", "Aql": "Aquila", "Ara": "Ara", "Ari": "Aries",
+    "Aur": "Auriga", "Boo": "Boötes", "Cae": "Caelum", "Cam": "Camelopardalis", "Cnc": "Cancer", "CVn": "Canes Venatici",
+    "CMa": "Canis Major", "CMi": "Canis Minor", "Cap": "Capricornus", "Car": "Carina", "Cas": "Cassiopeia",
+    "Cen": "Centaurus", "Cep": "Cepheus", "Cet": "Cetus", "Cha": "Chamaeleon", "Cir": "Circinus", "Col": "Columba",
+    "Com": "Coma Berenices", "CrA": "Corona Australis", "CrB": "Corona Borealis", "Crv": "Corvus", "Crt": "Crater",
+    "Cru": "Crux", "Cyg": "Cygnus", "Del": "Delphinus", "Dor": "Dorado", "Dra": "Draco", "Equ": "Equuleus",
+    "Eri": "Eridanus", "For": "Fornax", "Gem": "Gemini", "Gru": "Grus", "Her": "Hercules", "Hor": "Horologium",
+    "Hya": "Hydra", "Hyi": "Hydrus", "Ind": "Indus", "Lac": "Lacerta", "Leo": "Leo", "LMi": "Leo Minor", "Lep": "Lepus",
+    "Lib": "Libra", "Lup": "Lupus", "Lyn": "Lynx", "Lyr": "Lyra", "Men": "Mensa", "Mic": "Microscopium",
+    "Mon": "Monoceros", "Mus": "Musca", "Nor": "Norma", "Oct": "Octans", "Oph": "Ophiuchus", "Ori": "Orion",
+    "Pav": "Pavo", "Peg": "Pegasus", "Per": "Perseus", "Phe": "Phoenix", "Pic": "Pictor", "Psc": "Pisces",
+    "PsA": "Piscis Austrinus", "Pup": "Puppis", "Pyx": "Pyxis", "Ret": "Reticulum", "Sge": "Sagitta",
+    "Sgr": "Sagittarius", "Sco": "Scorpius", "Scl": "Sculptor", "Sct": "Scutum", "Ser": "Serpens", "Sex": "Sextans",
+    "Tau": "Taurus", "Tel": "Telescopium", "Tri": "Triangulum", "TrA": "Triangulum Australe", "Tuc": "Tucana",
+    "UMa": "Ursa Major", "UMi": "Ursa Minor", "Vel": "Vela", "Vir": "Virgo", "Vol": "Volans", "Vul": "Vulpecula",
+}
+
+
+def kotlin_map(src, name):
+    """Pairs "a" to "b" of the Kotlin mapOf(...) named [name]."""
+    start = src.index(name)
+    end = re.search(r"\n\s*\)\n", src[start:])
+    body = src[start:start + end.start()]
+    return dict(re.findall(r'"((?:[^"\\]|\\.)*)"\s+to\s+"((?:[^"\\]|\\.)*)"', body))
+
+
+def kotlin_when(src, fn):
+    start = src.index(fn)
+    body = src[start:src.index("\n        }", start)]
+    return dict(re.findall(r'"((?:[^"\\]|\\.)*)"\s*->\s*"((?:[^"\\]|\\.)*)"', body))
+
+
+def catalogue():
+    out = {}
+    cat = open(os.path.join(ROOT, "core/src/main/kotlin/org/starbridge/core/catalog/Catalog.kt"), encoding="utf8").read()
+    for en, es in kotlin_map(cat, "SPANISH_NAMES = mapOf(").items():
+        out[es] = en
+    for en, es in kotlin_when(cat, "private fun spanishType").items():
+        out[es] = en
+    stars = open(os.path.join(ROOT, "tools/build_stars.py"), encoding="utf8").read()
+    m = re.search(r"SPANISH = (\{.*?\n\})", stars, re.S)
+    for en, es in ast.literal_eval(m.group(1)).items():
+        out[es] = en
+    for line in open(os.path.join(ROOT, "core/src/main/resources/constellations.tsv"), encoding="utf8"):
+        parts = line.rstrip("\n").split("\t")
+        if parts[0] == "N" and parts[1] in CONSTELLATIONS:
+            out[parts[2]] = CONSTELLATIONS[parts[1]]
+    return out
+
+
+def main():
+    d = {}
+    for src in (catalogue(), EXTRA, SERVER, UI):
+        for k, v in src.items():
+            k = re.sub(r"%[-+ 0#]*\d*(?:\.\d+)?[sdf]", "{}", k).replace("%%", "%")
+            k = re.sub(r"\s+", " ", k).strip()  # the pages compare normalised whitespace
+            if k and v is not None:
+                d[k] = v
+    js = (
+        "// Generated by tools/i18n/build.py from tools/i18n/*.py and the catalogue: do not edit by hand.\n"
+        "// Spanish (source) -> English. {} = a value inserted by the code; {1}, {2}… reorder them.\n"
+        "window.I18N_EN = " + json.dumps(d, ensure_ascii=False, indent=0, sort_keys=True) + ";\n"
+    )
+    path = os.path.join(ROOT, "app/src/main/assets/web/i18n-en.js")
+    open(path, "w", encoding="utf8", newline="\n").write(js)
+    print(f"{len(d)} entries -> {os.path.relpath(path, ROOT)}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.StarBridge" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/sb_bg</item>
+        <item name="android:colorBackground">@color/sb_bg</item>
+        <item name="android:statusBarColor">@color/sb_bg</item>
+        <item name="android:navigationBarColor">@color/sb_bg</item>
+        <item name="android:colorAccent">@color/sb_accent</item>
+        <item name="android:colorPrimary">@color/sb_surface</item>
+        <item name="android:textColorPrimary">@color/sb_text</item>
+        <item name="android:textColorSecondary">@color/sb_dim</item>
+    </style>
+
+    <!-- The web controller: black edges, like the page itself. -->
+    <style name="Theme.StarBridge.Control" parent="Theme.StarBridge">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+</resources>

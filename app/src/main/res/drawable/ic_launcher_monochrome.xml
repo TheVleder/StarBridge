@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Themed icon (Android 13+): the same star and arc in one colour. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M30.5,66 A25,25 0 0,1 77.5,66"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M54,29 Q55.9,45.1 72,47 Q55.9,48.9 54,65 Q52.1,48.9 36,47 Q52.1,45.1 54,29 Z" />
+</vector>
