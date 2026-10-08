@@ -601,3 +601,6 @@ body.solo .win-menu { right: var(--gap); }
 .welcome > .muted { text-align: center; margin: 0 0 16px; }
 .welcome .flow li { margin: 4px 0; color: var(--text-2); }
 .welcome .flow b { color: var(--text); }
+
+/* ---------- Your telescope ---------- */
+.check-line { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 13px; color: var(--text-2); }

@@ -24,7 +24,7 @@ EXTRA = {
     "SSO": "SSW", "SO": "SW", "OSO": "WSW", "O": "W", "ONO": "WNW", "NO": "NW", "NNO": "NNW",
     "Sol": "Sun", "Luna": "Moon", "Mercurio": "Mercury", "Venus": "Venus", "Marte": "Mars", "Júpiter": "Jupiter",
     "Saturno": "Saturn", "Urano": "Uranus", "Neptuno": "Neptune", "Plutón": "Pluto",
-    "Planeta": "Planet", "Satélite": "Satellite", "Estrella": "Star",
+    "Planeta": "Planet", "Satélite": "Satellite", "Estrella": "Star", "Estrella variable": "Variable star",
     # Better-known English names than OpenNGC's.
     "Cúmulo del Pato Salvaje": "Wild Duck Cluster", "Nebulosa Omega": "Omega Nebula",
     "Gran Cúmulo de Hércules": "Great Hercules Cluster", "Pequeña Nube Estelar de Sagitario": "Small Sagittarius Star Cloud",

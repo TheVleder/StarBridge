@@ -100,4 +100,54 @@ class AstroCatalogTest {
         // NGC entries that are only stars stay out.
         assertTrue(c.objects.none { it.category == org.starbridge.core.catalog.Category.STAR && it.id.startsWith("NGC") })
     }
+
+    @Test
+    fun fullCatalogueStarsToMagnitude8AndEveryNgcIc() {
+        val c = Catalog.loadDefault()
+        val star = org.starbridge.core.catalog.Category.STAR
+        assertTrue(c.objects.count { it.category == star } > 40_000, "stars to mag 8")
+        assertTrue(c.objects.count { it.category != star && it.body == null } > 12_000, "the whole NGC/IC")
+        // Every designation finds the star: HIP, HD, HR, Bayer, Flamsteed.
+        for (q in listOf("hip 32349", "HD48915", "hr 2491", "α CMa", "9 CMa")) assertEquals("Sirio", c.search(q).first().id, q)
+        assertTrue(c.search("61 cyg").first().id.startsWith("61 Cyg"))
+        // Faint galaxies, by NGC or by UGC/PGC number.
+        assertEquals("M31", c.search("pgc 2557").first().id)
+        assertEquals("M31", c.search("UGC454").first().id)
+        assertNotNull(c.find("NGC 2"), "a 14th-magnitude galaxy")
+        // "31" still finds M31 first, among thousands of stars.
+        assertEquals("M31", c.search("31").first().id)
+    }
+
+    @Test
+    fun listsFollowTheTelescope() {
+        val c = Catalog.loadDefault()
+        val small = Catalog.deepSkyLimit(130, eaa = false)
+        assertTrue(abs(small - 11.8) < 0.1, "130 mm → $small")
+        assertTrue(Catalog.deepSkyLimit(203, eaa = false) > small + 0.9)
+        assertTrue(Catalog.deepSkyLimit(130, eaa = true) > small + 1.4)
+        val faint = assertNotNull(c.find("NGC 2"))
+        assertTrue(!Catalog.listed(faint, small), "too faint for a 130 mm")
+        assertTrue(Catalog.listed(assertNotNull(c.find("M31")), small))
+        assertTrue(Catalog.listed(assertNotNull(c.find("B 33")), small), "no magnitude, but famous")
+        assertTrue(c.objects.count { it.category != org.starbridge.core.catalog.Category.STAR && Catalog.listed(it, small) } in 1500..6000)
+    }
+
+    @Test
+    fun regionOfTheSky() {
+        val c = Catalog.loadDefault()
+        val m31 = assertNotNull(c.find("M31"))
+        val near = c.near(m31.fixed!!, 1.0).map { it.id }.toSet()
+        assertTrue(near.containsAll(listOf("M31", "M32", "M110")), "$near")
+        assertTrue("M42" !in near)
+    }
+
+    @Test
+    fun searchStaysFast() {
+        val c = Catalog.loadDefault()
+        c.search("andromda") // warm up
+        val t0 = System.nanoTime()
+        repeat(5) { c.search("andromda"); c.search("ngc 7"); c.search("31") }
+        val ms = (System.nanoTime() - t0) / 15 / 1e6
+        assertTrue(ms < 250, "search took $ms ms")
+    }
 }

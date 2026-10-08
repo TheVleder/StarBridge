@@ -201,4 +201,5 @@ SERVER = {
     "sin exposición manual": "no manual exposure",
     "exposición máx. {} s": "max exposure {} s",
     "enfoque fijo": "fixed focus",
+    "La abertura debe estar entre 50 y 1000 mm": "The aperture must be between 50 and 1000 mm",
 }

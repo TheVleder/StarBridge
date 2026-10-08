@@ -23,7 +23,7 @@ android {
         applicationId = "org.starbridge.app"
         minSdk = 29 // Huawei P20 Pro: Android 10
         targetSdk = 36
-        versionCode = 5
+        versionCode = 6
         versionName = providers.gradleProperty("starbridgeVersion").get()
     }
 

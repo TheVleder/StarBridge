@@ -153,7 +153,39 @@
     };
   }
   /** The computer's map: constellation figures and every deep-sky object. */
-  const requestSky = () => send({ type: 'sky', lines: true, deep: true });
+  // Whole sky: stars to 5.5 and the brighter deep sky; zoomed in, the faint ones of the part on
+  // screen come by region (skyRegion), so the ~53,000 objects never travel all at once.
+  const BASE_STAR_MAG = 5.5;
+  const requestSky = () => send({ type: 'sky', lines: true, deep: true, starMag: BASE_STAR_MAG });
+  const starLimit = () => Math.min(8, BASE_STAR_MAG + 1.5 * Math.log2(Math.max(1, view.zoom)));
+  // Deep sky: fainter as you zoom in, but not beyond what this telescope shows (Ajustes › Tu telescopio).
+  const dsoLimit = () => Math.min(7.5 + 1.8 * Math.log2(Math.max(1, view.zoom)), ((S.info.settings || {}).listLimit ?? 11.8) + 1);
+  /** Everything on the map: the whole sky plus the zoomed-in region (without repeats). */
+  function mapObjects() {
+    const base = S.sky ? S.sky.objects : [];
+    if (!S.region || !S.region.objects.length) return base;
+    const seen = new Set(base.map((o) => o.id));
+    return base.concat(S.region.objects.filter((o) => !seen.has(o.id)));
+  }
+  let regionKey = '', regionTimer = 0;
+  /** After the view settles (and with each refresh of the sky), ask for the part on screen. */
+  function scheduleRegion(force) {
+    if (view.zoom < 1.8 || !basis) { S.region = null; regionKey = ''; return; }
+    const key = `${view.cAz.toFixed(1)},${view.cAlt.toFixed(1)},${view.zoom.toFixed(2)}`;
+    if (!force && key === regionKey) return;
+    regionKey = key;
+    clearTimeout(regionTimer);
+    regionTimer = setTimeout(() => {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      const c = vec(view.cAz, view.cAlt);
+      let radius = 1;
+      for (const [x, y] of [[0, 0], [w, 0], [0, h], [w, h]]) {
+        const [az, alt] = unproject(x, y);
+        radius = Math.max(radius, Math.acos(Math.max(-1, Math.min(1, dot(c, vec(az, alt))))) / DEG);
+      }
+      send({ type: 'skyRegion', az: view.cAz, alt: view.cAlt, radius: Math.min(90, radius + 2), starMag: starLimit(), dsoMag: dsoLimit() + 0.3 });
+    }, force ? 0 : 350);
+  }
 
   function send(obj) {
     if (S.ws && S.ws.readyState === WebSocket.OPEN) { S.ws.send(JSON.stringify(obj)); return true; }
@@ -223,7 +255,9 @@
       S.sky = m;
       if (S.selected) send({ type: 'object', id: S.selected.id }); // its altitude changes too
       drawSky();
+      scheduleRegion(true);
     },
+    skyRegion(m) { if (view.zoom >= 1.8) { S.region = m; drawSky(); } },
     searchResult(m) { S.results = m.items; renderResults(); },
     object(m) { S.objects[m.id] = m; if (S.selected && S.selected.id === m.id) { S.selected = m; renderDetail(); renderMapCard(); } },
     objectNight(m) { S.nights[m.id] = m; if (S.selected && S.selected.id === m.id) renderDetail(); },
@@ -690,11 +724,15 @@
       const star = cssVar('--sky-star');
       ctx.fillStyle = star;
       ctx.font = '11px ' + cssVar('--font');
-      for (const [az, alt, mag, label] of sky.stars) {
-        if (alt < -1) continue;
+      const limit = starLimit();
+      const faint = S.region ? S.region.stars.filter((s) => s[2] > (sky.starMag ?? BASE_STAR_MAG)) : [];
+      for (const [az, alt, mag, label] of faint.length ? sky.stars.concat(faint) : sky.stars) {
+        if (alt < -1 || mag > limit) continue;
         const p = project(az, alt); if (!p) continue;
-        const r = Math.max(0.5, (2.9 - 0.5 * mag) * zoomBoost);
-        ctx.globalAlpha = Math.min(1, 0.4 + (4.6 - mag) * 0.16);
+        // Zoomed in, the scale slides: the faintest shown still look like faint stars, not dust.
+        const em = mag - 0.7 * (limit - BASE_STAR_MAG);
+        const r = Math.max(1.1, (2.9 - 0.5 * em) * zoomBoost);
+        ctx.globalAlpha = Math.max(0.6, Math.min(1, 0.4 + (4.6 - em) * 0.16));
         ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, 2 * Math.PI); ctx.fill();
         hits.push({ id: label || null, x: p[0], y: p[1], pr: 1, star: { mag, az, alt } });
         if (label && layers.names && (mag <= 1.5 || view.zoom >= 2.5)) {
@@ -703,7 +741,7 @@
       }
       ctx.globalAlpha = 1;
       const dso = cssVar('--sky-dso'), planet = cssVar('--sky-planet');
-      for (const o of sky.objects) {
+      for (const o of mapObjects()) {
         if (o.alt < -1) continue;
         const p = project(o.az, o.alt); if (!p) continue;
         const [x, y] = p;
@@ -717,13 +755,12 @@
         // Fainter objects appear as you zoom in: Messier always, magnitude 7.5 at the full view,
         // about 12 at ×4 and everything (to 12-13) beyond.
         const messier = /^M\d+$/.test(o.id);
-        const limit = 7.5 + 2.2 * Math.log2(Math.max(1, view.zoom));
-        if (!messier && !(o.name && view.zoom >= 2) && (o.mag ?? 12.5) > limit) continue;
+        if (!messier && !(o.name && view.zoom >= 2) && (o.mag ?? 12.5) > dsoLimit()) continue;
         ctx.strokeStyle = dso; ctx.lineWidth = 1.2; const s = 1 * Math.min(2.2, zoomBoost);
         if (o.cat === 'galaxy') { ctx.beginPath(); ctx.ellipse(x, y, 5.5 * s, 2.8 * s, -0.5, 0, 2 * Math.PI); ctx.stroke(); }
         else if (o.cat === 'nebula') { ctx.strokeRect(x - 4 * s, y - 4 * s, 8 * s, 8 * s); }
         else { ctx.setLineDash([1.5, 1.5]); ctx.beginPath(); ctx.arc(x, y, 4.5 * s, 0, 2 * Math.PI); ctx.stroke(); ctx.setLineDash([]); }
-        if (layers.names && (/^M\d+$/.test(o.id) || view.zoom >= 3)) {
+        if (layers.names && (messier || (view.zoom >= 3 && (o.name || (o.mag ?? 99) <= dsoLimit() - 1.5)) || view.zoom >= 10)) {
           ctx.fillStyle = dso; ctx.globalAlpha = 0.85; ctx.font = '10.5px ' + cssVar('--font'); ctx.textAlign = 'left'; ctx.textBaseline = 'top';
           ctx.fillText(o.id, x + 6 * s, y + 4 * s); ctx.globalAlpha = 1;
         }
@@ -757,6 +794,7 @@
     const st = S.status;
     if (st.alt !== undefined && st.alt > -5) { const p = project(st.az, st.alt); if (p) reticle(p, false); }
     else if (st.sensor && st.sensor.alt > -5) { const p = project(st.sensor.az, st.sensor.alt); if (p) reticle(p, true); }
+    scheduleRegion(false);
     $('#mapLegend').textContent = sky ? `Cielo de las ${fmtTime(sky.time)} · rueda: zoom · arrastrar: mover · doble clic: centrar` : (S.open ? 'Cargando el cielo…' : 'Sin conexión');
   }
   function polyline(points) {
@@ -857,7 +895,7 @@
     const tip = $('#tooltip');
     if (!h) { tip.classList.add('hidden'); hover = null; return; }
     hover = h;
-    const o = h.id ? (S.sky.objects.find((q) => q.id === h.id) || S.objects[h.id]) : null;
+    const o = h.id ? (mapObjects().find((q) => q.id === h.id) || S.objects[h.id]) : null;
     tip.innerHTML = o ? `<b>${esc(o.name ? `${o.id} · ${o.name}` : o.id)}</b><br>${esc(o.cat || '')}${o.mag != null ? ' · mag ' + o.mag : ''} · alt ${fmtDeg(o.alt)}`
       : h.id ? `<b>${esc(h.id)}</b><br>estrella · mag ${h.star?.mag ?? ''}` : `estrella · mag ${h.star.mag} · alt ${fmtDeg(h.star.alt)}`;
     tip.style.left = `${x + 16}px`; tip.style.top = `${y + 12}px`;
@@ -928,7 +966,7 @@
 
   // ------------------------------------------------------------------ selection: map card and object page
   function selectObject(id) {
-    const known = S.objects[id] || (S.sky && S.sky.objects.find((o) => o.id === id)) || { id };
+    const known = S.objects[id] || mapObjects().find((o) => o.id === id) || { id };
     S.selected = Object.assign({ id }, known);
     send({ type: 'object', id });
     send({ type: 'objectNight', id });
@@ -2010,6 +2048,12 @@
     $$('#gotoSeg button').forEach((b) => b.classList.toggle('active', b.dataset.method === method));
     $('#gotoHint').textContent = { auto: 'El mando hace el tramo largo y StarBridge la llegada, para dejar la holgura recogida.', hc: 'Siempre el GoTo del propio mando.', soft: 'StarBridge mueve los motores leyendo los encoders hasta llegar.' }[method];
     if (document.activeElement !== $('#approach') && st.approachDeg != null) $('#approach').value = st.approachDeg;
+    const sel = $('#aperture'), mm = String(st.apertureMm || 130);
+    if (![...sel.options].some((o) => o.value === mm)) sel.add(new Option(`${mm} mm`, mm));
+    if (document.activeElement !== sel) sel.value = mm;
+    $('#listsEaa').checked = !!st.listsEaa;
+    $('#apertureHint').textContent = st.listLimit != null
+      ? `Las listas enseñan cielo profundo hasta la magnitud ${window.I18N && I18N.lang === 'en' ? st.listLimit : String(st.listLimit).replace('.', ',')}. La búsqueda encuentra siempre todo.` : '';
     $('#mountInfo').innerHTML = i.connected ? `<span>Mando</span><span>versión ${esc(i.hcVersion)}${i.model === 7 ? ' · NexStar SLT' : ''}</span>
       <span>Modo</span><span>${i.mode === 'hc' ? 'alineación del mando' : 'StarBridge'}</span>
       <span>GoTo del mando</span><span>${i.hcGoto === true ? 'funciona' : i.hcGoto === false ? 'no lo ejecuta (lo hace StarBridge)' : 'sin probar'}</span>
@@ -2030,6 +2074,10 @@
     else toast('Coordenadas no válidas', true);
   });
   $$('#gotoSeg button').forEach((b) => b.addEventListener('click', () => send({ type: 'setSetting', key: 'gotoMethod', value: b.dataset.method })));
+  // The aperture decides how faint the lists go (search always finds everything).
+  const scopeChanged = () => setTimeout(() => { if (S.view === 'objects') search(); }, 400);
+  $('#aperture').addEventListener('change', (e) => { send({ type: 'setSetting', key: 'apertureMm', value: e.target.value }); scopeChanged(); });
+  $('#listsEaa').addEventListener('change', (e) => { send({ type: 'setSetting', key: 'listsEaa', value: String(e.target.checked) }); scopeChanged(); });
   $('#approach').addEventListener('change', () => send({ type: 'setSetting', key: 'approachDeg', value: String(Number($('#approach').value) || 0) }));
   for (const [id, key] of [['#invertAz', 'invertAz'], ['#invertAlt', 'invertAlt']]) {
     $(id).checked = prefs.get(key, false);

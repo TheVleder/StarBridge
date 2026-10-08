@@ -172,7 +172,7 @@ h2 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: v
 .switch input:checked + span::after { transform: translateX(20px); background: #fff; }
 body.night .switch input:checked + span::after { background: #000; }
 
-input[type=number], input[type=search], input[type=text] {
+input[type=number], input[type=search], input[type=text], select {
   font: inherit; color: var(--text); background: var(--surface-2); border: 1px solid var(--line);
   border-radius: 10px; padding: 10px 12px; width: 100%; outline: none;
 }

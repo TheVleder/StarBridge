@@ -39,6 +39,8 @@ data class CatalogObject(
     val aliases: List<String> = emptyList(),
     /** Other names, only for searching (the English name: "Andromeda Galaxy", "Jupiter"). */
     val otherNames: List<String> = emptyList(),
+    /** Apparent size (major axis) of deep-sky objects, in arcmin, when OpenNGC gives it. */
+    val sizeArcmin: Double? = null,
 ) {
     /** Position in the equinox of date, as the hand control expects. */
     fun position(epochMillis: Long, site: Site): RaDec =
@@ -51,35 +53,60 @@ data class CatalogObject(
 /**
  * Embedded offline catalog:
  * - Moon and planets (computed),
- * - 925 stars to magnitude 4.5 from HYG v4 (CC BY-SA 4.0), named ones searchable,
- * - ~1860 deep-sky objects from OpenNGC (CC BY-SA 4.0): all Messier and Caldwell, NGC/IC to
- *   magnitude 12 and the big named nebulae (tools/build_catalog.py).
+ * - ~41,500 stars to magnitude 8 from HYG v4 (CC BY-SA 4.0), searchable by name, Bayer and
+ *   Flamsteed designation, HIP/HD/HR number and variable-star name (tools/build_stars.py),
+ * - ~12,100 deep-sky objects from OpenNGC (CC BY-SA 4.0): the whole NGC and IC, Messier,
+ *   Caldwell and the addendum (Barnard, Melotte, Collinder…), also by UGC/PGC number
+ *   (tools/build_catalog.py).
+ * Lists show what the user's telescope can reach ([deepSkyLimit]); search always finds all.
  */
 class Catalog(val objects: List<CatalogObject>) {
     private val byId = objects.associateBy { it.id.lowercase() }
-    /** "ngc869", "c14": typed without spaces or by another catalogue number. */
+    /** "ngc869", "c14", "hip32349": typed without spaces or by another catalogue number. */
     private val byKey = HashMap<String, CatalogObject>().apply {
         objects.forEach { o -> (o.aliases + o.id).forEach { putIfAbsent(normalize(it), o) } }
     }
+
+    /** Everything search compares, normalized once (the catalogue has ~55,000 objects). */
+    private class Index(val keys: List<String>, val catalogNumbers: List<Pair<String, String>>, val words: List<String>, val names: List<String>)
+
+    private val index: Array<Index> = Array(objects.size) { i ->
+        val o = objects[i]
+        val keys = (o.aliases + o.id + o.otherNames.filter { CATALOG_NUMBER.matches(normalize(it)) }).map(::normalize).distinct()
+        val names = (listOf(o.name, o.id) + o.otherNames).filter { it.isNotBlank() }
+        Index(
+            keys = keys,
+            catalogNumbers = keys.mapNotNull { k -> CATALOG_NUMBER.matchEntire(k)?.let { it.groupValues[1] to it.groupValues[2] } },
+            words = names.flatMap { n -> n.split(WORD_SPLIT).map(::normalize).filter { it.isNotEmpty() } }.distinct(),
+            names = names.map(::normalize),
+        )
+    }
+
+    /** Unit vectors of the J2000 positions (null for the Moon and planets), for [near]. */
+    private val vectors: Array<DoubleArray?> = Array(objects.size) { i -> objects[i].fixed?.let(::unit) }
 
     fun find(id: String): CatalogObject? = byId[id.lowercase()] ?: byKey[normalize(id)]
 
     /**
      * Forgiving search, best matches first:
      * - a bare number finds that catalogue number: "31" → M31 (then NGC 31, IC 31, C31…);
-     * - ids and other catalogue numbers with or without spaces: "m 42", "ngc224", "c14";
+     * - ids and other catalogue numbers with or without spaces: "m 42", "ngc224", "c14",
+     *   "hip 32349", "hd48915", "pgc 2557", "61 cyg";
      * - any word of the name, in Spanish or English, from its start or inside it: "andro",
      *   "remolino", "whirlpool", "orion";
      * - small typos in names: "andromda", "betelguese", "jupyter".
      */
     fun search(query: String, limit: Int = 40, category: Category? = null): List<CatalogObject> {
         val q = normalize(query)
-        val pool = objects.asSequence().filter { category == null || it.category == category }
         if (q.isEmpty()) {
-            return pool.filter { it.category != Category.STAR || it.alignmentStar }.take(limit).toList()
+            return objects.asSequence()
+                .filter { (category == null || it.category == category) && (it.category != Category.STAR || it.alignmentStar) }
+                .take(limit).toList()
         }
         val number = q.toIntOrNull()?.toString()
-        return pool.mapNotNull { o -> score(o, q, number)?.let { o to it } }
+        return objects.indices.asSequence()
+            .filter { category == null || objects[it].category == category }
+            .mapNotNull { i -> score(index[i], q, number)?.let { objects[i] to it } }
             .sortedWith(compareBy<Pair<CatalogObject, Int>> { it.second }.thenBy { rank(it.first) }.thenBy { it.first.magnitude ?: -30.0 })
             .take(limit)
             .map { it.first }
@@ -87,20 +114,16 @@ class Catalog(val objects: List<CatalogObject>) {
     }
 
     /** Lower is better; null = no match. */
-    private fun score(o: CatalogObject, q: String, number: String?): Int? {
-        val keys = (o.aliases + o.id + o.otherNames.filter { CATALOG_NUMBER.matches(normalize(it)) }).map(::normalize)
-        if (keys.any { it == q }) return 0
+    private fun score(x: Index, q: String, number: String?): Int? {
+        if (x.keys.any { it == q }) return 0
         if (number != null) {
-            // "31": the number of a catalogue id ("m31", "ngc31", "c31", "hip31" never).
-            val nums = keys.mapNotNull { k -> CATALOG_NUMBER.matchEntire(k)?.let { it.groupValues[1] to it.groupValues[2] } }
-            nums.firstOrNull { it.second == number }?.let { (cat, _) -> return if (cat == "m") 1 else if (cat == "c") 2 else 3 }
+            // "31": the number of a catalogue id ("m31", "ngc31", "c31"; never "hip31" or "pgc31").
+            x.catalogNumbers.firstOrNull { it.second == number }?.let { (cat, _) -> return if (cat == "m") 1 else if (cat == "c") 2 else 3 }
         }
-        if (keys.any { it.startsWith(q) }) return 4
-        val names = (listOf(o.name, o.id) + o.otherNames).filter { it.isNotBlank() }
-        val words = names.flatMap { n -> n.split(WORD_SPLIT).map(::normalize).filter { it.isNotEmpty() } }
-        if (words.any { it.startsWith(q) }) return 5
-        if (names.any { normalize(it).contains(q) }) return 6
-        if (q.length >= 4 && words.any { w -> w.length >= 4 && editDistance(w.take(q.length + 1), q) <= if (q.length >= 7) 2 else 1 }) return 7
+        if (x.keys.any { it.startsWith(q) }) return 4
+        if (x.words.any { it.startsWith(q) }) return 5
+        if (x.names.any { it.contains(q) }) return 6
+        if (q.length >= 4 && x.words.any { w -> w.length >= 4 && !w[0].isDigit() && editDistance(w.take(q.length + 1), q) <= if (q.length >= 7) 2 else 1 }) return 7
         return null
     }
 
@@ -110,14 +133,56 @@ class Catalog(val objects: List<CatalogObject>) {
         o.messier -> 1
         o.category != Category.STAR -> 2
         o.alignmentStar -> 3
-        else -> 4
+        o.name.isNotBlank() || !o.id.startsWith("HIP") -> 4
+        else -> 5
     }
 
-    val alignmentStars: List<CatalogObject> get() = objects.filter { it.alignmentStar }
+    /** Fixed objects within [radiusDeg] of [center] (J2000), e.g. the part of the sky on screen. */
+    fun near(center: RaDec, radiusDeg: Double): Sequence<CatalogObject> {
+        val c = unit(center)
+        val minCos = kotlin.math.cos(Math.toRadians(radiusDeg.coerceIn(0.0, 180.0)))
+        return objects.indices.asSequence().filter { i ->
+            val v = vectors[i] ?: return@filter false
+            v[0] * c[0] + v[1] * c[1] + v[2] * c[2] >= minCos
+        }.map { objects[it] }
+    }
+
+    val alignmentStars: List<CatalogObject> by lazy { objects.filter { it.alignmentStar } }
 
     companion object {
+        private val MARKS = Regex("\\p{M}")
+        private val SEPARATORS = Regex("[\\s\\-·.'’_]")
+        private val MESSIER_ID = Regex("M\\d+")
+
         private fun normalize(s: String) = java.text.Normalizer.normalize(s.lowercase(), java.text.Normalizer.Form.NFD)
-            .replace(Regex("\\p{M}"), "").replace(Regex("[\\s\\-·.'’_]"), "")
+            .replace(MARKS, "").replace(SEPARATORS, "")
+
+        private fun unit(p: RaDec): DoubleArray {
+            val ra = Math.toRadians(p.raHours * 15)
+            val dec = Math.toRadians(p.decDeg)
+            return doubleArrayOf(kotlin.math.cos(dec) * kotlin.math.cos(ra), kotlin.math.cos(dec) * kotlin.math.sin(ra), kotlin.math.sin(dec))
+        }
+
+        /**
+         * Faintest deep-sky magnitude worth listing for a telescope of [apertureMm]: the stellar
+         * limit (7.7 + 5·log10(D cm)) minus 1.5 for extended objects, so 130 mm ≈ 11.8 and
+         * 203 mm ≈ 12.8. Live stacking ([eaa]) reaches about 1.5 magnitudes fainter.
+         */
+        fun deepSkyLimit(apertureMm: Int, eaa: Boolean): Double =
+            7.7 + 5 * kotlin.math.log10(apertureMm / 10.0) - 1.5 + if (eaa) 1.5 else 0.0
+
+        /**
+         * Whether lists show [o] for that limit: bright enough, or with no catalogued magnitude
+         * but famous (Messier, Caldwell, a common name) or a large nebula (the Veil, the
+         * Horsehead… have no magnitude in OpenNGC).
+         */
+        fun listed(o: CatalogObject, limit: Double): Boolean {
+            if (o.body != null || o.messier || o.aliases.any { it.matches(CALDWELL) } || o.id.startsWith("C ")) return true
+            if (o.category == Category.STAR) return o.alignmentStar
+            val m = o.magnitude ?: return o.name.isNotBlank() || (o.category == Category.NEBULA && (o.sizeArcmin ?: 0.0) >= 10.0)
+            return m <= limit
+        }
+        private val CALDWELL = Regex("C\\d+")
 
         private val WORD_SPLIT = Regex("[\\s/·,()'’-]+")
         /** "m31", "ngc7000", "ic434", "c14" → catalogue and number. */
@@ -154,12 +219,13 @@ class Catalog(val objects: List<CatalogObject>) {
                     fixed = RaDec(c[3].toDouble(), c[4].toDouble()),
                     magnitude = c[5].toDoubleOrNull(),
                     constellation = c.getOrElse(6) { "" },
-                    messier = c[0].matches(Regex("M\\d+")),
+                    messier = c[0].matches(MESSIER_ID),
                     aliases = c.getOrElse(7) { "" }.split(',').map { it.trim() }.filter { it.isNotEmpty() },
+                    sizeArcmin = c.getOrElse(8) { "" }.toDoubleOrNull(),
                 )
             }.toList()
 
-        /** HYG stars (stars.tsv): hip, name, bayer, const, ra, dec, mag. */
+        /** HYG stars (stars.tsv): hip, name, bayer, const, ra, dec, mag, flamsteed, hd, hr, variable. */
         fun parseStars(text: String): List<CatalogObject> = text.lineSequence()
             .filter { it.isNotBlank() && !it.startsWith("#") }
             .map { line ->
@@ -167,15 +233,26 @@ class Catalog(val objects: List<CatalogObject>) {
                 val name = c[1]
                 val bayer = c[2]
                 val mag = c[6].toDouble()
+                val flamsteed = c.getOrElse(7) { "" }
+                val variable = c.getOrElse(10) { "" }
+                // The best-known designation is the id; all the others are searchable.
+                val designations = listOf(
+                    bayer, flamsteed, variable,
+                    c[0].takeIf { it.isNotEmpty() && it[0].isDigit() }?.let { "HIP $it" }.orEmpty(),
+                    c.getOrElse(8) { "" }.takeIf { it.isNotEmpty() }?.let { "HD $it" }.orEmpty(),
+                    c.getOrElse(9) { "" }.takeIf { it.isNotEmpty() }?.let { "HR $it" }.orEmpty(),
+                ).filter { it.isNotEmpty() }
+                val id = name.ifBlank { designations.firstOrNull() ?: "HIP ${c[0]}" }
                 CatalogObject(
-                    id = name.ifBlank { bayer.ifBlank { "HIP ${c[0]}" } },
-                    name = if (name.isNotBlank()) bayer else "",
-                    type = "Estrella",
+                    id = id,
+                    name = if (name.isNotBlank()) bayer.ifBlank { flamsteed } else "",
+                    type = if (variable.isNotEmpty()) "Estrella variable" else "Estrella",
                     category = Category.STAR,
                     fixed = RaDec(c[4].toDouble(), c[5].toDouble()),
                     magnitude = mag,
                     constellation = c[3],
                     alignmentStar = name.isNotBlank() && mag <= 2.6,
+                    aliases = designations.filter { it != id },
                 )
             }.toList()
 

@@ -811,4 +811,6 @@ UI.update({
     "se perdio la conexion con el puerto": "the connection with the port was lost",
     "servicio detenido": "service stopped",
     "Pantalla del Android apagada": "Android screen off", "Pantalla del Android encendida": "Android screen on",
+    "Tu telescopio": "Your telescope", "Abertura": "Aperture", "Listas para fotos (EAA)": "Lists for photos (EAA)",
+    "Las listas enseñan cielo profundo hasta la magnitud {}. La búsqueda encuentra siempre todo.": "Lists show deep sky down to magnitude {}. Search always finds everything.",
 })

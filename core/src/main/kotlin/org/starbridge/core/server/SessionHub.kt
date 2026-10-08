@@ -514,13 +514,29 @@ class SessionHub(
                 })
                 "search" -> reply(
                     clientId,
-                    searchResult(msg["q"]?.jsonPrimitive?.content ?: "", msg["category"]?.jsonPrimitive?.content),
+                    searchResult(
+                        msg["q"]?.jsonPrimitive?.content ?: "",
+                        msg["category"]?.jsonPrimitive?.content,
+                        // A page that stacks (the iPhone app) may ask for EAA lists just for itself.
+                        eaa = msg["eaa"]?.jsonPrimitive?.booleanOrNull == true,
+                    ),
                 )
                 "sky" -> reply(
                     clientId,
                     skyMessage(
                         withLines = msg["lines"]?.jsonPrimitive?.booleanOrNull == true,
                         deep = msg["deep"]?.jsonPrimitive?.booleanOrNull == true,
+                        starMag = msg["starMag"]?.jsonPrimitive?.doubleOrNull ?: MAP_STAR_MAG,
+                    ),
+                )
+                "skyRegion" -> reply(
+                    clientId,
+                    skyRegionMessage(
+                        az = msg.double("az"),
+                        alt = msg.double("alt"),
+                        radiusDeg = msg.double("radius"),
+                        starMag = msg["starMag"]?.jsonPrimitive?.doubleOrNull ?: MAP_STAR_MAG,
+                        dsoMag = msg["dsoMag"]?.jsonPrimitive?.doubleOrNull ?: DESK_DSO_MAG,
                     ),
                 )
                 "object" -> reply(clientId, objectMessage(requireObject(msg)))
@@ -588,6 +604,8 @@ class SessionHub(
                         KEY_SLACK_ALT -> brain.setSlack(Axis.ALT, value.toDouble())
                         KEY_GOTO_METHOD -> brain.gotoMethod = GotoMethod.of(value) ?: throw IllegalArgumentException("Método de GoTo no válido")
                         KEY_MANUAL_TAKE_UP -> brain.manualTakeUp = value.toBooleanStrict()
+                        KEY_APERTURE -> require(value.toIntOrNull() in 50..1000) { "La abertura debe estar entre 50 y 1000 mm" }
+                        KEY_LISTS_EAA -> value.toBooleanStrict()
                         else -> throw IllegalArgumentException("Ajuste desconocido: $key")
                     }
                     settings.put(key, value)
@@ -980,6 +998,9 @@ class SessionHub(
             put(KEY_SLACK_ALT, r(brain.slack(Axis.ALT)))
             put(KEY_GOTO_METHOD, brain.gotoMethod.key)
             put(KEY_MANUAL_TAKE_UP, brain.manualTakeUp)
+            put(KEY_APERTURE, apertureMm)
+            put(KEY_LISTS_EAA, listsEaa)
+            put("listLimit", r(listLimit(), 1))
         }
         brain.handControlGotoWorks?.let { put("hcGoto", it) }
     }
@@ -993,7 +1014,9 @@ class SessionHub(
         put("cat", o.category.name.lowercase())
         o.magnitude?.let { put("mag", it) }
         put("const", o.constellation)
-        if (o.aliases.isNotEmpty()) put("aka", o.aliases.joinToString(" · "))
+        // The handy designations; UGC/PGC/HD/HR numbers are only for searching.
+        o.aliases.filter { a -> AKA_HIDDEN.none { a.startsWith(it) } }.take(3)
+            .takeIf { it.isNotEmpty() }?.let { put("aka", it.joinToString(" · ")) }
         put("ra", r(p.raHours, 5))
         put("dec", r(p.decDeg, 4))
         put("alt", r(sky.altDeg, 2))
@@ -1002,7 +1025,32 @@ class SessionHub(
         zones.visible(sky)?.let { put("inZone", it) }
     }
 
-    private fun searchResult(q: String, category: String?): JsonObject {
+    private val apertureMm get() = settings.get(KEY_APERTURE)?.toIntOrNull() ?: DEFAULT_APERTURE_MM
+    private val listsEaa get() = settings.get(KEY_LISTS_EAA)?.toBooleanStrictOrNull() ?: false
+    private fun listLimit(eaa: Boolean = false) = Catalog.deepSkyLimit(apertureMm, listsEaa || eaa)
+
+    /**
+     * What the lists offer without a search text, within what the telescope reaches: visible
+     * first, then brightest first by eye; for stacking (EAA), the highest first (in 15° bands,
+     * brightest first in each), since altitude matters more than brightness for a photo.
+     */
+    private fun listedNow(now: Long, eaa: Boolean, filter: (CatalogObject) -> Boolean): List<CatalogObject> {
+        val stacking = listsEaa || eaa
+        val limit = listLimit(eaa)
+        return catalog.objects.asSequence()
+            .filter { filter(it) && Catalog.listed(it, limit) }
+            .map { it to brain.skyOf(it, now).altDeg }
+            .sortedWith(
+                compareByDescending<Pair<CatalogObject, Double>> { it.second > 0 }
+                    .thenByDescending { if (stacking) kotlin.math.floor(it.second / 15.0) else 0.0 }
+                    .thenBy { it.first.magnitude ?: 99.0 },
+            )
+            .take(LIST_MAX)
+            .map { it.first }
+            .toList()
+    }
+
+    private fun searchResult(q: String, category: String?, eaa: Boolean = false): JsonObject {
         val now = clock()
         val items: List<CatalogObject> = if (category == "best") {
             catalog.objects.asSequence()
@@ -1011,16 +1059,16 @@ class SessionHub(
                 .sortedBy { o -> (o.magnitude ?: -3.0) + if (o.category == Category.STAR) 3.0 else 0.0 }
                 .take(40).toList()
         } else if (category == "all" || category == "ngc") {
-            // everything (or every NGC/IC object) matching the text; without text, the brightest visible first
-            val found = catalog.search(q, limit = Int.MAX_VALUE)
-                .filter { category == "all" || it.id.startsWith("NGC") || it.id.startsWith("IC") }
-                .map { it to (brain.skyOf(it, now).altDeg > 0) }
-            val ordered = if (q.isBlank()) {
-                found.sortedWith(compareByDescending<Pair<CatalogObject, Boolean>> { it.second }.thenBy { it.first.magnitude ?: 99.0 })
+            val ngc = { o: CatalogObject -> category == "all" || o.id.startsWith("NGC") || o.id.startsWith("IC") }
+            if (q.isBlank()) {
+                // what this telescope can show, the brightest visible first
+                listedNow(now, eaa) { it.category != Category.STAR && ngc(it) }
             } else {
-                found.sortedByDescending { it.second } // stable: exact id matches stay first
+                // everything matching the text, however faint
+                catalog.search(q, limit = 400).filter(ngc)
+                    .sortedByDescending { brain.skyOf(it, now).altDeg > 0 } // stable: exact id matches stay first
+                    .take(120)
             }
-            ordered.take(120).map { it.first }
         } else if (category == "messier" || category == "solar") {
             catalog.search(q, limit = 400)
                 .filter { if (category == "messier") it.messier else it.body != null }
@@ -1028,15 +1076,31 @@ class SessionHub(
                 .take(120)
         } else {
             val cat = category?.let { c -> Category.entries.firstOrNull { it.name.equals(c, ignoreCase = true) } }
-            catalog.search(q, limit = if (cat == null) 40 else 400, category = cat)
-                .sortedByDescending { brain.skyOf(it, now).altDeg > 0 }
-                .take(60)
+            if (q.isBlank() && cat != null && cat != Category.STAR) {
+                listedNow(now, eaa) { it.category == cat }
+            } else {
+                catalog.search(q, limit = if (cat == null) 40 else 400, category = cat)
+                    .sortedByDescending { brain.skyOf(it, now).altDeg > 0 }
+                    .take(60)
+            }
         }
+        // Exactly what was typed ("pgc 2557", "NGC 2") first, even below the horizon.
+        val exact = q.takeIf { it.isNotBlank() }?.let(catalog::find)?.takeIf { o ->
+            o in items || when (category) {
+                null, "all" -> true
+                "best" -> false
+                "ngc" -> o.id.startsWith("NGC") || o.id.startsWith("IC")
+                "messier" -> o.messier
+                "solar" -> o.body != null
+                else -> o.category.name.equals(category, ignoreCase = true)
+            }
+        }
+        val shown = if (exact == null) items else listOf(exact) + (items - exact)
         return buildJsonObject {
             put("type", "searchResult")
             put("q", q)
             category?.let { put("category", it) }
-            putJsonArray("items") { items.forEach { o -> add(buildJsonObject { putObject(o, now) }) } }
+            putJsonArray("items") { shown.forEach { o -> add(buildJsonObject { putObject(o, now) }) } }
         }
     }
 
@@ -1054,7 +1118,7 @@ class SessionHub(
      * [withLines]: also constellation figures as polylines of [az, alt] and labels [name, az, alt]
      * (the computer's big map; phones keep the light version).
      */
-    private fun skyMessage(withLines: Boolean = false, deep: Boolean = false): JsonObject {
+    private fun skyMessage(withLines: Boolean = false, deep: Boolean = false, starMag: Double = MAP_STAR_MAG): JsonObject {
         val now = clock()
         return buildJsonObject {
             put("type", "sky")
@@ -1079,19 +1143,13 @@ class SessionHub(
                     }
                 }
             }
+            put("starMag", starMag)
             putJsonArray("stars") {
-                catalog.objects.asSequence().filter { it.category == Category.STAR }.forEach { o ->
-                    val s = brain.skyOf(o, now)
-                    if (s.altDeg > -1) add(buildJsonArray {
-                        add(JsonPrimitive(r(s.azDeg, 2)))
-                        add(JsonPrimitive(r(s.altDeg, 2)))
-                        add(JsonPrimitive(o.magnitude ?: 4.0))
-                        add(JsonPrimitive(if (o.alignmentStar) o.id else ""))
-                    })
-                }
+                catalog.objects.asSequence().filter { it.category == Category.STAR && (it.magnitude ?: 0.0) <= starMag }
+                    .forEach { o -> starArray(o, now)?.let(::add) }
             }
             putJsonArray("objects") {
-                catalog.objects.asSequence().filter { isMapObject(it) || (deep && it.category != Category.STAR) }.forEach { o ->
+                catalog.objects.asSequence().filter { isMapObject(it) || (deep && it.category != Category.STAR && Catalog.listed(it, DESK_DSO_MAG)) }.forEach { o ->
                     val s = brain.skyOf(o, now)
                     if (s.altDeg > -1) add(buildJsonObject {
                         put("id", o.id)
@@ -1102,6 +1160,61 @@ class SessionHub(
                         put("alt", r(s.altDeg, 2))
                     })
                 }
+            }
+        }
+    }
+
+    /** A star for the map: [az, alt, mag, label] (label = id of the bright named ones), or null if set. */
+    private fun starArray(o: CatalogObject, now: Long): kotlinx.serialization.json.JsonArray? {
+        val s = brain.skyOf(o, now)
+        if (s.altDeg <= -1) return null
+        return buildJsonArray {
+            add(JsonPrimitive(r(s.azDeg, 2)))
+            add(JsonPrimitive(r(s.altDeg, 2)))
+            add(JsonPrimitive(o.magnitude ?: 4.0))
+            add(JsonPrimitive(if (o.alignmentStar || ((o.magnitude ?: 9.0) <= 3.5 && o.name.isNotBlank())) o.id else ""))
+        }
+    }
+
+    /**
+     * The part of the sky on screen when zoomed in: stars to [starMag] and deep sky to [dsoMag]
+     * within [radiusDeg] of (az, alt). The pages add it to the whole-sky [skyMessage].
+     */
+    private fun skyRegionMessage(az: Double, alt: Double, radiusDeg: Double, starMag: Double, dsoMag: Double): JsonObject {
+        val now = clock()
+        val radius = radiusDeg.coerceIn(0.5, 90.0)
+        // Equinox of date vs J2000 (the catalogue): under half a degree, covered by the margin.
+        val center = Astro.apparentToRaDec(org.starbridge.core.mount.AltAz(az, alt), brain.site, now)
+        val inView = catalog.near(center, radius + 1.0).toList()
+        return buildJsonObject {
+            put("type", "skyRegion")
+            put("time", now)
+            put("az", az)
+            put("alt", alt)
+            put("radius", radius)
+            put("starMag", starMag)
+            put("dsoMag", dsoMag)
+            putJsonArray("stars") {
+                inView.asSequence().filter { it.category == Category.STAR && (it.magnitude ?: 0.0) <= starMag }
+                    .sortedBy { it.magnitude ?: 0.0 }.take(REGION_MAX_STARS)
+                    .forEach { o -> starArray(o, now)?.let(::add) }
+            }
+            putJsonArray("objects") {
+                inView.asSequence().filter { it.category != Category.STAR && it.body == null }
+                    .filter { o -> o.magnitude?.let { it <= dsoMag } ?: (Catalog.listed(o, dsoMag) || dsoMag >= 13.5) }
+                    .sortedBy { it.magnitude ?: 99.0 }.take(REGION_MAX_OBJECTS)
+                    .forEach { o ->
+                        val s = brain.skyOf(o, now)
+                        if (s.altDeg > -1) add(buildJsonObject {
+                            put("id", o.id)
+                            put("name", o.name)
+                            put("cat", o.category.name.lowercase())
+                            o.magnitude?.let { put("mag", it) }
+                            o.sizeArcmin?.let { put("size", it) }
+                            put("az", r(s.azDeg, 2))
+                            put("alt", r(s.altDeg, 2))
+                        })
+                    }
             }
         }
     }
@@ -1452,6 +1565,22 @@ class SessionHub(
         const val FIXED_TOP_FROM_ARCSEC = 12_000.0
         const val EVENT_LOG_LINES = 120
         const val KEY_GOTO_METHOD = "gotoMethod"
+        /** The telescope's aperture in mm: which deep-sky objects the lists offer. */
+        const val KEY_APERTURE = "apertureMm"
+        /** Lists for live stacking (EAA): about 1.5 magnitudes fainter than by eye. */
+        const val KEY_LISTS_EAA = "listsEaa"
+        const val DEFAULT_APERTURE_MM = 130
+        /** Stars on the phone's map (more come with [skyRegionMessage] when zooming in). */
+        const val MAP_STAR_MAG = 5.0
+        /** Deep sky on the computer's whole-sky map; fainter objects come by region. */
+        const val DESK_DSO_MAG = 10.0
+        /** At most this many stars per region (the faintest are dropped). */
+        const val REGION_MAX_STARS = 6000
+        /** Longest list without a search text. */
+        const val LIST_MAX = 300
+        /** At most this many deep-sky objects per region (the faintest are dropped). */
+        const val REGION_MAX_OBJECTS = 2500
+        private val AKA_HIDDEN = listOf("UGC ", "PGC ", "HD ", "HR ")
         const val KEY_MANUAL_TAKE_UP = "manualTakeUp"
         /** Hand-control rate 4 ≈ 16× sidereal ≈ 0.067°/s: slow enough to see the star start. */
         const val VISUAL_RATE = 4

@@ -117,7 +117,7 @@ Descarga los ficheros de la última versión en **[Releases](../../releases/late
 ## Qué hace
 
 - **Mapa del cielo** en tiempo real con la posición del telescopio; toca un objeto para ir a él.
-- **Buscar** entre ~1900 objetos de cielo profundo (Messier, Caldwell, NGC/IC hasta mag 12), más de 900 estrellas, la Luna y los planetas, sin internet. Búsqueda tolerante: `31` encuentra M31 y se perdonan las erratas. Listas de «Lo mejor ahora».
+- **Buscar** en todo el NGC y el IC (~12.100 objetos de cielo profundo, con Messier, Caldwell, Barnard…), más de 41.000 estrellas hasta magnitud 8, la Luna y los planetas, sin internet. Vale cualquier designación: `M31`, `31`, `NGC 224`, `PGC 2557`, `α CMa`, `61 Cyg`, `HIP 32349`, `HD 48915`; se perdonan las erratas. Las listas enseñan lo que alcanza **tu** telescopio (eliges su abertura) y el mapa enseña estrellas y galaxias más débiles al hacer zoom.
 - **Modelo de puntería propio**: alineación con 1–N estrellas, base inclinada, GoTo en dos tramos y seguimiento por velocidad variable. También funciona con la alineación del mando.
 - **Compensación de la holgura**, medida con el giroscopio del móvil o centrando una estrella dos veces.
 - **Apilado en directo (EAA)** con el Android en el ocular: exposiciones largas en RAW, calibración, registro, control de calidad y apilado automáticos; guarda FITS/TIFF (lineales) + JPEG.

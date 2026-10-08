@@ -117,7 +117,7 @@ Prefer a real installer? See [Building from source](#building-from-source) (`pac
 ## Features
 
 - **Sky map** in real time with the telescope's position; tap an object to go to it.
-- **Search** ~1,900 deep-sky objects (Messier, Caldwell, NGC/IC to mag 12), 900+ stars, the Moon and planets, offline. Forgiving search: `31` finds M31, typos are tolerated. "Best now" lists.
+- **Search** the whole NGC and IC (~12,100 deep-sky objects with Messier, Caldwell, Barnard…), 41,000+ stars to magnitude 8, the Moon and planets, offline. Every designation works: `M31`, `31`, `NGC 224`, `PGC 2557`, `α CMa`, `61 Cyg`, `HIP 32349`, `HD 48915`; typos are tolerated. The lists show what **your** telescope can reach (set its aperture), and the map shows fainter stars and galaxies as you zoom in.
 - **Own pointing model**: 1–N star alignment, tilted base, GoTo in two legs, tracking by variable rate. Also works with the hand control's alignment.
 - **Backlash compensation**, measured with the phone's gyroscope or by centring a star twice.
 - **Live stacking (EAA)** with the Android phone on the eyepiece: RAW long exposures, automatic calibration, registration, quality control and stacking; saves FITS/TIFF (linear) + JPEG.

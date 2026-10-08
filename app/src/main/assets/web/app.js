@@ -112,7 +112,8 @@
     },
     alignment(m) { S.alignment = m; renderAlign(); },
     searchResult(m) { S.results = m.items; renderResults(); },
-    sky(m) { S.sky = m; drawSky(); },
+    sky(m) { S.sky = m; drawSky(); scheduleRegion(true); },
+    skyRegion(m) { if (zoom >= 1.8) { S.region = m; drawSky(); } },
     object(m) {
       // Only if the user is still waiting for this object's sheet.
       if (S.sheetObj && S.sheetObj.id === m.id) { S.sheetObj = m; renderSheet(); }
@@ -415,6 +416,30 @@
 
   function cssVar(n) { return getComputedStyle(document.body).getPropertyValue(n).trim(); }
 
+  // Zoomed in, the fainter stars and deep sky of the part on screen come by region (skyRegion).
+  const starLimit = () => Math.min(8, 5 + 1.5 * Math.log2(zoom));
+  function mapObjects() {
+    const base = S.sky ? S.sky.objects : [];
+    if (!S.region || !S.region.objects.length) return base;
+    const seen = new Set(base.map((o) => o.id));
+    return base.concat(S.region.objects.filter((o) => !seen.has(o.id)));
+  }
+  let regionKey = '', regionTimer = 0;
+  function scheduleRegion(force) {
+    if (zoom < 1.8 || !skyR) { S.region = null; regionKey = ''; return; }
+    const key = `${fx.toFixed(1)},${fy.toFixed(1)},${zoom.toFixed(2)},${rotIdx}`;
+    if (!force && key === regionKey) return;
+    regionKey = key;
+    clearTimeout(regionTimer);
+    regionTimer = setTimeout(() => {
+      const c = skyAt(fx, fy, skyR);
+      const half = (canvas.clientWidth / 2) * Math.SQRT2 / zoom; // centre to corner, map px at zoom 1
+      const radius = Math.min(90, 90 * half / skyR + 2);
+      const listLimit = ((S.info.settings || {}).listLimit ?? 11.8) + 1; // not beyond what this telescope shows
+      send({ type: 'skyRegion', az: c.az, alt: c.alt, radius, starMag: starLimit(), dsoMag: Math.min(listLimit, 7 + 1.8 * Math.log2(zoom)) });
+    }, force ? 0 : 350);
+  }
+
   /** Offset from the zenith at zoom 1 (azimuthal equidistant). */
   function base(az, alt, R) {
     const r = R * (90 - alt) / 90;
@@ -508,12 +533,15 @@
     if (sky) {
       const starColor = cssVar('--sky-star');
       ctx.fillStyle = starColor;
-      for (const [az, alt, mag, label] of sky.stars) {
-        if (alt < 0) continue;
+      const faint = S.region ? S.region.stars.filter((s) => s[2] > (sky.starMag ?? 5)) : [];
+      const limit = starLimit();
+      for (const [az, alt, mag, label] of faint.length ? sky.stars.concat(faint) : sky.stars) {
+        if (alt < 0 || mag > limit) continue;
         const [x, y] = project(az, alt, cx, cy, R);
         if (!on(x, y)) continue;
-        const r = Math.max(0.55, 2.9 - 0.52 * mag) * grow;
-        ctx.globalAlpha = Math.min(1, 0.45 + (4.5 - mag) * 0.15);
+        const em = mag - 0.7 * (limit - 5); // zoomed in, the faintest shown still look like stars
+        const r = Math.max(1, 2.9 - 0.52 * em) * grow;
+        ctx.globalAlpha = Math.max(0.6, Math.min(1, 0.45 + (4.5 - em) * 0.15));
         ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.fill();
         if (label) {
           hitList.push({ id: label, x, y, pr: 1 });
@@ -522,7 +550,7 @@
       }
       ctx.globalAlpha = 1;
       const dso = cssVar('--sky-dso'), planet = cssVar('--sky-planet');
-      for (const o of sky.objects) {
+      for (const o of mapObjects()) {
         if (o.alt < 0) continue;
         const [x, y] = project(o.az, o.alt, cx, cy, R);
         if (!on(x, y)) continue;
@@ -547,6 +575,8 @@
       ctx.fillStyle = cssVar('--dim'); ctx.font = '14px -apple-system, system-ui'; ctx.textAlign = 'center';
       ctx.fillText(S.open ? 'Cargando cielo…' : 'Sin conexión', cx, cy);
     }
+
+    scheduleRegion(false);
 
     // other layers (visible zones, zones.js)
     for (const fn of extra.skyDraw || []) fn(ctx, { project: (az, alt) => project(az, alt, cx, cy, R), zenith: [zx, zy], radius: ZR, dpr });
@@ -945,6 +975,7 @@
     if (document.activeElement !== $('#slackAz') && st.slackAz !== undefined) $('#slackAz').value = st.slackAz;
     if (document.activeElement !== $('#slackAlt') && st.slackAlt !== undefined) $('#slackAlt').value = st.slackAlt;
     if (document.activeElement !== $('#takeUp')) $('#takeUp').checked = st.manualTakeUp !== false;
+    renderScope(st);
     const method = st.gotoMethod || 'auto';
     $$('#gotoSeg button').forEach((b) => b.classList.toggle('active', b.dataset.method === method));
     $('#gotoHint').textContent = {
@@ -1179,6 +1210,20 @@
 
   // ---------------------------------------------------------------- GoTo method & diagnostics
   $$('#gotoSeg button').forEach((b) => b.addEventListener('click', () => send({ type: 'setSetting', key: 'gotoMethod', value: b.dataset.method })));
+
+  /** The telescope's aperture decides how faint the lists go (search always finds everything). */
+  function renderScope(st) {
+    const sel = $('#aperture');
+    const mm = String(st.apertureMm || 130);
+    if (![...sel.options].some((o) => o.value === mm)) sel.add(new Option(`${mm} mm`, mm));
+    if (document.activeElement !== sel) sel.value = mm;
+    $('#listsEaa').checked = !!st.listsEaa;
+    $('#apertureHint').textContent = st.listLimit != null
+      ? `Las listas enseñan cielo profundo hasta la magnitud ${window.I18N && I18N.lang === 'en' ? st.listLimit : String(st.listLimit).replace('.', ',')}. La búsqueda encuentra siempre todo.` : '';
+  }
+  const scopeChanged = () => setTimeout(() => { if (S.tab === 'search') search(); }, 400);
+  $('#aperture').addEventListener('change', (e) => { send({ type: 'setSetting', key: 'apertureMm', value: e.target.value }); scopeChanged(); });
+  $('#listsEaa').addEventListener('change', (e) => { send({ type: 'setSetting', key: 'listsEaa', value: String(e.target.checked) }); scopeChanged(); });
   $('#takeUp').addEventListener('change', (e) => send({ type: 'setSetting', key: 'manualTakeUp', value: String(e.target.checked) }));
 
   $('#diagOpen').addEventListener('click', () => {

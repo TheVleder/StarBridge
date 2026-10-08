@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Builds core/src/main/resources/catalog.tsv from OpenNGC (CC-BY-SA-4.0, github.com/mattiaverga/OpenNGC).
 
-Keeps:
-- every Messier and Caldwell object;
-- NGC/IC/addendum objects brighter than MAG_LIMIT (V, or B when there is no V): a 130 mm
-  reflector under a dark sky shows galaxies to about there;
-- objects without a catalogued magnitude that have a common name, or are nebulae larger than
-  SIZE_LIMIT arcmin (the Veil, the Rosette, the Horsehead... have no magnitude in OpenNGC).
-NGC/IC entries that are just stars are left out unless they are Messier/Caldwell.
+Keeps every NGC, IC and addendum object (Messier, Caldwell, Barnard, Melotte, Collinder…),
+except entries that do not exist, duplicates and NGC/IC entries that are just stars (unless
+they are Messier/Caldwell). Which ones the lists show depends on the user's telescope
+(SessionHub: aperture → limiting magnitude); search always finds them all.
+
+Columns: id, name(s), type, RA (h, J2000), Dec (°), magnitude (V, else B), constellation,
+other searchable numbers (Caldwell, UGC, PGC) and the major axis in arcmin.
 
 Ids are written the usual way: "M31", "NGC 869", "IC 342", "C 14" stays the NGC id with
 "C14" as an alias, addendum objects keep their name ("B 33", "Mel 111", "HCG 92").
@@ -16,13 +16,10 @@ Usage: python build_catalog.py NGC.csv addendum.csv > core/src/main/resources/ca
 """
 import csv, re, sys
 
-MAG_LIMIT = 12.0
-SIZE_LIMIT = 10.0
 TYPES = {"*": "Star", "**": "Double star", "*Ass": "Asterism", "OCl": "Open cluster", "GCl": "Globular cluster",
          "Cl+N": "Cluster + nebula", "G": "Galaxy", "GPair": "Galaxy pair", "GTrpl": "Galaxy triplet", "GGroup": "Galaxy group",
          "PN": "Planetary nebula", "HII": "Emission nebula", "DrkN": "Dark nebula", "EmN": "Emission nebula",
          "Neb": "Nebula", "RfN": "Reflection nebula", "SNR": "Supernova remnant", "Nova": "Nova", "NonEx": None, "Dup": None, "Other": "Other"}
-NEBULAE = {"HII", "EmN", "Neb", "RfN", "SNR", "Cl+N", "DrkN", "PN"}
 NOT_DEEP_SKY = {"*", "**", "Nova", "Other"}
 
 def hms(s):
@@ -57,7 +54,7 @@ for path in sys.argv[1:]:
     with open(path, encoding="utf8") as f:
         rows += list(csv.DictReader(f, delimiter=";"))
 
-print("# id\tname\ttype\tra_hours\tdec_deg\tmag\tconst\taliases\tSource: OpenNGC (CC-BY-SA-4.0)")
+print("# id\tname\ttype\tra_hours\tdec_deg\tmag\tconst\taliases\tsize_arcmin\tSource: OpenNGC (CC-BY-SA-4.0)")
 seen = set()
 out = []
 for r in rows:
@@ -70,11 +67,7 @@ for r in rows:
     if caldwell is None and re.fullmatch(r"C\d{3}", r["Name"]):  # addendum: Caldwell objects outside NGC/IC
         caldwell = int(r["Name"][1:])
     name = common(r, f"M{int(messier)}" if messier else r["Name"])
-    if not (messier or caldwell):
-        if r["Type"] in NOT_DEEP_SKY: continue  # NGC/IC entries that are stars
-        bright = m is not None and m <= MAG_LIMIT
-        notable = m is None and (name or (r["Type"] in NEBULAE and size(r) >= SIZE_LIMIT))
-        if not (bright or notable): continue
+    if not (messier or caldwell) and r["Type"] in NOT_DEEP_SKY: continue  # NGC/IC entries that are stars
     if messier:
         ident = f"M{int(messier)}"
     elif re.fullmatch(r"C\d{3}", r["Name"]):
@@ -85,10 +78,14 @@ for r in rows:
     seen.add(ident)
     alt = pretty(r["Name"]) if messier and not re.fullmatch(r"M\d+", r["Name"]) else ""
     label = " / ".join(x for x in (name, alt) if x)
-    aliases = f"C{caldwell}" if caldwell and not ident.startswith("C ") else ""
+    # Searchable: the Caldwell number and the UGC/PGC numbers of galaxies ("UGC 454", "PGC 2557").
+    others = [f"C{caldwell}"] if caldwell and not ident.startswith("C ") else []
+    others += [f"{c} {int(n)}" for c, n in re.findall(r"\b(UGC|PGC) 0*(\d+)\b", r.get("Identifiers") or "")]
+    aliases = ",".join(others)
     group = 0 if messier else 1 if caldwell else 2
     order = int(messier) if messier else caldwell or 0
-    out.append((group, order, ident, label, t, hms(r["RA"]), dms(r["Dec"]), m, r["Const"], aliases))
+    out.append((group, order, ident, label, t, hms(r["RA"]), dms(r["Dec"]), m, r["Const"], aliases, size(r)))
 out.sort(key=lambda x: (x[0], x[1], x[2]))
 for o in out:
-    print(f"{o[2]}\t{o[3]}\t{o[4]}\t{o[5]:.5f}\t{o[6]:.4f}\t{'' if o[7] is None else o[7]}\t{o[8]}\t{o[9]}")
+    size_txt = f"{o[10]:g}" if o[10] else ""
+    print(f"{o[2]}\t{o[3]}\t{o[4]}\t{o[5]:.5f}\t{o[6]:.4f}\t{'' if o[7] is None else o[7]}\t{o[8]}\t{o[9]}\t{size_txt}")

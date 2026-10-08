@@ -3,7 +3,7 @@
 ;   2. iscc packaging\windows\StarBridge.iss  (Inno Setup 6, https://jrsoftware.org/isinfo.php)
 ; Output: build\release\StarBridge-PC-<version>-setup.exe. Installs per user (no admin rights).
 
-#define AppVersion "0.5.0"
+#define AppVersion "0.6.0"
 
 [Setup]
 AppId={{F77C8D5F-F338-4988-AF58-6FDEAD521CA6}
